@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pic11"
+    app:layout_constraintBaseline_creator="@android:integer/config_mediumAnimTime"
+    tools:context=".Add_Promotions">
+
+    <EditText
+        android:id="@+id/editTxt1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Food Item Number"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp" />
+
+    <EditText
+        android:id="@+id/editTxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/editTxt1"
+        android:layout_alignStart="@id/editTxt1"
+        android:layout_alignLeft="@id/editTxt1"
+        android:layout_marginTop="20dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Food Name"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp" />
+
+    <EditText
+        android:id="@+id/editTxt3"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/editTxt2"
+        android:layout_alignStart="@id/editTxt2"
+        android:layout_alignLeft="@id/editTxt2"
+        android:layout_marginTop="20dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Quantity of Item"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp" />
+
+    <EditText
+        android:id="@+id/editTxt4"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/editTxt3"
+        android:layout_alignStart="@id/editTxt3"
+        android:layout_alignLeft="@id/editTxt3"
+        android:layout_marginTop="20dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Description of Promotion"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp" />
+
+    <Button
+        android:id="@+id/tvDate"
+        android:layout_width="258dp"
+        android:layout_height="63dp"
+        android:layout_below="@id/editTxt4"
+        android:layout_alignStart="@id/editTxt4"
+        android:layout_alignLeft="@id/editTxt4"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="82dp"
+        android:text="Add Deadline"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDate"
+        android:layout_alignStart="@id/tvDate"
+        android:layout_alignLeft="@id/tvDate"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Add"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="@string/form_txt6"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+</RelativeLayout>
