@@ -8,4 +8,27 @@
     <string name="form_txt6">Add Promotions</string>
     <string name="form_txt7">Add an Image</string>
     <string name="desc_1">2 plates + FREE mediam Sprite</string>
+
+    <string-array name="res_names">
+        <item>Olive Garden Restuarant</item>
+        <item>Dilanka Food Catars</item>
+        <item>Aunty's house</item>
+        <item>Mathara Bath Kade</item>
+        <item>Olive Garden Restuarant</item>
+        <item>Dilanka Food Catars</item>
+        <item>Aunty's house</item>
+        <item>Mathara Bath Kade</item>
+        <item>Olive Garden Restuarant</item>
+        <item>Dilanka Food Catars</item>
+        <item>Aunty's house</item>
+        <item>Mathara Bath Kade</item>
+        <item>Olive Garden Restuarant</item>
+        <item>Dilanka Food Catars</item>
+        <item>Aunty's house</item>
+        <item>Mathara Bath Kade</item>
+        <item>Olive Garden Restuarant</item>
+        <item>Dilanka Food Catars</item>
+        <item>Aunty's house</item>
+        <item>Mathara Bath Kade</item>
+    </string-array>
 </resources>
