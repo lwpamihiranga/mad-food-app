@@ -71,7 +71,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(Add_Promotions.this,promo_order.class);
+               Intent intent = new Intent(Add_Promotions.this,Promotion_ACTIVITY1.class);
 
 
             }

@@ -10,31 +10,61 @@
         android:id="@+id/imageView2"
         android:layout_width="159dp"
         android:layout_height="138dp"
-        app:srcCompat="@drawable/img6"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="110dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@drawable/img6" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="371dp"
-        android:layout_height="35dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="2 plate + free sprite "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="57dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="151dp"
         android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Rs.200/= only"
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="110dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="153dp"
         android:layout_height="82dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Only for Monday to Friday"
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="166dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
 </androidx.constraintlayout.widget.ConstraintLayout>
