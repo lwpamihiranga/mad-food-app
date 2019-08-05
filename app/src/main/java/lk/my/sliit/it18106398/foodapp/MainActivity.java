@@ -10,13 +10,17 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button b1;
-
+    Button restView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         b1 = (Button) findViewById(R.id.button_pramo);
+
+        restView =  findViewById(R.id.button);
+
+
     }
 
     @Override
@@ -27,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Promotion_ACTIVITY1.class);
+                startActivity(intent);
+            }
+        });
+
+        restView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RestuarantDetail.class);
                 startActivity(intent);
             }
         });
