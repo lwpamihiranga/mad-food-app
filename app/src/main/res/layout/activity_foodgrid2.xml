@@ -11,9 +11,9 @@
 
 
     <RelativeLayout
-        android:layout_width="390dp"
-        android:layout_height="639dp"
-        android:layout_weight="0">
+        android:layout_width="match_parent"
+        android:layout_height="641dp"
+        android:layout_weight="2">
 
         <TextView
             android:id="@+id/textGrid"
@@ -21,8 +21,8 @@
             android:layout_height="65dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="61dp"
-            android:layout_marginBottom="534dp"
+            android:layout_marginEnd="77dp"
+            android:layout_marginBottom="500dp"
             android:text="Customer Home"
             android:textColor="@android:color/darker_gray"
             android:textSize="34sp" />
@@ -33,18 +33,24 @@
     <GridLayout
         android:layout_width="386dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_weight="4"
         android:alignmentMode="alignMargins"
         android:columnCount="2"
         android:columnOrderPreserved="false"
-        android:rowCount="3">
+        android:rowCount="3"
+        android:padding="14dp">
 
         <androidx.cardview.widget.CardView>
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="4dp"
+
 
         </androidx.cardview.widget.CardView>
 
