@@ -76,6 +76,7 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
         public void onClick(View view) {
             Intent intent = new Intent(mContext, DisplayRestaurantsActivity.class);
             intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
+            intent.putExtra("res_name", mList.get(getAdapterPosition()).getName());
 
             mContext.startActivity(intent);
         }
