@@ -1,10 +1,10 @@
 package lk.my.sliit.it18106398.foodapp;
 
-public class ModelRestuarant {
+public class ModelRestaurant {
     private int image;
     private String name;
 
-    public ModelRestuarant(int image, String name) {
+    public ModelRestaurant(int image, String name) {
         this.image = image;
         this.name = name;
     }

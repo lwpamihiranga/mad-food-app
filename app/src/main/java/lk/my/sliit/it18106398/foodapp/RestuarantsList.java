@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RestuarantsList extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<ModelRestuarant> restuarantsList;
+    ArrayList<ModelRestaurant> restuarantsList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,15 +21,15 @@ public class RestuarantsList extends AppCompatActivity {
 
         restuarantsList = new ArrayList<>();
 
-        restuarantsList.add(new ModelRestuarant(R.drawable.res1, "Olive Garden"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res2, "Dilanka Foods"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res3, "Monasha Hotel"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res4, "Lounge 171"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res5, "Lanka Food Corner"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res6, "Matara Bath Kade"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res7, "Hawai Restuarant"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res8, "Palle Kade"));
-        restuarantsList.add(new ModelRestuarant(R.drawable.res9, "Antige Kade"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res1, "Olive Garden"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res2, "Dilanka Foods"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res3, "Monasha Hotel"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res4, "Lounge 171"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res5, "Lanka Food Corner"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res6, "Matara Bath Kade"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res7, "Hawai Restuarant"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res8, "Palle Kade"));
+        restuarantsList.add(new ModelRestaurant(R.drawable.res9, "Antige Kade"));
 
         RestuarantsAdapter adapter = new RestuarantsAdapter(this, restuarantsList);
 

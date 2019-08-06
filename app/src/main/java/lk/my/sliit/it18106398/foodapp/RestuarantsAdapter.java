@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,9 +16,9 @@ import java.util.ArrayList;
 public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.myViewHolder> {
 
     private Context mContext;
-    private ArrayList<ModelRestuarant> mList;
+    private ArrayList<ModelRestaurant> mList;
 
-    public RestuarantsAdapter(Context context, ArrayList<ModelRestuarant> list) {
+    public RestuarantsAdapter(Context context, ArrayList<ModelRestaurant> list) {
         mContext = context;
         mList = list;
     }
@@ -38,7 +37,7 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
 
     @Override
     public void onBindViewHolder(myViewHolder holder, int position) {
-        ModelRestuarant restuarants = mList.get(position);
+        ModelRestaurant restuarants = mList.get(position);
 
         ImageView restuarantImage = holder.restuarant_img;
         TextView restuarantName = holder.restuarant_name;
@@ -58,9 +57,9 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
         TextView restuarant_name;
 
         Context mContext;
-        ArrayList<ModelRestuarant> mList;
+        ArrayList<ModelRestaurant> mList;
 
-        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelRestuarant> list) {
+        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelRestaurant> list) {
             super(itemView);
 
             restuarant_img = itemView.findViewById(R.id.resImg);
