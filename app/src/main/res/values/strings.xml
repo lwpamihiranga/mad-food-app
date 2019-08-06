@@ -9,4 +9,10 @@
     <string name="form_txt7">Add an Image</string>
     <string name="desc_1">2 plates + FREE mediam Sprite</string>
     <string name="promo_add">ADD TO BAG</string>
+    <string name="homeaddfood">ADD NEW FOODS</string>
+    <string name="homeaddpromo">ADD NEW PROMOTIONS</string>
+    <string name="homeviewfood">VIEW FOODS</string>
+    <string name="homeviewpromo">VIEW PROMOTIONS</string>
+    <string name="homeaddorder">ADD NEW ORDERS</string>
+    <string name="homevieworder">VIEW ORDERS</string>
 </resources>
