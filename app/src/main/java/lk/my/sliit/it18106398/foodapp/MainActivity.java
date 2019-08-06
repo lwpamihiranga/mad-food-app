@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button b1,b2;
 
+    Button b1;
+    Button restView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
         b1 = (Button) findViewById(R.id.button_pramo);
         b2 = (Button) findViewById(R.id.buttonAdd);
+
+        restView =  findViewById(R.id.button);
+
+
     }
 
     @Override
@@ -36,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Add_Promotions.class);
+                startActivity(intent);
+            }
+        });
+
+        restView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RestuarantsList.class);
                 startActivity(intent);
             }
         });

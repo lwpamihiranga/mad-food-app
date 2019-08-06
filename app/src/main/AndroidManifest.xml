@@ -12,6 +12,10 @@
         <activity android:name=".ListPromotions"></activity>
         <activity android:name=".promo_list" />
         <activity android:name=".promo_order" />
+        <activity android:name=".DisplayRestaurantsActivity"></activity>
+        <activity android:name=".RestuarantsList" />
+        <activity android:name=".RestuarantDetail" />
+        <activity android:name=".promo_order" />
         <activity android:name=".Add_Promotions" />
         <activity android:name=".Promotion_ACTIVITY3" />
         <activity android:name=".Promotion_ACTIVITY2" />
