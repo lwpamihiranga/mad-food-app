@@ -1,5 +1,6 @@
 package lk.my.sliit.it18106398.foodapp;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,25 +10,43 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RestuarantsAdapter extends RecyclerView.Adapter {
+import java.util.ArrayList;
+
+public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.myViewHolder> {
+
+    private Context mContext;
+    private ArrayList<ModelRestuarant> mList;
+
+    public RestuarantsAdapter(Context context, ArrayList<ModelRestuarant> list) {
+        mContext = context;
+        mList = list;
+    }
+
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        LayoutInflater inflater = LayoutInflater.from(mContext);
         View v = inflater.inflate(R.layout.restuarant_list_card, parent, false);
 
         return new myViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(myViewHolder holder, int position) {
+        ModelRestuarant restuarants = mList.get(position);
 
+        ImageView restuarantImage = holder.restuarant_img;
+        TextView restuarantName = holder.restuarant_name;
+
+        restuarantImage.setImageResource(mList.get(position).getImage());
+
+        restuarantName.setText(restuarants.getName());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mList.size();
     }
 
     public class myViewHolder extends  RecyclerView.ViewHolder {
