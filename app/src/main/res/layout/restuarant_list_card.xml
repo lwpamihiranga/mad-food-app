@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/restuarantImageView"
+            android:id="@+id/restuarantImage"
             android:layout_width="187dp"
             android:layout_height="217dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +31,7 @@
             android:layout_marginBottom="190dp"
             android:text="Restuaran Name"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/restuarantImageView"
+            app:layout_constraintStart_toEndOf="@+id/restuarantImage"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -45,7 +45,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/restuarantImageView" />
+            app:layout_constraintStart_toEndOf="@+id/restuarantImage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
