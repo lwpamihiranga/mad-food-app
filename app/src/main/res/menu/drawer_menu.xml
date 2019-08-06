@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_id1" android:title="Home" android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/menu_id2" android:title="Foods" android:icon="@drawable/ic_food"/>
+    <item android:id="@+id/menu_id3" android:title="Restaurants" android:icon="@drawable/ic_restaurant"/>
+    <item android:id="@+id/menu_id4" android:title="Promotions" android:icon="@drawable/ic_promotion"/>
+    <item android:id="@+id/menu_id5" android:title="My Bag" android:icon="@drawable/ic_bag"/>
+</menu>
