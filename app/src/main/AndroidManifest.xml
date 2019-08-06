@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecycleViewFood"></activity>
-        <activity android:name=".view_home" />
-        <activity android:name=".foodgridDemo" />
-        <activity android:name=".foodgrid" />
         <activity android:name=".promo_order" />
         <activity android:name=".Add_Promotions" />
         <activity android:name=".Promotion_ACTIVITY3" />
