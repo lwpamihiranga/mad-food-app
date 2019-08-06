@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         restView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RestuarantDetail.class);
+                Intent intent = new Intent(MainActivity.this, RestuarantsList.class);
                 startActivity(intent);
             }
         });
