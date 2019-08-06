@@ -1,6 +1,7 @@
 package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View v = inflater.inflate(R.layout.resturant_list, parent, false);
 
-        myViewHolder viewHolder = new myViewHolder(v);
+        myViewHolder viewHolder = new myViewHolder(v, mContext, mList);
 
         return viewHolder;
     }
@@ -51,15 +53,31 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
         return mList.size();
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder {
+    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView restuarant_img;
         TextView restuarant_name;
 
-        public myViewHolder(@NonNull View itemView) {
+        Context mContext;
+        ArrayList<ModelRestuarant> mList;
+
+        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelRestuarant> list) {
             super(itemView);
 
             restuarant_img = itemView.findViewById(R.id.resImg);
             restuarant_name = itemView.findViewById(R.id.resName);
+
+            itemView.setOnClickListener(this);
+
+            mContext = context;
+            mList = list;
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(mContext, DisplayRestaurantsActivity.class);
+            intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
+
+            mContext.startActivity(intent);
         }
     }
 }
