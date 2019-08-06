@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         b1 = (Button) findViewById(R.id.button_pramo);
         b2 = (Button) findViewById(R.id.button_food);
     }

@@ -4,16 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class foodgrid2 extends AppCompatActivity {
+public class RecycleViewFood extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foodgrid2);
-
-
-
-
-
+        setContentView(R.layout.activity_recycle_view_food);
     }
 }
