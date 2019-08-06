@@ -29,7 +29,9 @@ public class ListPromotions extends AppCompatActivity {
         promotions.add(new ModelPromotions(R.drawable.pic1, "Promo 1"));
         promotions.add(new ModelPromotions(R.drawable.img6, "Promo 2"));
         promotions.add(new ModelPromotions(R.drawable.img7, "Promo 3"));
-
+        promotions.add(new ModelPromotions(R.drawable.img10, "Promo 4"));
+        promotions.add(new ModelPromotions(R.drawable.img11, "Promo 5"));
+        
         PromotionsAdapter adapter = new PromotionsAdapter(this, promotions);
 
         recyclerView.setAdapter(adapter);
