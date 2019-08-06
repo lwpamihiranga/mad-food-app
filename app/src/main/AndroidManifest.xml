@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="lk.my.sliit.it18106398.foodapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".FoodMain"></activity>
         <activity android:name=".promo_order" />
         <activity android:name=".Add_Promotions" />
         <activity android:name=".Promotion_ACTIVITY3" />
