@@ -34,10 +34,7 @@ public class RestuarantsList extends AppCompatActivity {
 
         RestuarantsAdapter adapter = new RestuarantsAdapter(this, restuarantsList);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        RecyclerView.LayoutManager layoutManager1 = layoutManager;
-
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(layoutManager1);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

@@ -28,7 +28,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="190dp"
-            android:text="Restuaran Name"
+            android:text="Restuarant Name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/restuarantImage"
             app:layout_constraintTop_toTopOf="parent" />

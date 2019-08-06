@@ -27,7 +27,7 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View v = inflater.inflate(R.layout.restuarant_list_card, parent, false);
+        View v = inflater.inflate(R.layout.resturant_list, parent, false);
 
         myViewHolder viewHolder = new myViewHolder(v);
 
@@ -51,15 +51,15 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
         return mList.size();
     }
 
-    public class myViewHolder extends  RecyclerView.ViewHolder {
+    public class myViewHolder extends RecyclerView.ViewHolder {
         ImageView restuarant_img;
         TextView restuarant_name;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            restuarant_img = itemView.findViewById(R.id.restuarantImage);
-            restuarant_name = itemView.findViewById(R.id.restuarantNameTextView);
+            restuarant_img = itemView.findViewById(R.id.resImg);
+            restuarant_name = itemView.findViewById(R.id.resName);
         }
     }
 }
