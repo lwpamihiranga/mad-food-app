@@ -29,7 +29,9 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View v = inflater.inflate(R.layout.restuarant_list_card, parent, false);
 
-        return new myViewHolder(v);
+        myViewHolder viewHolder = new myViewHolder(v);
+
+        return viewHolder;
     }
 
     @Override
