@@ -20,7 +20,7 @@
             android:id="@+id/img1"
             android:layout_width="wrap_content"
             android:layout_height="172dp"
-            android:background="@drawable/pic1" />
+            android:background="@drawable/pic11" />
 
         <TextView
             android:id="@+id/txtView1"
@@ -72,7 +72,7 @@
             android:id="@+id/img2"
             android:layout_width="395dp"
             android:layout_height="159dp"
-            android:background="@drawable/img7" />
+            android:background="@drawable/img12" />
 
         <TextView
             android:id="@+id/txtView2"

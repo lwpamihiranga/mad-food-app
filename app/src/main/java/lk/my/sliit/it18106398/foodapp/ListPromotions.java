@@ -28,9 +28,9 @@ public class ListPromotions extends AppCompatActivity {
 
         promotions = new ArrayList<>();
 
-        promotions.add(new ModelPromotions(R.drawable.pic1, "Promo 1"));
+        promotions.add(new ModelPromotions(R.drawable.pic11, "Promo 1"));
         promotions.add(new ModelPromotions(R.drawable.img6, "Promo 2"));
-        promotions.add(new ModelPromotions(R.drawable.img7, "Promo 3"));
+        promotions.add(new ModelPromotions(R.drawable.img9, "Promo 3"));
         promotions.add(new ModelPromotions(R.drawable.img10, "Promo 4"));
         promotions.add(new ModelPromotions(R.drawable.img11, "Promo 5"));
 
@@ -38,21 +38,10 @@ public class ListPromotions extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-//        btn_promo1 = (Button) findViewById(R.id.buttonPromo1);
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-
-//        btn_promo1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent ins = new Intent(ListPromotions.this,Promotion_ACTIVITY3.class);
-//                startActivity(ins);
-//            }
-//        });
- //   }
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
