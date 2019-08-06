@@ -1,6 +1,7 @@
 package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -30,7 +31,7 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View v = inflater.inflate(R.layout.list_promotions, parent, false);
 
-        myViewHolder viewHolder = new myViewHolder(v);
+        myViewHolder viewHolder = new myViewHolder(v, mContext, mList);
 
         return viewHolder;
     }
@@ -48,19 +49,37 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
 
     @Override
     public int getItemCount() {
+
         return mList.size();
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder {
+    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         ImageView promo_img;
         TextView promo_txt;
 
-        public myViewHolder(@NonNull View itemView) {
+        Context mContext;
+        ArrayList<ModelPromotions> mList;
+
+        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelPromotions> list) {
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promoImage);
             promo_txt = itemView.findViewById(R.id.promoText);
+
+            itemView.setOnClickListener(this);
+
+            mContext = context;
+            mList = list;
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(mContext,Promotion_ACTIVITY3.class);
+            intent.putExtra("image",mList.get(getAdapterPosition()).getPromoImage());
+            intent.putExtra("name", mList.get(getAdapterPosition()).getPromoName());
+
+            mContext.startActivity(intent);
         }
     }
 }
