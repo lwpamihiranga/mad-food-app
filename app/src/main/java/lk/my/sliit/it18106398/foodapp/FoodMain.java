@@ -27,6 +27,8 @@ public class FoodMain extends AppCompatActivity {
         Log.d(TAG,"onCreate: started.");
 
         initImageBitmaps();
+
+
     }
     private  void initImageBitmaps(){
         Log.d(TAG,"initImageBitmaps: preparing bitmaps.");

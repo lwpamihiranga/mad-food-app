@@ -1,6 +1,7 @@
 package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,12 @@ public FoodAdapter(Context context,ArrayList<String> imageNames, ArrayList<Strin
                 Log.d(TAG,"onclick: clicked on:" + mImageNames.get(position));
 
                 Toast.makeText(mContex,mImageNames.get(position),Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(mContex, FoodGalleryMain.class);
+                intent.putExtra("images_m",mImages.get(position));
+                intent.putExtra("imageNames_m",mImageNames.get(position));
+                mContex.startActivity(intent);
+
             }
         });
     }
