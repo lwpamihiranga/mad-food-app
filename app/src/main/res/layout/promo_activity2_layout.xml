@@ -39,7 +39,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonPromo1"
             android:layout_width="57dp"
             android:layout_height="89dp"
             android:layout_alignEnd="@+id/img1"
