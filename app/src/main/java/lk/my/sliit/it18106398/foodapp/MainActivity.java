@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        b1 = findViewById(R.id.btn3);
+        b1 = findViewById(R.id.btn1);
         b2 = findViewById(R.id.btn2);
         b3 = findViewById(R.id.btn3);
     }
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Promotion_ACTIVITY2.class);
+                Intent intent = new Intent(MainActivity.this, Add_Promotions.class);
                 startActivity(intent);
             }
 
