@@ -1,12 +1,6 @@
 <resources>
     <string name="app_name">Food App</string>
-    <string name="form_txt1">Food Item Number</string>
-    <string name="form_txt2">Description</string>
-    <string name="form_txt3">Food Name</string>
-    <string name="form_txt4">Quantity</string>
-    <string name="form_txt5">Expiry Date of Promotion</string>
     <string name="form_txt6">Add Promotions</string>
-    <string name="form_txt7">Add an Image</string>
     <string name="desc_1">2 plates + FREE mediam Sprite</string>
     <string name="promo_add">ADD TO BAG</string>
 </resources>
