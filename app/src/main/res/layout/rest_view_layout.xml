@@ -8,6 +8,4 @@
     android:textSize="18sp"
     android:layout_margin="12dp"
     android:padding="12dp">
-
-
 </TextView>
