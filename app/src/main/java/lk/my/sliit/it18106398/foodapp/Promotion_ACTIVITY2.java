@@ -31,11 +31,11 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
 
         resViewpromotions = new ArrayList<>();
 
-        resViewpromotions.add(new ModelViewPromotion(R.drawable.pic1, "Promo 1"));
-        resViewpromotions.add(new ModelViewPromotion(R.drawable.img6, "Promo 2"));
-        resViewpromotions.add(new ModelViewPromotion(R.drawable.img7, "Promo 3"));
-        resViewpromotions.add(new ModelViewPromotion(R.drawable.img10, "Promo 4"));
-        resViewpromotions.add(new ModelViewPromotion(R.drawable.img11, "Promo 5"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.pic1, "Bangladesh Cuisine"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img6, "Beef Stroganoff"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img7, "Sausage mix rice"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img10, "Indean Kottu"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img11, "Box-O-Noodles"));
 
         ResViewPromotionAdapter adapter = new ResViewPromotionAdapter(this, resViewpromotions);
 
