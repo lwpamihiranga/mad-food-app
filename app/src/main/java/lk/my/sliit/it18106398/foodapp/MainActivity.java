@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity{
         b3 = findViewById(R.id.btn3);
         b4 = findViewById(R.id.btn4);
         b5 = findViewById(R.id.btn5);
-        b5 = findViewById(R.id.btn6);
+        b6 = findViewById(R.id.btn6);
 
         m1 = findViewById(R.id.menu_id1);
 
@@ -97,17 +97,18 @@ public class MainActivity extends AppCompatActivity{
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MyBag.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
 
 
         });
 
-        b5.setOnClickListener(new View.OnClickListener() {
+        b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FoodList.class);
+
+                Intent intent = new Intent(MainActivity.this, MyBag.class);
                 startActivity(intent);
             }
 
