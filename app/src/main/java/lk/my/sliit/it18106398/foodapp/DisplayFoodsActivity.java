@@ -21,6 +21,16 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_foods);
 
         b1 = findViewById(R.id.btn1);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent1 = new Intent(DisplayFoodsActivity.this, MyBag.class);
+                startActivity(intent1);
+            }
+        });
+
+
 
         imageView = findViewById(R.id.imageTop);
         textView = findViewById(R.id.foodNameTxtView);
@@ -31,19 +41,6 @@ public class DisplayFoodsActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent1 = new Intent(DisplayFoodsActivity.this, MyBag.class);
-                startActivity(intent1);
-            }
-
-
-        });
-    }
+    
 }
