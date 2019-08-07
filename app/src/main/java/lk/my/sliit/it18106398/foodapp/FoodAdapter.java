@@ -60,8 +60,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         public FoodViewHolder(@NonNull View itemView, Context context, ArrayList<ModelFood> list) {
             super(itemView);
 
-            fImage = itemView.findViewById(R.id.image);
-            fName = itemView.findViewById(R.id.image_name);
+            fImage = itemView.findViewById(R.id.foodImg);
+            fName = itemView.findViewById(R.id.foodName);
 
             itemView.setOnClickListener(this);
 
@@ -71,8 +71,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
         @Override
         public void onClick(View view) {
-//            Intent intent = new Intent(mContext, FoodGalleryMain.class);
-//            intent.putExtra("image", mList.get(getAdapterPosition()));
+            Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
+            intent.putExtra("image_id", mList.get(getAdapterPosition()).getFoodImage());
+            intent.putExtra("res_name", mList.get(getAdapterPosition()).getfName());
+
+            mContext.startActivity(intent);
+
         }
     }
 }
