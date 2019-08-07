@@ -39,8 +39,8 @@ public class DisplayFoodsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(DisplayFoodsActivity.this, MyBag.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(DisplayFoodsActivity.this, MyBag.class);
+                startActivity(intent1);
             }
 
 
