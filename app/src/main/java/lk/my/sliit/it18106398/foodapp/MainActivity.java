@@ -1,5 +1,6 @@
 package lk.my.sliit.it18106398.foodapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -9,8 +10,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class MainActivity extends AppCompatActivity{
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
@@ -19,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     Button b1, b2, b3, b4, b5;
 
     MenuItem m1;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +48,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         if(actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     protected void onResume() {
@@ -104,4 +113,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
+
 }
