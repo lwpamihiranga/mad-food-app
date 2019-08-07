@@ -10,4 +10,7 @@
     <string name="homeviewpromo">VIEW PROMOTIONS</string>
     <string name="homeaddorder">ADD NEW ORDERS</string>
     <string name="homevieworder">VIEW ORDERS</string>
+    <string name="restuarantname1">Olive Garden</string>
+    <string name="restuarantname2">DFC</string>
+    <string name="restuarantname3">Take Away</string>
 </resources>

@@ -18,14 +18,14 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ModelViewPromotion> resViewpromotions;
-    Button btn_promo1;
+    //Button btn_promo_update;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotion__activity2);
 
-//        btn_promo1 = (Button) findViewById(R.id.buttonPromo1);
+
 
         recyclerView = findViewById(R.id.promoRecyclerView);
 
@@ -42,11 +42,19 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //btn_promo_update = (Button) findViewById(R.id.btnpromo_update);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
+//        btn_promo_update.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Promotion_ACTIVITY2.this, Add_Promotions.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

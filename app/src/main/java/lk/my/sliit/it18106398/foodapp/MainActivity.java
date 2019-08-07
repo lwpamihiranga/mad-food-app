@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button b1,b2,b3;
+    Button b1,b2,b3,b4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         b1 = findViewById(R.id.btn1);
         b2 = findViewById(R.id.btn2);
         b3 = findViewById(R.id.btn3);
+        b4 = findViewById(R.id.btn4);
     }
 
     @Override
@@ -46,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RestuarantsList.class);
+                startActivity(intent);
+            }
+        });
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListPromotions.class);
                 startActivity(intent);
             }
         });

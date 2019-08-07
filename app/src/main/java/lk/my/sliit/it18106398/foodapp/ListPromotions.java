@@ -17,12 +17,10 @@ public class ListPromotions extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<ModelPromotions> promotions;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resturent__home);
+        setContentView(R.layout.activity_list_promotions);
 
         recyclerView = findViewById(R.id.promoRecyclerView);
 
@@ -38,8 +36,6 @@ public class ListPromotions extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
 
     }
 }
