@@ -6,7 +6,7 @@ public class ModelViewPromotion {
     private int promoImage;
     private String promoName;
 //    private Button btnDelete;
-//    private Button btnUpdate;
+    private Button btnUpdate;
 
     public ModelViewPromotion(int promoImage, String promoName) {
         this.promoImage = promoImage;
@@ -22,6 +22,8 @@ public class ModelViewPromotion {
     public String getPromoName() {
         return promoName;
     }
+
+   // public int getBtnUpdate(){return btnUpdate;}
 
 
 }
