@@ -6,7 +6,7 @@
     <color name="dark_blue">#3023AE</color>
     <color name="purple">#C86DD7</color>
     
-    <color name="login_form_details">#ffffff</color>
-    <color name="login_form_details_light">#ffffff</color>
+    <color name="login_form_details">#A9E2F9</color>
+    <color name="login_form_details_light">#F98282</color>
     <color name="login_form_details_medium">#ffffff</color>
 </resources>
