@@ -1,7 +1,9 @@
 package lk.my.sliit.it18106398.foodapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +25,7 @@ public class FoodGalleryMain extends AppCompatActivity {
         Log.d(TAG, "onCreate: started.");
 
 
-
+        b1 = findViewById(R.id.btn1);
 
 
 
@@ -58,6 +60,23 @@ public class FoodGalleryMain extends AppCompatActivity {
                 .into(image);
 
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(FoodGalleryMain.this, My_Bag.class);
+                startActivity(intent);
+            }
+            });
+
+            }
 
     }
+
+
+
+

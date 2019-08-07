@@ -26,17 +26,17 @@
         android:textColor="#000"/>
 
     <Button
-        android:id="@+id/button_mybag"
+        android:id="@+id/btn1"
         android:layout_width="401dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:layout_marginRight="20dp"
         android:background="@color/colorPrimary"
+        android:onClick="buttonPressed"
         android:paddingHorizontal="30dp"
         android:text="Add to My Bag"
-        android:textSize="16sp"
-        android:onClick="buttonPressed"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="16sp" />
 
 
 </LinearLayout>
