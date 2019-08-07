@@ -25,7 +25,7 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotion__activity2);
 
-        btn_promo1 = (Button) findViewById(R.id.buttonPromo1);
+//        btn_promo1 = (Button) findViewById(R.id.buttonPromo1);
 
         recyclerView = findViewById(R.id.promoRecyclerView);
 
