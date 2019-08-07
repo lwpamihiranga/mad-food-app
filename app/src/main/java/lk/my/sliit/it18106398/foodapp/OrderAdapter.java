@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
     public OrderAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View v = inflater.inflate(R.layout.resturant_list, parent, false);
+        View v = inflater.inflate(R.layout.order_bag_layout, parent, false);
 
         myViewHolder viewHolder = new myViewHolder(v, mContext, mList);
 
@@ -39,6 +40,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         orderImage.setImageResource(mList.get(position).getImage());
 
         orderName.setText(order.getName());
+
     }
     public int getItemCount() {
         return mList.size();
@@ -47,6 +49,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView order_img;
         TextView order_name;
+        Button updateBtn;
 
         Context mContext;
         ArrayList<ModelOrder> mList;
@@ -56,6 +59,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
+            updateBtn = itemView.findViewById(R.id.updateBtn);
 
             itemView.setOnClickListener(this);
 
