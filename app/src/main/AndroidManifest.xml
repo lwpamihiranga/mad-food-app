@@ -18,9 +18,9 @@
         <activity android:name=".Promotion_ACTIVITY3" />
         <activity android:name=".Promotion_ACTIVITY2" />
         <activity android:name=".Promotion_ACTIVITY1" />
-        <activity android:name=".RestuarantsList" />
-        <activity android:name=".ListPromotions" />
-        <activity android:name=".DisplayRestaurantsActivity" />
+        <activity android:name=".RestuarantsList"/>
+        <activity android:name=".ListPromotions"/>
+        <activity android:name=".DisplayRestaurantsActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
