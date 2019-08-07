@@ -1,6 +1,7 @@
 package lk.my.sliit.it18106398.foodapp;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,9 +19,7 @@ public class FoodMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_main);
 
-//        Log.d(TAG,"onCreate: started.");
-
-        recyclerView.findViewById(R.id.recycler_view);
+        recyclerView.findViewById(R.id.foodRecyclerView);
 
         foods = new ArrayList<>();
 

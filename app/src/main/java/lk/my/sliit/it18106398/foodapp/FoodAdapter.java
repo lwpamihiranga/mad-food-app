@@ -1,6 +1,7 @@
 package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,21 +15,23 @@ import java.util.ArrayList;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
 
-    private Context mContex;
+    private Context mContext;
     private ArrayList<ModelFood> mList;
 
-    public FoodAdapter(Context mContex, ArrayList<ModelFood> mList) {
-        this.mContex = mContex;
+    public FoodAdapter(Context mContext, ArrayList<ModelFood> mList) {
+        this.mContext = mContext;
         this.mList = mList;
     }
 
     @NonNull
     @Override
-    public FoodAdapter.FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mContex);
+    public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.detail_listview, parent, false);
 
-        return new FoodViewHolder(view, mContex, mList);
+        FoodViewHolder viewHolder = new FoodViewHolder(view, mContext, mList);
+
+        return viewHolder;
     }
 
     @Override
@@ -68,10 +71,14 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             mList = list;
         }
 
+
         @Override
         public void onClick(View view) {
-//            Intent intent = new Intent(mContext, FoodGalleryMain.class);
-//            intent.putExtra("image", mList.get(getAdapterPosition()));
+            Intent intent = new Intent(mContext, FoodGalleryMain.class);
+            intent.putExtra("image_id", mList.get(getAdapterPosition()).getFoodImage());
+            intent.putExtra("res_name", mList.get(getAdapterPosition()).getfName());
+
+            mContext.startActivity(intent);
         }
     }
 }

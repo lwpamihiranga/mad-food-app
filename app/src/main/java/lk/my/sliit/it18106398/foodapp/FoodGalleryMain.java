@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
+//import com.bumptech.glide.Glide;
 
 public class FoodGalleryMain extends AppCompatActivity {
 
@@ -40,24 +40,24 @@ public class FoodGalleryMain extends AppCompatActivity {
             String mImages = getIntent().getStringExtra("images_m");
             String mNames = getIntent().getStringExtra("imageNames_m");
 
-            setImage(mImages,mNames);
+//            setImage(mImages,mNames);
         }
     }
-
-    private void setImage(String mImages, String mNames){
-        Log.d(TAG,"setImage: setting to image and name widgets.");
-
-        TextView name = findViewById(R.id.image_description);
-        name.setText(mNames);
-
-
-        ImageView image = findViewById(R.id.image);
-        Glide.with(this)
-                .asBitmap()
-                .load (mImages)
-                .into(image);
-
-    }
+//
+//    private void setImage(String mImages, String mNames){
+//        Log.d(TAG,"setImage: setting to image and name widgets.");
+//
+//        TextView name = findViewById(R.id.image_description);
+//        name.setText(mNames);
+//
+//
+//        ImageView image = findViewById(R.id.image);
+//        Glide.with(this)
+//                .asBitmap()
+//                .load (mImages)
+//                .into(image);
+//
+//    }
 
 
     }
