@@ -20,7 +20,7 @@ public class FoodMain extends AppCompatActivity {
 
 //        Log.d(TAG,"onCreate: started.");
 
-        recyclerView.findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
 
         foods = new ArrayList<>();
 
