@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ListCompanyOrder"></activity>
+        <activity
+            android:name=".TabViewOrders"
+            android:label="@string/title_activity_tab_view_orders"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Company_order"
             android:label="@string/title_activity_company_order"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MyBag" />
         <activity android:name=".LoginActivity" /> <!-- <activity android:name=".promo_order" /> -->
         <activity android:name=".DisplayFoodsActivity" />
