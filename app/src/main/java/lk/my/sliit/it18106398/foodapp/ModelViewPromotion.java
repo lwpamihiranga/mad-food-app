@@ -5,14 +5,14 @@ import android.widget.Button;
 public class ModelViewPromotion {
     private int promoImage;
     private String promoName;
-    private Button btnDelete;
-    private Button btnUpdate;
+//    private Button btnDelete;
+//    private Button btnUpdate;
 
-    public ModelViewPromotion(int promoImage, String promoName, Button btndelete, Button btnupdate) {
+    public ModelViewPromotion(int promoImage, String promoName) {
         this.promoImage = promoImage;
         this.promoName = promoName;
-        this.btnDelete = btndelete;
-        this.btnUpdate = btnupdate;
+//        this.btnDelete = btndelete;
+//        this.btnUpdate = btnupdate;
     }
 
     public int getPromoImage() {
@@ -22,4 +22,6 @@ public class ModelViewPromotion {
     public String getPromoName() {
         return promoName;
     }
+
+
 }

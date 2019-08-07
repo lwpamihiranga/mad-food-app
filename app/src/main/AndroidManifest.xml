@@ -12,7 +12,6 @@
         <activity android:name=".Resturent_Home"></activity>
         <activity android:name=".ListPromotions" />
         <activity android:name=".promo_list" />
-        <activity android:name=".promo_order" />
         <activity android:name=".DisplayRestaurantsActivity" />
         <activity android:name=".RestuarantsList" />
         <activity android:name=".promo_order" />

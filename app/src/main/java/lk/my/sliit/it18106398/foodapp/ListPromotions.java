@@ -16,7 +16,7 @@ public class ListPromotions extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ModelPromotions> promotions;
-    Button btn_promoupdate;
+
 
 
     @Override
@@ -40,19 +40,6 @@ public class ListPromotions extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        btn_promoupdate = (Button) findViewById(R.id.btnpromoupdate);
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        btn_promoupdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent ins = new Intent(ListPromotions.this,Add_Promotions.class);
-                startActivity(ins);
-            }
-        });
     }
 }
