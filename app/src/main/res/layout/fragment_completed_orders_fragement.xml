@@ -4,17 +4,10 @@
     android:id="@+id/completedFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F44336"
+    android:background="@android:color/transparent"
     tools:context=".CompletedOrdersFragement">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<TextView-->
-    <!--android:id="@+id/completedFragement"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:text="@string/hello_blank_fragment" />-->
-    <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"

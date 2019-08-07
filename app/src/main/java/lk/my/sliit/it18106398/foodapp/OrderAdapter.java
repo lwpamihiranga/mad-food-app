@@ -61,14 +61,15 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             order_name = itemView.findViewById(R.id.foodName);
             updateBtn = itemView.findViewById(R.id.acceptbtn);
 
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(this);
+            updateBtn.setOnClickListener(this);
 
             mContext = context;
             mList = list;
         }
 
         public void onClick(View view) {
-            Intent intent = new Intent(mContext, DisplayRestaurantsActivity.class);
+            Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
             intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
             intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
 
