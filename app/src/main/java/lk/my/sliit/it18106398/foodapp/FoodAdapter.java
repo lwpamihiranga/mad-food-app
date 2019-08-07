@@ -1,95 +1,77 @@
 package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>{
+public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
 
-    private static  final  String TAG = "FoodAdapter";
-    private ArrayList<String> mImageNames = new ArrayList<>();
-    private ArrayList<String> mImages = new ArrayList<>();
     private Context mContex;
+    private ArrayList<ModelFood> mList;
 
-public FoodAdapter(Context context,ArrayList<String> imageNames, ArrayList<String> images ){
-    mImageNames = imageNames;
-    mImages = images;
-    mContex = context;
+    public FoodAdapter(Context mContex, ArrayList<ModelFood> mList) {
+        this.mContex = mContex;
+        this.mList = mList;
+    }
 
-
-}
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.detail_listview,parent,false);
-    ViewHolder holder = new ViewHolder(view);
-    return holder;
+    public FoodAdapter.FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mContex);
+        View view = inflater.inflate(R.layout.detail_listview, parent, false);
+
+        return new FoodViewHolder(view, mContex, mList);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-    Log.d(TAG,"onBindViewHolder: called." );
+    public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
+        ModelFood foods = mList.get(position);
 
-        Glide.with(mContex)
-            .asBitmap()
-            .load(mImages.get(position))
-            .into(holder.image);
+        ImageView imageView = holder.fImage;
+        TextView textView = holder.fName;
 
+        imageView.setImageResource(mList.get(position).getFoodImage());
 
-        holder.imageName.setText(mImageNames.get(position));
-
-        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG,"onclick: clicked on:" + mImageNames.get(position));
-
-                Toast.makeText(mContex,mImageNames.get(position),Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(mContex, FoodGalleryMain.class);
-                intent.putExtra("images_m",mImages.get(position));
-                intent.putExtra("imageNames_m",mImageNames.get(position));
-                mContex.startActivity(intent);
-
-            }
-        });
+        textView.setText(foods.getfName());
     }
 
     @Override
     public int getItemCount() {
-        return mImageNames.size();
+        return mList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView image;
-        TextView imageName;
-        RelativeLayout parentLayout;
+    public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        ImageView fImage;
+        TextView fName;
 
-        public ViewHolder(View itemview){
-            super(itemview);
-            image = itemview.findViewById(R.id.image);
-            imageName = itemview.findViewById(R.id.image_name);
-            parentLayout = itemview.findViewById(R.id.parent_layout);
+        Context mContext;
+        ArrayList<ModelFood> mList;
 
+        public FoodViewHolder(@NonNull View itemView, Context context, ArrayList<ModelFood> list) {
+            super(itemView);
 
+            fImage = itemView.findViewById(R.id.image);
+            fName = itemView.findViewById(R.id.image_name);
+
+            itemView.setOnClickListener(this);
+
+            mContext = context;
+            mList = list;
         }
 
-
+        @Override
+        public void onClick(View view) {
+//            Intent intent = new Intent(mContext, FoodGalleryMain.class);
+//            intent.putExtra("image", mList.get(getAdapterPosition()));
+        }
     }
-
-
 }

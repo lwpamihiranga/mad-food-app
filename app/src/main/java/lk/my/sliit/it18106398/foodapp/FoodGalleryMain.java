@@ -2,6 +2,7 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 public class FoodGalleryMain extends AppCompatActivity {
 
     private static final String TAG = "FoodGalleryMain";
+    Button b1;
 
     @Override
     protected void onCreate(@NonNull Bundle savedInstanceState) {
@@ -21,7 +23,12 @@ public class FoodGalleryMain extends AppCompatActivity {
         Log.d(TAG, "onCreate: started.");
 
 
-        getIncomingIntent();
+
+
+
+
+
+    getIncomingIntent();
 
     }
 
@@ -53,5 +60,4 @@ public class FoodGalleryMain extends AppCompatActivity {
     }
 
 
-
-}
+    }
