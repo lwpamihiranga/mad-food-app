@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,57 +14,52 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.myViewHolder> {
-
+public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder> {
     private Context mContext;
-    private ArrayList<ModelRestaurant> mList;
+    private ArrayList<ModelOrder> mList;
 
-    public RestuarantsAdapter(Context context, ArrayList<ModelRestaurant> list) {
+    public OrderAdapter(Context context, ArrayList<ModelOrder> list) {
         mContext = context;
         mList = list;
     }
-
-    @NonNull
-    @Override
-    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public OrderAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View v = inflater.inflate(R.layout.resturant_list, parent, false);
+        View v = inflater.inflate(R.layout.order_bag_layout, parent, false);
 
         myViewHolder viewHolder = new myViewHolder(v, mContext, mList);
 
         return viewHolder;
     }
-
-    @Override
     public void onBindViewHolder(myViewHolder holder, int position) {
-        ModelRestaurant restuarants = mList.get(position);
+        ModelOrder order = mList.get(position);
 
-        ImageView restuarantImage = holder.restuarant_img;
-        TextView restuarantName = holder.restuarant_name;
+        ImageView orderImage = holder.order_img;
+        TextView orderName = holder.order_name;
 
-        restuarantImage.setImageResource(mList.get(position).getImage());
+        orderImage.setImageResource(mList.get(position).getImage());
 
-        restuarantName.setText(restuarants.getName());
+        orderName.setText(order.getName());
+
     }
-
-    @Override
     public int getItemCount() {
         return mList.size();
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView restuarant_img;
-        TextView restuarant_name;
+        ImageView order_img;
+        TextView order_name;
+        Button updateBtn;
 
         Context mContext;
-        ArrayList<ModelRestaurant> mList;
+        ArrayList<ModelOrder> mList;
 
-        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelRestaurant> list) {
+        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelOrder> list) {
             super(itemView);
 
-            restuarant_img = itemView.findViewById(R.id.foodImg);
-            restuarant_name = itemView.findViewById(R.id.foodName);
+            order_img = itemView.findViewById(R.id.foodImg);
+            order_name = itemView.findViewById(R.id.foodName);
+            updateBtn = itemView.findViewById(R.id.updateBtn);
 
             itemView.setOnClickListener(this);
 
@@ -71,11 +67,10 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
             mList = list;
         }
 
-        @Override
         public void onClick(View view) {
             Intent intent = new Intent(mContext, DisplayRestaurantsActivity.class);
             intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
-            intent.putExtra("res_name", mList.get(getAdapterPosition()).getName());
+            intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
 
             mContext.startActivity(intent);
         }
