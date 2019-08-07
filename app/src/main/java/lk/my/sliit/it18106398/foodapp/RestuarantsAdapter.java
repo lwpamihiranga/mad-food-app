@@ -62,8 +62,8 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
         public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelRestaurant> list) {
             super(itemView);
 
-            restuarant_img = itemView.findViewById(R.id.resImg);
-            restuarant_name = itemView.findViewById(R.id.resName);
+            restuarant_img = itemView.findViewById(R.id.foodImg);
+            restuarant_name = itemView.findViewById(R.id.foodName);
 
             itemView.setOnClickListener(this);
 
