@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button b1, b2, b3, b4;
 
+    MenuItem m1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         b2 = findViewById(R.id.btn2);
         b3 = findViewById(R.id.btn3);
         b4 = findViewById(R.id.btn4);
+
+        m1 = findViewById(R.id.menu_id1);
 
         drawerLayout = findViewById(R.id.drawer);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
