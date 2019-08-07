@@ -1,18 +1,14 @@
 package lk.my.sliit.it18106398.foodapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -98,12 +94,23 @@ public class MainActivity extends AppCompatActivity{
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FoodList.class);
+                startActivity(intent);
+            }
+
+
+        });
+
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
 
 
         });
+
 
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
