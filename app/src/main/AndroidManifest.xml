@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListCompanyOrder"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ListCompanyOrder" />
         <activity android:name=".MyBag" />
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MyBag" />
         <activity android:name=".LoginActivity" /> <!-- <activity android:name=".promo_order" /> -->
         <activity android:name=".DisplayFoodsActivity" />
-        <activity android:name=".Resturent_Home"></activity>
+        <activity android:name=".Resturent_Home" />
         <activity android:name=".ListPromotions" />
         <activity android:name=".promo_list" />
         <activity android:name=".DisplayRestaurantsActivity" />
