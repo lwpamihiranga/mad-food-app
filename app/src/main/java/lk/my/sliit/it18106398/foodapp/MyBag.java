@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import java.util.ArrayList;
-//test comment 3
+
 public class MyBag extends AppCompatActivity {
 
     RecyclerView recyclerView;
