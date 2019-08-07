@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity{
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
 
-    Button b1, b2, b3, b4, b5;
+    Button b1, b2, b3, b4, b5, b6;
 
     MenuItem m1;
 
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity{
         b3 = findViewById(R.id.btn3);
         b4 = findViewById(R.id.btn4);
         b5 = findViewById(R.id.btn5);
+        b5 = findViewById(R.id.btn6);
 
         m1 = findViewById(R.id.menu_id1);
 
