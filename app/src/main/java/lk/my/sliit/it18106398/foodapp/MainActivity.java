@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity{
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
 
-    Button b1, b2, b3, b4, b5, b6;
+    Button b1, b2, b3, b4, b5, b6, b7;
 
     MenuItem m1;
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity{
         b4 = findViewById(R.id.btn4);
         b5 = findViewById(R.id.btn5);
         b6 = findViewById(R.id.btn6);
+        b7 = findViewById(R.id.btn7);
 
         m1 = findViewById(R.id.menu_id1);
 
@@ -109,6 +110,17 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, MyBag.class);
+                startActivity(intent);
+            }
+
+
+        });
+
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ListCompanyOrder.class);
                 startActivity(intent);
             }
 
