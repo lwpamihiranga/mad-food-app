@@ -18,18 +18,32 @@ public class Promotion_ACTIVITY1 extends AppCompatActivity {
 
         btn1 = findViewById(R.id.res1);
         btn2 = findViewById(R.id.res2);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Promotion_ACTIVITY1.this, ListPromotions.class);//client's side
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(Promotion_ACTIVITY1.this, ListPromotions.class);//client's side
+                startActivity(intent1);
+
+//                Intent intent2 = new Intent(Promotion_ACTIVITY1.this, Add_Promotions.class);//user's side
+//                startActivity(intent2);
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(Promotion_ACTIVITY1.this, ListPromotions.class);
+                startActivity(intent1);
+
+//                Intent intent2 = new Intent(Promotion_ACTIVITY1.this, Promotion_ACTIVITY3.class);//user's side
+//                startActivity(intent2);
+            }
+        });
+            }
+        });
     }
 }

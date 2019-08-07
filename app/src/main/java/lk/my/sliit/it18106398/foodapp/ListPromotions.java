@@ -16,8 +16,6 @@ public class ListPromotions extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ModelPromotions> promotions;
-    //Button btn_promo1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +26,16 @@ public class ListPromotions extends AppCompatActivity {
 
         promotions = new ArrayList<>();
 
-        promotions.add(new ModelPromotions(R.drawable.pic11, "Promo 1"));
-        promotions.add(new ModelPromotions(R.drawable.img6, "Promo 2"));
-        promotions.add(new ModelPromotions(R.drawable.img9, "Promo 3"));
-        promotions.add(new ModelPromotions(R.drawable.img10, "Promo 4"));
-        promotions.add(new ModelPromotions(R.drawable.img11, "Promo 5"));
+        promotions.add(new ModelPromotions(R.drawable.pic1, "Bangladesh Cuisine"));
+        promotions.add(new ModelPromotions(R.drawable.img6, "Beef Stroganoff"));
+        promotions.add(new ModelPromotions(R.drawable.img7, "Sausage mix rice"));
+        promotions.add(new ModelPromotions(R.drawable.img10, "Indean Kottu"));
+        promotions.add(new ModelPromotions(R.drawable.img11, "Box-O-Noodles"));
 
         PromotionsAdapter adapter = new PromotionsAdapter(this, promotions);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
     }
 }

@@ -33,6 +33,15 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         txt1_form = (EditText) findViewById(R.id.editTxt1);
 
         btn = (Button) findViewById(R.id.add_btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Add_Promotions.this,ListPromotions.class);
+
+
+            }
+        });
+
 
         btnDate = (Button) findViewById(R.id.tvDate);
         btnDate.setOnClickListener(new View.OnClickListener() {
@@ -68,13 +77,6 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     protected void onResume() {
         super.onResume();
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent intent = new Intent(Add_Promotions.this,Promotion_ACTIVITY1.class);
 
-
-            }
-        });
     }
 }

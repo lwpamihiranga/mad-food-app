@@ -74,17 +74,17 @@ public class MainActivity extends AppCompatActivity{
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Add_Promotions.class);
+                Intent intent = new Intent(MainActivity.this, RestuarantsList.class);
                 startActivity(intent);
             }
 
 
         });
 
-        b3.setOnClickListener(new View.OnClickListener() {
+        b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RestuarantsList.class);
+                Intent intent = new Intent(MainActivity.this, Resturent_Home.class);
                 startActivity(intent);
             }
 
@@ -134,6 +134,4 @@ public class MainActivity extends AppCompatActivity{
 
         });
     }
-
-
 }

@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">Food App</string>
+    <string name="form_txt2">Description</string>
     <string name="form_txt6">Add Promotions</string>
     <string name="desc_1">2 plates + FREE mediam Sprite</string>
     <string name="promo_add">ADD TO BAG</string>
+    <string name="homeaddfood">ADD NEW FOODS</string>
+    <string name="homeaddpromo">ADD NEW PROMOTIONS</string>
+    <string name="homeviewfood">VIEW FOODS</string>
+    <string name="homeviewpromo">VIEW PROMOTIONS</string>
+    <string name="homeaddorder">ADD NEW ORDERS</string>
+    <string name="homevieworder">VIEW ORDERS</string>
+    <string name="restuarantname1">Olive Garden</string>
+    <string name="restuarantname2">DFC</string>
+    <string name="restuarantname3">Take Away</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="tab_text_1">Tab 1</string>
