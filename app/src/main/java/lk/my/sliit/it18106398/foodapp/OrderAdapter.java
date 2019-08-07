@@ -70,6 +70,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
         public void onClick(View view) {
             Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
             intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
 
