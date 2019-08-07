@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#0C0C0C</color>
+    <color name="dark_blue">#3023AE</color>
+    <color name="purple">#C86DD7</color>
+    
+    <color name="login_form_details">#ffffff</color>
+    <color name="login_form_details_light">#ffffff</color>
+    <color name="login_form_details_medium">#ffffff</color>
 </resources>
