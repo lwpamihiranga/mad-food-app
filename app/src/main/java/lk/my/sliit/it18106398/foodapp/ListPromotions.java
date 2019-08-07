@@ -16,13 +16,13 @@ public class ListPromotions extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ModelPromotions> promotions;
-    //Button btn_promo1;
+    Button btn_promoupdate;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_promotions);
+        setContentView(R.layout.activity_resturent__home);
 
         recyclerView = findViewById(R.id.promoRecyclerView);
 
@@ -40,19 +40,19 @@ public class ListPromotions extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-//        btn_promo1 = (Button) findViewById(R.id.buttonPromo1);
+        btn_promoupdate = (Button) findViewById(R.id.btnpromoupdate);
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-//        btn_promo1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent ins = new Intent(ListPromotions.this,Promotion_ACTIVITY3.class);
-//                startActivity(ins);
-//            }
-//        });
- //   }
+        btn_promoupdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ins = new Intent(ListPromotions.this,Add_Promotions.class);
+                startActivity(ins);
+            }
+        });
+    }
 }
