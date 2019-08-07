@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Promotion_ACTIVITY2 extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<ModelPromotions> promotions;
+    ArrayList<ModelViewPromotion> resViewpromotions;
     Button btn_promo1;
 
     @Override
@@ -33,15 +33,15 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.promoRecyclerView);
 
-        promotions = new ArrayList<>();
+        resViewpromotions = new ArrayList<>();
 
-        promotions.add(new ModelPromotions(R.drawable.pic1, "Promo 1"));
-        promotions.add(new ModelPromotions(R.drawable.img6, "Promo 2"));
-        promotions.add(new ModelPromotions(R.drawable.img7, "Promo 3"));
-        promotions.add(new ModelPromotions(R.drawable.img10, "Promo 4"));
-        promotions.add(new ModelPromotions(R.drawable.img11, "Promo 5"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.pic1, "Promo 1"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img6, "Promo 2"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img7, "Promo 3"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img10, "Promo 4"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img11, "Promo 5"));
 
-        PromotionsAdapter adapter = new PromotionsAdapter(this, promotions);
+        ResViewPromotionAdapter adapter = new PromotionsAdapter(this, resViewpromotions);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
