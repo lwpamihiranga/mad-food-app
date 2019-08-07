@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FoodMain.class);
+                Intent intent = new Intent(MainActivity.this, FoodList.class);
                 startActivity(intent);
             }
         });
