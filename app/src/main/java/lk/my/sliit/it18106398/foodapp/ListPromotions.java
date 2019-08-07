@@ -26,9 +26,9 @@ public class ListPromotions extends AppCompatActivity {
 
         promotions = new ArrayList<>();
 
-        promotions.add(new ModelPromotions(R.drawable.pic1, "Bangladesh Cuisine"));
+        promotions.add(new ModelPromotions(R.drawable.pic12, "Bangladesh Cuisine"));
         promotions.add(new ModelPromotions(R.drawable.img6, "Beef Stroganoff"));
-        promotions.add(new ModelPromotions(R.drawable.img7, "Sausage mix rice"));
+        promotions.add(new ModelPromotions(R.drawable.img10, "Sausage mix rice"));
         promotions.add(new ModelPromotions(R.drawable.img10, "Indean Kottu"));
         promotions.add(new ModelPromotions(R.drawable.img11, "Box-O-Noodles"));
 

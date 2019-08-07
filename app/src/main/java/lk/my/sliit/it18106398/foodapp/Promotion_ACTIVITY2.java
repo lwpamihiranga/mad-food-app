@@ -31,9 +31,9 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
 
         resViewpromotions = new ArrayList<>();
 
-        resViewpromotions.add(new ModelViewPromotion(R.drawable.pic1, "Bangladesh Cuisine"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.pic12, "Bangladesh Cuisine"));
         resViewpromotions.add(new ModelViewPromotion(R.drawable.img6, "Beef Stroganoff"));
-        resViewpromotions.add(new ModelViewPromotion(R.drawable.img7, "Sausage mix rice"));
+        resViewpromotions.add(new ModelViewPromotion(R.drawable.img10, "Sausage mix rice"));
         resViewpromotions.add(new ModelViewPromotion(R.drawable.img10, "Indean Kottu"));
         resViewpromotions.add(new ModelViewPromotion(R.drawable.img11, "Box-O-Noodles"));
 

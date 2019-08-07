@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img13"
+    android:background="@drawable/img12"
     app:layout_constraintBaseline_creator="@android:integer/config_mediumAnimTime"
     tools:context=".Add_Promotions">
 
