@@ -27,7 +27,7 @@ public class MyBag extends AppCompatActivity {
         orderList.add(new ModelOrder(R.drawable.noodles,"noodles"));
         orderList.add(new ModelOrder(R.drawable.noodles,"noodles"));
 
-        recyclerView = findViewById(R.id.restuarantRecycleView);
+        recyclerView = findViewById(R.id.foodsRecycleView);
 
         adapter = new OrderAdapter(getApplicationContext(),orderList);
 

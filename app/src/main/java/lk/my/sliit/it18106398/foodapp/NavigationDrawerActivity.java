@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class NavigationDrawerActivity extends AppCompatActivity
@@ -47,6 +48,20 @@ public class NavigationDrawerActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button btnUser, btnRestaurant;
+
+        btnUser = findViewById(R.id.btnViewUser);
+        btnRestaurant = findViewById(R.id.btnViewRestaurant);
+
+        btnRestaurant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(NavigationDrawerActivity.this, "Restaurant Button Clikced", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(NavigationDrawerActivity.this, Resturent_Home.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -90,9 +105,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
             Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show();
-            setContentView(R.layout.activity_display_restaurants);
-//            intent = new Intent(this, FoodList.class);
-//            startActivity(intent);
+            intent = new Intent(this, FoodList.class);
+            startActivity(intent);
         } else if (id == R.id.nav_foods) {
             intent = new Intent(this, FoodList.class);
             startActivity(intent);

@@ -51,8 +51,8 @@
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sing_in">Sing In</string>
-    <string name="john_wick">John Wick</string>
-    <string name="johnwick_gmail_com">johnwick@gmail.com</string>
+    <string name="user_name">John Wick</string>
+    <string name="user_email">johnwick@gmail.com</string>
     <string name="textview">TextView</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
@@ -66,4 +66,6 @@
     <string name="driver_name">Name</string>
     <string name="rating_label">Rating</string>
     <string name="req_deliver_btn">Request to Deliver</string>
+    <string name="user_button">User Button</string>
+    <string name="view_as_restaurant">View as Restaurant</string>
 </resources>
