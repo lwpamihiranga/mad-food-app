@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Restautarant_viewfoods"></activity>
         <activity android:name=".Addfoods" />
         <activity android:name=".MyBag" />
         <activity android:name=".RegisterActivity"></activity>
