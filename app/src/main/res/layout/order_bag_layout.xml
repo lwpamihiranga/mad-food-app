@@ -47,8 +47,7 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/deleteBtn"
             app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
-            app:layout_constraintStart_toEndOf="@+id/foodImg"
-            app:layout_constraintTop_toTopOf="@+id/deleteBtn" />
+            app:layout_constraintStart_toEndOf="@+id/foodImg" />
 
         <Button
             android:id="@+id/deleteBtn"

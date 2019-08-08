@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
     android:orientation="vertical"
     tools:context=".ListCompanyOrder">
 
@@ -11,21 +12,29 @@
         android:id="@+id/btnPending"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/btnCompleted"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:background="@drawable/round_shape"
+        android:backgroundTint="@color/login_form_details_medium"
+        android:text="Pending Orders" />
 
     <fragment
         android:id="@+id/fragmentDefault"
         android:name="lk.my.sliit.it18106398.foodapp.PendingOrdersFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
+        android:layout_height="200dp">
     </fragment>
+
+    <Button
+        android:id="@+id/btnCompleted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_shape"
+        android:backgroundTint="@color/login_form_details"
+        android:text="Completed Orders" />
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="lk.my.sliit.it18106398.foodapp.CompletedOrdersFragement"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
 </LinearLayout>

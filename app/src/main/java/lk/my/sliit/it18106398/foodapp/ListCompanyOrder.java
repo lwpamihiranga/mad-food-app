@@ -54,7 +54,7 @@ public class ListCompanyOrder extends AppCompatActivity {
             Toast.makeText(this, "clicked 2", Toast.LENGTH_SHORT).show();
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragmentDefault, fragment);
+            fragmentTransaction.replace(R.id.fragment, fragment);
             fragmentTransaction.commit();
         }
     }
