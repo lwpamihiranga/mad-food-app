@@ -1,20 +1,16 @@
 package lk.my.sliit.it18106398.foodapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
 
@@ -32,7 +28,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
 
         txt1_form = (EditText) findViewById(R.id.editTxt1);
 
-        btn = (Button) findViewById(R.id.add_btn);
+        btn = (Button) findViewById(R.id.add_button);
 
         btnDate = (Button) findViewById(R.id.tvDate);
         btnDate.setOnClickListener(new View.OnClickListener() {

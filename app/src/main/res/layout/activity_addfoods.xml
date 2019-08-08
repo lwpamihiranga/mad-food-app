@@ -4,6 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login"
     tools:context=".Addfoods">
+
+    <EditText
+        android:id="@+id/editTxt1"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Food Item Number"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.185" />
+
+
+    <EditText
+        android:id="@+id/editTxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_below="@id/editTxt1"
+        android:layout_alignStart="@id/editTxt1"
+        android:layout_alignLeft="@id/editTxt1"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Food Name"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.339" />
+
+
+    <EditText
+        android:id="@+id/editTxt3"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_below="@id/editTxt2"
+        android:layout_alignStart="@id/editTxt2"
+        android:layout_alignLeft="@id/editTxt2"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="68dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
+
+
+    <EditText
+        android:id="@+id/editTxt4"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/editTxt3"
+        android:layout_alignStart="@id/editTxt3"
+        android:layout_alignLeft="@id/editTxt3"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Food Description"
+        android:inputType="text"
+        android:textColorHint="@android:color/black"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.621" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="43dp"
+        android:text="Add New Food Items"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTxt1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Add"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
