@@ -20,7 +20,7 @@ public class Resturent_Home extends AppCompatActivity {
 
         addPromotion = (Button) findViewById(R.id.btnadd_promo);
         viewPromotion = (Button) findViewById(R.id.btnview_promo);
-        addFood = (Button) findViewById(R.id.add_button);
+        addFood = (Button) findViewById(R.id.btnview_food);
        // viewFood = (Button) findViewById(R.id.btnview_promo);
 
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayFoodsActivity">
+    tools:context=".DisplayFoodsActivity"
+    android:background="@drawable/background_login">
 
     <ImageView
         android:id="@+id/imageTop"
@@ -22,6 +23,7 @@
         android:id="@+id/foodNameTxtView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/login_form_details"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="161dp"
@@ -35,17 +37,21 @@
         android:id="@+id/editText1"
         android:layout_width="139dp"
         android:layout_height="55dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_background_login"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Quntity"
-        android:textSize="10dp"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="12sp"
+        android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996" />
+        app:layout_constraintVertical_bias="0.962" />
 
     <Button
         android:id="@+id/btn1"
@@ -57,8 +63,9 @@
         android:text="Add to My Bag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toEndOf="@+id/editText1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
+        app:layout_constraintVertical_bias="0.961" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
