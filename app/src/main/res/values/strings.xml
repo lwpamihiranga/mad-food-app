@@ -34,6 +34,37 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="food_item_number">Food Item Number</string>
+    <string name="food_name">Food Name</string>
+    <string name="quantity_of_item">Quantity of Item</string>
+    <string name="add">Add</string>
+    <string name="add_deadline">Add Deadline</string>
+    <string name="description_of_promotion">Description of Promotion</string>
+    <string name="todo">TODO</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="pending">Pending</string>
+    <string name="completed">Completed</string>
+    <string name="password">Password</string>
+    <string name="login_now">Login Now</string>
+    <string name="don_t_remember_password">Don\'t remember password?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="save_your_money">Save your Money</string>
+    <string name="check_out_our_current_specials">Check out our current specials</string>
+    <string name="pastha">Pastha</string>
+    <string name="pasta">Pasta</string>
+    <string name="name">Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone">Phone</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sing_in">Sing In</string>
+    <string name="john_wick">John Wick</string>
+    <string name="johnwick_gmail_com">johnwick@gmail.com</string>
+    <string name="textview">TextView</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="promotion">promotion</string>
 
     <string-array name="account_types">
         <item>Customer</item>

@@ -7,9 +7,8 @@
     android:background="@android:color/transparent"
     tools:context=".CompletedOrdersFragement">
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scrollbars="vertical">
@@ -36,7 +35,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/foodImg"
@@ -50,7 +49,7 @@
                 android:layout_marginStart="8dp"
                 android:background="@drawable/round_shape"
                 android:backgroundTint="@color/login_form_details"
-                android:text="Update"
+                android:text="@string/update"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/deleteBtn"
                 app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
@@ -65,7 +64,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/round_shape"
                 android:backgroundTint="@color/login_form_details_light"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

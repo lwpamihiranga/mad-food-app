@@ -11,19 +11,20 @@
         android:id="@+id/btnPending"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/pending" />
 
     <Button
         android:id="@+id/btnCompleted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/completed" />
 
     <fragment
         android:id="@+id/fragmentDefault"
         android:name="lk.my.sliit.it18106398.foodapp.PendingOrdersFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_pending_orders">
 
 
     </fragment>

@@ -16,7 +16,7 @@
         android:layout_marginTop="160dp"
         android:background="#11000000"
         android:ems="10"
-        android:hint="Food Item Number"
+        android:hint="@string/food_item_number"
         android:inputType="text"
         android:textColorHint="@android:color/black"
         android:textSize="23dp" />
@@ -31,7 +31,7 @@
         android:layout_marginTop="20dp"
         android:background="#11000000"
         android:ems="10"
-        android:hint="Food Name"
+        android:hint="@string/food_name"
         android:inputType="text"
         android:textColorHint="@android:color/black"
         android:textSize="23dp" />
@@ -46,7 +46,7 @@
         android:layout_marginTop="20dp"
         android:background="#11000000"
         android:ems="10"
-        android:hint="Quantity of Item"
+        android:hint="@string/quantity_of_item"
         android:inputType="text"
         android:textColorHint="@android:color/black"
         android:textSize="23dp" />
@@ -61,7 +61,7 @@
         android:layout_marginTop="20dp"
         android:background="#11000000"
         android:ems="10"
-        android:hint="Description of Promotion"
+        android:hint="@string/description_of_promotion"
         android:inputType="text"
         android:textColorHint="@android:color/black"
         android:textSize="23dp" />
@@ -77,7 +77,7 @@
         android:layout_marginLeft="9dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="82dp"
-        android:text="Add Deadline"
+        android:text="@string/add_deadline"
         android:textSize="20dp" />
 
     <Button
@@ -92,7 +92,7 @@
         android:layout_marginTop="73dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Add"
+        android:text="@string/add"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
