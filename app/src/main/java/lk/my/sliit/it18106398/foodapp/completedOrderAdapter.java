@@ -25,7 +25,7 @@ public class completedOrderAdapter extends RecyclerView.Adapter<completedOrderAd
     @Override
     public completedOrderAdapter.OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View v = inflater.inflate(R.layout.pending_orders_layout, parent, false);
+        View v = inflater.inflate(R.layout.completed_orders_layout, parent, false);
         return new completedOrderAdapter.OrderViewHolder(v);
     }
 

@@ -17,14 +17,14 @@ public class CompletedOrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completed_order);
 
-        recyclerView = findViewById(R.id.recycleVeiwPendingOrders);
+        recyclerView = findViewById(R.id.recycleVeiwCompletedOrders);
 
         orders = new ArrayList<>();
 
         orders.add(new ModelOrder(R.drawable.friderice, "Fried Rice"));
         orders.add(new ModelOrder(R.drawable.cheeskottu, "Cheese Kottu"));
 
-        PendingOrderAdapter adapter = new PendingOrderAdapter(this, orders);
+        completedOrderAdapter adapter = new completedOrderAdapter(this, orders);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

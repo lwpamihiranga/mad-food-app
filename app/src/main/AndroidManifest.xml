@@ -9,11 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewFood"></activity>
-        <activity android:name=".PendingOrderActivity"></activity>
-        <activity android:name=".Addfoods" />
-        <activity android:name=".MyBag" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ViewFood"
+            android:parentActivityName=".NavigationDrawerActivity"></activity>
+        <activity android:name=".PendingOrderActivity"
+            android:parentActivityName=".NavigationDrawerActivity"></activity>
+        <activity android:name=".Addfoods"
+            android:parentActivityName=".NavigationDrawerActivity"/>
+        <activity android:name=".MyBag"
+            android:parentActivityName=".NavigationDrawerActivity"/>
+        <activity android:name=".RegisterActivity"
+            android:parentActivityName=".NavigationDrawerActivity"/>
         <activity android:name=".DeliveryPersonList" />
         <activity
             android:name=".NavigationDrawerActivity"
@@ -28,7 +33,8 @@
             </intent-filter>
         </activity> <!-- <activity android:name=".promo_order" /> -->
         <activity android:name=".DisplayFoodsActivity" />
-        <activity android:name=".Resturent_Home" />
+        <activity android:name=".Resturent_Home"
+            android:parentActivityName=".NavigationDrawerActivity"/>
         <activity android:name=".ListPromotions" />
         <activity android:name=".promo_list" />
         <activity android:name=".DisplayRestaurantsActivity" />
@@ -40,6 +46,7 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".RestuarantsList"/>
+        <activity android:name=".CompletedOrderActivity"/>
     </application>
 
 </manifest>
