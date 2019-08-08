@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity{
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DeliveryPersonList.class);
+                Intent intent = new Intent(MainActivity.this, PendingOrderActivity.class);
                 startActivity(intent);
             }
 
