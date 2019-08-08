@@ -1,29 +1,25 @@
 package lk.my.sliit.it18106398.foodapp;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class RestuarantsList extends AppCompatActivity {
 
+
     RecyclerView recyclerView;
     ArrayList<ModelRestaurant> restuarantsList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restuarants_list);
+
+
 
         recyclerView = findViewById(R.id.restuarantRecycleView);
 
@@ -44,4 +40,8 @@ public class RestuarantsList extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
-}
+
+
+
+    }
+
