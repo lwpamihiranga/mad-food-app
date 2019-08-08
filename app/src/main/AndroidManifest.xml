@@ -12,8 +12,9 @@
         <activity android:name=".Addfoods" />
         <activity android:name=".MyBag" />
         <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".DeliveryPersonList"></activity>
+
         <activity android:name=".ListCompanyOrder" />
-        <activity android:name=".MyBag" />
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"

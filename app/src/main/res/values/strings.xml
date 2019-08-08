@@ -63,4 +63,7 @@
         <item>Restaurant</item>
         <item>Delivery</item>
     </string-array>
+    <string name="driver_name">Name</string>
+    <string name="rating_label">Rating</string>
+    <string name="req_deliver_btn">Request to Deliver</string>
 </resources>
