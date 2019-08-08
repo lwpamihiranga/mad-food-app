@@ -11,12 +11,16 @@ public class DeliveryPersonList extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ModelDeliverPerson> deliverPeople;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_person_list);
 
         recyclerView = findViewById(R.id.personListRecycleView);
+
+        deliverPeople = new ArrayList<>();
+
+        deliverPeople.add(new ModelDeliverPerson(R.))
     }
 }
