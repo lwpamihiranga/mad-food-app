@@ -28,7 +28,6 @@ public class ListDeliveryPersonAdapter extends RecyclerView.Adapter<ListDelivery
     @Override
     public PersonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        Log.d("message", "onBindCalled");
         View v = inflater.inflate(R.layout.delivery_person, parent, false);
 
         return new PersonViewHolder(v);
@@ -47,7 +46,7 @@ public class ListDeliveryPersonAdapter extends RecyclerView.Adapter<ListDelivery
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mList.size();
     }
 
     public class PersonViewHolder extends RecyclerView.ViewHolder {
