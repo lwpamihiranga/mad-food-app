@@ -24,8 +24,8 @@ public class FoodList extends AppCompatActivity {
 
         foodList.add(new ModelFood(R.drawable.friderice, "Mix Rice        Rs.250.00"));
         foodList.add(new ModelFood(R.drawable.cheeskottu, "Cheese Kottu   Rs.350.00"));
-        foodList.add(new ModelFood(R.drawable.hoppers, "Hoppers"));
-        foodList.add(new ModelFood(R.drawable.noodles, "Noodles"));
+        foodList.add(new ModelFood(R.drawable.hoppers, "Hoppers        R.20.00"));
+        foodList.add(new ModelFood(R.drawable.noodles, "Noodles     Rs.200.00"));
         //foodList.add(new ModelRestuarant(R.drawable.res5, "Lanka Food Corner"));
         //foodList.add(new ModelRestuarant(R.drawable.res6, "Matara Bath Kade"));
         //foodList.add(new ModelRestuarant(R.drawable.res7, "Hawai Restuarant"));
