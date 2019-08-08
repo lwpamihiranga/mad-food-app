@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -32,7 +33,7 @@ public class DeliveryPersonList extends AppCompatActivity {
         deliverPeople.add(new ModelDeliverPerson(R.drawable.pro8, "Shawn Mendis"));
 
         ListDeliveryPersonAdapter adapter = new ListDeliveryPersonAdapter(this, deliverPeople);
-
+        Toast.makeText(this,"opened", Toast.LENGTH_SHORT).show();
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

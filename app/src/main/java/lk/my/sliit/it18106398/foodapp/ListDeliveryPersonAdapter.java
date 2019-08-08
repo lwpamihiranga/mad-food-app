@@ -54,7 +54,7 @@ public class ListDeliveryPersonAdapter extends RecyclerView.Adapter<ListDelivery
         public PersonViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            personName = itemView.findViewById(R.id.imageViewDeliveryPerson);
+            personImage = itemView.findViewById(R.id.imageViewDeliveryPerson);
             personName = itemView.findViewById(R.id.textViewDeliveryPersonName);
         }
     }
