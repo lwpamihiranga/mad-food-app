@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, ListCompanyOrder.class);
+                Intent intent = new Intent(MainActivity.this, CompletedOrderActivity.class);
                 startActivity(intent);
             }
 
