@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         spinnerUserType = findViewById(R.id.spinner);
 
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegister = findViewById(R.id.btnLogin);
 
         user = new User();
 
@@ -47,8 +47,8 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setPassword(editTextPassword.getText().toString().trim());
                 user.setType(spinnerUserType.getSelectedItem().toString().trim());
 
-                dbRef.push().setValue(user);
-
+                //dbRef.push().setValue(user);
+                dbRef.child(user.getEmail()).setValue(user);
                 Toast.makeText(getApplicationContext(), "User Registered", Toast.LENGTH_SHORT).show();
             }
         });
