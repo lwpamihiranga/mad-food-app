@@ -54,35 +54,35 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.password);
         btnLogin = findViewById(R.id.btnLogin);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dbRef = FirebaseDatabase.getInstance().getReference().child("User").child(editTextUsername.getText().toString().trim());
-
-                dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChildren()) {
-                            String username = dataSnapshot.child("username").getValue().toString();
-                            String password = dataSnapshot.child("password").getValue().toString();
-                            String type = dataSnapshot.child("type").getValue().toString();
-
-                            if(type.equalsIgnoreCase("Customer")) {
-                                Toast.makeText(getApplicationContext(), "Singing in as a Customer", Toast.LENGTH_SHORT).show();
-                            } else if(type.equalsIgnoreCase("Restaurant")) {
-                                Toast.makeText(getApplicationContext(), "Singing in as a Restaurant", Toast.LENGTH_SHORT).show();
-                            } else if(type.equalsIgnoreCase("Delivery")) {
-                                Toast.makeText(getApplicationContext(), "Singing in as a Delivery Driver", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-            }
-        });
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                dbRef = FirebaseDatabase.getInstance().getReference().child("User").child(editTextUsername.getText().toString().trim());
+//
+//                dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        if(dataSnapshot.hasChildren()) {
+//                            String username = dataSnapshot.child("username").getValue().toString();
+//                            String password = dataSnapshot.child("password").getValue().toString();
+//                            String type = dataSnapshot.child("type").getValue().toString();
+//
+//                            if(type.equalsIgnoreCase("Customer")) {
+//                                Toast.makeText(getApplicationContext(), "Singing in as a Customer", Toast.LENGTH_SHORT).show();
+//                            } else if(type.equalsIgnoreCase("Restaurant")) {
+//                                Toast.makeText(getApplicationContext(), "Singing in as a Restaurant", Toast.LENGTH_SHORT).show();
+//                            } else if(type.equalsIgnoreCase("Delivery")) {
+//                                Toast.makeText(getApplicationContext(), "Singing in as a Delivery Driver", Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+//            }
+//        });
     }
 }
