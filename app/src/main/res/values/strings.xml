@@ -68,4 +68,7 @@
     <string name="req_deliver_btn">Request to Deliver</string>
     <string name="user_button">User Button</string>
     <string name="view_as_restaurant">View as Restaurant</string>
+    <string name="dateDeadline" />
+    <string name="deadlinedate">Date</string>
+    <string name="promoNumber">Promotion Number</string>
 </resources>

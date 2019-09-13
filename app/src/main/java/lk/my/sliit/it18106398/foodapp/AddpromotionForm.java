@@ -1,12 +1,14 @@
 package lk.my.sliit.it18106398.foodapp;
 
+import java.util.Date;
+
 public class AddpromotionForm {
     private String promoNo;
     private String itemNo;
     private String foodName;
-    private String Qty;
+    private Integer Qty;
     private String description;
-    private date_picker_fragment deadlineDate;
+    //private Date deadlineDate;
 
     public AddpromotionForm() {
     }
@@ -23,7 +25,7 @@ public class AddpromotionForm {
         return foodName;
     }
 
-    public String getQty() {
+    public Integer getQty() {
         return Qty;
     }
 
@@ -31,9 +33,9 @@ public class AddpromotionForm {
         return description;
     }
 
-    public date_picker_fragment getDeadlineDate() {
+   /* public Date getDeadlineDate() {
         return deadlineDate;
-    }
+    }*/
 
     public void setPromoNo(String promoNo) {
         this.promoNo = promoNo;
@@ -47,7 +49,7 @@ public class AddpromotionForm {
         this.foodName = foodName;
     }
 
-    public void setQty(String qty) {
+    public void setQty(Integer qty) {
         Qty = qty;
     }
 
@@ -55,8 +57,8 @@ public class AddpromotionForm {
         this.description = description;
     }
 
-    public void setDeadlineDate(date_picker_fragment deadlineDate) {
+    /*public void setDeadlineDate(Date deadlineDate) {
         this.deadlineDate = deadlineDate;
-    }
+    }*/
 }
 
