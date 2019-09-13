@@ -55,7 +55,7 @@
             android:text="@string/delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintHorizontal_bias="0.613"
             app:layout_constraintStart_toEndOf="@+id/btnpromo_delete" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
