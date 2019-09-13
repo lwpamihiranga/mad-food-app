@@ -9,32 +9,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewFood"
-            android:parentActivityName=".NavigationDrawerActivity"></activity>
-        <activity android:name=".PendingOrderActivity"
-            android:parentActivityName=".NavigationDrawerActivity"></activity>
-        <activity android:name=".Addfoods"
-            android:parentActivityName=".NavigationDrawerActivity"/>
-        <activity android:name=".MyBag"
-            android:parentActivityName=".NavigationDrawerActivity"/>
-        <activity android:name=".RegisterActivity"
-            android:parentActivityName=".NavigationDrawerActivity"/>
+        <activity android:name=".UserControlPromotion"></activity>
+        <activity
+            android:name=".ViewFood"
+            android:parentActivityName=".NavigationDrawerActivity" />
+        <activity
+            android:name=".PendingOrderActivity"
+            android:parentActivityName=".NavigationDrawerActivity" />
+        <activity
+            android:name=".Addfoods"
+            android:parentActivityName=".NavigationDrawerActivity" />
+        <activity
+            android:name=".MyBag"
+            android:parentActivityName=".NavigationDrawerActivity" />
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".NavigationDrawerActivity" />
         <activity android:name=".DeliveryPersonList" />
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".LoginActivity" >
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- <activity android:name=".promo_order" /> -->
         <activity android:name=".DisplayFoodsActivity" />
-        <activity android:name=".Resturent_Home"
-            android:parentActivityName=".NavigationDrawerActivity"/>
+        <activity
+            android:name=".Resturent_Home"
+            android:parentActivityName=".NavigationDrawerActivity" />
         <activity android:name=".ListPromotions" />
         <activity android:name=".promo_list" />
         <activity android:name=".DisplayRestaurantsActivity" />
@@ -43,10 +49,9 @@
         <activity android:name=".Promotion_ACTIVITY3" />
         <activity android:name=".Promotion_ACTIVITY2" />
         <activity android:name=".Promotion_ACTIVITY1" />
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".RestuarantsList"/>
-        <activity android:name=".CompletedOrderActivity"/>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".RestuarantsList" />
+        <activity android:name=".CompletedOrderActivity" />
     </application>
 
 </manifest>

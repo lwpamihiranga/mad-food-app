@@ -72,7 +72,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbRef = FirebaseDatabase.getInstance().getReference().child("AddpromotionForm");
+                dbRef = FirebaseDatabase.getInstance().getReference().child("Promotions");
                 try {
                     if (TextUtils.isEmpty(txt0_form.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Create an ID for the Promotion.", Toast.LENGTH_SHORT).show();
