@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText editTextName, editTextUsername, editTextPhone, editTextPassword;
+    EditText editTextUsername, editTextEmail, editTextPhone, editTextPassword;
     Spinner spinnerUserType;
     Button btnRegister;
     DatabaseReference dbRef;
@@ -25,8 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        editTextName = findViewById(R.id.name);
         editTextUsername = findViewById(R.id.username);
+        editTextEmail = findViewById(R.id.email);
         editTextPhone = findViewById(R.id.phone);
         editTextPassword = findViewById(R.id.password);
 
@@ -41,14 +41,14 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 dbRef = FirebaseDatabase.getInstance().getReference().child("User");
 
-                user.setName(editTextName.getText().toString().trim());
-                user.setEmail(editTextUsername.getText().toString().trim());
+                user.setUsername(editTextUsername.getText().toString().trim());
+                user.setEmail(editTextEmail.getText().toString().trim());
                 user.setPhone(editTextPhone.getText().toString().trim());
                 user.setPassword(editTextPassword.getText().toString().trim());
                 user.setType(spinnerUserType.getSelectedItem().toString().trim());
 
                 //dbRef.push().setValue(user);
-                dbRef.child(user.getEmail()).setValue(user);
+                dbRef.child(user.getUsername()).setValue(user);
                 Toast.makeText(getApplicationContext(), "User Registered", Toast.LENGTH_SHORT).show();
             }
         });

@@ -1,7 +1,7 @@
 package lk.my.sliit.it18106398.foodapp;
 
 public class User {
-    private String name;
+    private String username;
     private String email;
     private String phone;
     private String password;
@@ -9,12 +9,12 @@ public class User {
 
     public User() {}
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String usernname) {
+        this.username = usernname;
     }
 
     public String getEmail() {

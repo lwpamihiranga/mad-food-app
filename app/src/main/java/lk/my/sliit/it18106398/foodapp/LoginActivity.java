@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        editTextUsername = findViewById(R.id.username);
+        editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.password);
         btnLogin = findViewById(R.id.btnLogin);
 
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChildren()) {
-                            String username = dataSnapshot.child("email").getValue().toString();
+                            String username = dataSnapshot.child("username").getValue().toString();
                             String password = dataSnapshot.child("password").getValue().toString();
                             String type = dataSnapshot.child("type").getValue().toString();
 
