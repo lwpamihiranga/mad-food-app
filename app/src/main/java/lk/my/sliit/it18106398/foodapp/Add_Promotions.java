@@ -24,7 +24,7 @@ import java.util.Calendar;
 public class Add_Promotions extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
     //String s1, s2;
-    EditText txt1_form;
+    EditText txt0_form, txt1_form, txt2_form, txt3_form, txt4_form;
 
     Button btn, btnDate;
 
@@ -33,7 +33,11 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_promotions);
 
+        txt0_form = (EditText) findViewById(R.id.editTxt1);
         txt1_form = (EditText) findViewById(R.id.editTxt1);
+        txt2_form = (EditText) findViewById(R.id.editTxt2);
+        txt3_form = (EditText) findViewById(R.id.editTxt3);
+        txt4_form = (EditText) findViewById(R.id.editTxt4);
 
         btn = (Button) findViewById(R.id.add_button);
 
@@ -45,6 +49,8 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                 datePicker.show(getSupportFragmentManager(),"Date Picker");
             }
         });
+
+
     }
 
     @Override
