@@ -3,22 +3,39 @@ package lk.my.sliit.it18106398.foodapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Promotion_ACTIVITY3 extends AppCompatActivity {
-    ImageView imageView;
-    TextView textView;
+
+    ImageButton imageView;
+    EditText textView1;
+    EditText getTextView2;
+    Button b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotion__activity3);
 
-        imageView = findViewById(R.id.imageView2);
-        textView = findViewById(R.id.textView4);
+        imageView = findViewById(R.id.imageButtonview);
+        textView1 = findViewById(R.id.editText5);
+        getTextView2 = findViewById(R.id.editText4);
+
+        b = findViewById(R.id.button2);
 
         imageView.setImageResource(getIntent().getIntExtra("image", 00));
-        textView.setText(getIntent().getStringExtra("name"));
+        textView1.setText(getIntent().getStringExtra("name"));
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }

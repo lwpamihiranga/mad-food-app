@@ -58,8 +58,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/promo_text"
-            app:srcCompat="#FDF8F8" />
+            app:layout_constraintTop_toBottomOf="@+id/promo_text" />
 
         <EditText
             android:id="@+id/editText2"

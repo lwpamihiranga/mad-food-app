@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,7 +50,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageButton promo_img;
-        TextView promo_txt;
+        EditText promo_txt;
         Button update_promo;
         Button delete_promo;
 
