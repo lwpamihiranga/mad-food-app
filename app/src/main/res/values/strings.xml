@@ -71,4 +71,6 @@
     <string name="dateDeadline" />
     <string name="deadlinedate">Date</string>
     <string name="promoNumber">Promotion Number</string>
+    <string name="foodname">Food Name</string>
+    <string name="promotiondescription">Promotion Description</string>
 </resources>
