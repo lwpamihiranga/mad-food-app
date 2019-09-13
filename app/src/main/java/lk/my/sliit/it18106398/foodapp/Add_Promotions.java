@@ -4,23 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,7 +25,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     EditText txt0_form, txt1_form, txt2_form, txt3_form, txt4_form;
     Button btn, btnDate;
     DatabaseReference dbRef;
-    AddpromotionForm pro;
+    PromotionTable pro;
 
     private void clearControls(){
         txt0_form.setText("");
@@ -57,7 +49,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
 
         btn = (Button) findViewById(R.id.add_button);
 
-        pro = new AddpromotionForm();
+        pro = new PromotionTable();
 
         btnDate = (Button) findViewById(R.id.tvDate);
         btnDate.setOnClickListener(new View.OnClickListener() {
@@ -72,20 +64,22 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbRef = FirebaseDatabase.getInstance().getReference().child("Promotions");
+                //Intent intent = new Intent(Add_Promotions.this, Promotion_ACTIVITY1.class);
+                //Toast.makeText(Add_Promotions.this, "Added New Promotion Successfully.", Toast.LENGTH_SHORT).show();
+                dbRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
                 try {
                     if (TextUtils.isEmpty(txt0_form.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Create an ID for the Promotion.", Toast.LENGTH_SHORT).show();
-                    } else if (TextUtils.isEmpty(txt3_form.getText().toString())) {
+                    } else if (TextUtils.isEmpty(txt1_form.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Should add the promotion given quantity.", Toast.LENGTH_SHORT).show();
-                    } else if (TextUtils.isEmpty(txt4_form.getText().toString())) {
-                        Toast.makeText(getApplicationContext(), "Please add a desscription to this promotion.", Toast.LENGTH_SHORT).show();
                     }else{
                         pro.setPromoNo(txt0_form.getText().toString().trim());
                         pro.setItemNo(txt1_form.getText().toString().trim());
+
                         pro.setFoodName(txt2_form.getText().toString().trim());
                         pro.setQty(Integer.parseInt(txt3_form.getText().toString().trim()));
                         pro.setDescription(txt4_form.getText().toString().trim());
+
 
                         dbRef.push().setValue(pro);
 
@@ -124,13 +118,6 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     protected void onResume() {
         super.onResume();
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Add_Promotions.this, Promotion_ACTIVITY1.class);
-                Toast.makeText(Add_Promotions.this, "Added New Promotion Successfully.", Toast.LENGTH_SHORT).show();
 
-            }
-        });
     }
 }

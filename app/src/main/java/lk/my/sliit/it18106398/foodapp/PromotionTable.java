@@ -2,7 +2,7 @@ package lk.my.sliit.it18106398.foodapp;
 
 import java.util.Date;
 
-public class AddpromotionForm {
+public class PromotionTable {
     private String promoNo;
     private String itemNo;
     private String foodName;
@@ -10,7 +10,7 @@ public class AddpromotionForm {
     private String description;
     private Date deadlineDate;
 
-    public AddpromotionForm() {
+    public PromotionTable() {
     }
 
     public String getPromoNo() {
