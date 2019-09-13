@@ -2,6 +2,7 @@ package lk.my.sliit.it18106398.foodapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,14 +29,9 @@ public class Promotion_ACTIVITY3 extends AppCompatActivity {
 
         b = findViewById(R.id.button2);
 
-        imageView.setImageResource(getIntent().getIntExtra("image", 00));
-        textView1.setText(getIntent().getStringExtra("name"));
+        //imageView.setImageResource(getIntent().getIntExtra("image", 00));
+        //textView1.setText(getIntent().getStringExtra("name"));
 
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
     }
 }

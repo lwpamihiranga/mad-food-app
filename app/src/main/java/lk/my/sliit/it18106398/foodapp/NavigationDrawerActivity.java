@@ -58,7 +58,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Toast.makeText(NavigationDrawerActivity.this, "Restaurant Button Clikced", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(NavigationDrawerActivity.this, Resturent_Home.class);
+                //Intent intent = new Intent(NavigationDrawerActivity.this, Resturent_Home.class);
+                //linking problem solved
+                Intent intent = new Intent(NavigationDrawerActivity.this, Promotion_ACTIVITY1.class);
                 startActivity(intent);
             }
         });

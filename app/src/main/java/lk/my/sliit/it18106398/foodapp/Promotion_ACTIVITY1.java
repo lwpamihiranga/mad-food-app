@@ -27,7 +27,7 @@ public class Promotion_ACTIVITY1 extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Promotion_ACTIVITY1.this, ListPromotions.class);//client's side
+                Intent intent1 = new Intent(Promotion_ACTIVITY1.this, Resturent_Home.class);//client's side
                 startActivity(intent1);
 
 //                Intent intent2 = new Intent(Promotion_ACTIVITY1.this, Add_Promotions.class);//user's side
@@ -36,7 +36,7 @@ public class Promotion_ACTIVITY1 extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Promotion_ACTIVITY1.this, ListPromotions.class);
+                Intent intent1 = new Intent(Promotion_ACTIVITY1.this, Resturent_Home.class);
                 startActivity(intent1);
 
 //                Intent intent2 = new Intent(Promotion_ACTIVITY1.this, Promotion_ACTIVITY3.class);//user's side
