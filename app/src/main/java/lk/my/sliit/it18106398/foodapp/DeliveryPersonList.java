@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -32,7 +33,11 @@ public class DeliveryPersonList extends AppCompatActivity {
         deliverPeople.add(new ModelDeliverPerson(R.drawable.pro7, "Eric Chen"));
         deliverPeople.add(new ModelDeliverPerson(R.drawable.pro8, "Shawn Mendis"));
 
-        ListDeliveryPersonAdapter adapter = new ListDeliveryPersonAdapter(this, deliverPeople);
+        Intent intent = getIntent();
+
+        String orderName = intent.getStringExtra("order_name");
+
+        ListDeliveryPersonAdapter adapter = new ListDeliveryPersonAdapter(this, deliverPeople, orderName);
         Toast.makeText(this,"opened", Toast.LENGTH_SHORT).show();
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
