@@ -8,7 +8,8 @@ public class PromotionTable {
     private String foodName;
     private Integer Qty;
     private String description;
-    private Date deadlineDate;
+    private int deadlineDate;
+    private int image;
 
     public PromotionTable() {
     }
@@ -33,9 +34,11 @@ public class PromotionTable {
         return description;
     }
 
-   public Date getDeadlineDate() {
+   public int getDeadlineDate() {
         return deadlineDate;
     }
+
+    public int getImage() { return image; }
 
     public void setPromoNo(String promoNo) {
         this.promoNo = promoNo;
@@ -57,8 +60,10 @@ public class PromotionTable {
         this.description = description;
     }
 
-    public void setDeadlineDate(Date deadlineDate) {
+    public void setDeadlineDate(int deadlineDate) {
         this.deadlineDate = deadlineDate;
     }
+
+    public void setImage(int image) { this.image = image; }
 }
 

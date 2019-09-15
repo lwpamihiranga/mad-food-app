@@ -20,7 +20,9 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Add_Promotions extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
@@ -31,7 +33,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     DatabaseReference dbRef;
     PromotionTable pro;
 
-
+    SimpleDateFormat dform = new SimpleDateFormat("dd:mm:yy");
     private static final int GALLERY_REQUEST = 1;
 
     private void clearControls(){
@@ -65,7 +67,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
             public void onClick(View view) {
                 DialogFragment datePicker = new date_picker_fragment();
                 datePicker.show(getSupportFragmentManager(),"Date Picker");
-                ;
+
             }
         });
 
@@ -84,6 +86,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                 //Intent intent = new Intent(Add_Promotions.this, Promotion_ACTIVITY1.class);
                 //Toast.makeText(Add_Promotions.this, "Added New Promotion Successfully.", Toast.LENGTH_SHORT).show();
                 dbRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
+    //long x = new Date().getTime();
                 try {
                     if (TextUtils.isEmpty(txt0_form.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Create an ID for the Promotion.", Toast.LENGTH_SHORT).show();
@@ -93,13 +96,16 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                         Toast.makeText(getApplicationContext(),"You should apply small description to this promotion.",Toast.LENGTH_SHORT).show();
                     }else if (TextUtils.isEmpty(txt3_form.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Should add the promotion given quantity.", Toast.LENGTH_SHORT).show();
-                    }else{
+                    }
+                    else{
                         pro.setPromoNo(txt0_form.getText().toString().trim());
                         pro.setItemNo(txt1_form.getText().toString().trim());
 
                         pro.setFoodName(txt2_form.getText().toString().trim());
                         pro.setQty(Integer.parseInt(txt3_form.getText().toString().trim()));
                         pro.setDescription(txt4_form.getText().toString().trim());
+                        pro.setDeadlineDate(Integer.parseInt(btnDate.getText().toString()));
+
 
 
                         //dbRef.push().setValue(pro);
