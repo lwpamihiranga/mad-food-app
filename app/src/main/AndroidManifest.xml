@@ -51,6 +51,7 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".RestuarantsList" />
         <activity android:name=".CompletedOrderActivity" />
+
     </application>
 
 </manifest>
