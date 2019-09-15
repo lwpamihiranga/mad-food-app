@@ -24,6 +24,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+//have to add image to database
+
 public class Add_Promotions extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
     //StorageReference imageRef;
@@ -104,9 +106,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                         pro.setFoodName(txt2_form.getText().toString().trim());
                         pro.setQty(Integer.parseInt(txt3_form.getText().toString().trim()));
                         pro.setDescription(txt4_form.getText().toString().trim());
-                        pro.setDeadlineDate(Integer.parseInt(btnDate.getText().toString()));
-
-
+                        //pro.setDeadlineDate(Integer.parseInt(btnDate.getText().toString()));
 
                         //dbRef.push().setValue(pro);
                         dbRef.child("promotion3").setValue(pro);
