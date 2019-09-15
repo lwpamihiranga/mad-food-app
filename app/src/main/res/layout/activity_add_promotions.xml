@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pic12"
+    android:background="@color/common_google_signin_btn_text_dark_pressed"
     app:layout_constraintBaseline_creator="@android:integer/config_mediumAnimTime"
     tools:context=".Add_Promotions">
 
@@ -133,7 +133,7 @@
         android:id="@+id/editTxt0"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:background="#11000000"
         android:ems="10"
         android:hint="@string/promoNumber"
@@ -149,7 +149,7 @@
         android:layout_width="177dp"
         android:layout_height="83dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTxt4"
         app:srcCompat="@color/common_google_signin_btn_text_dark_default" />

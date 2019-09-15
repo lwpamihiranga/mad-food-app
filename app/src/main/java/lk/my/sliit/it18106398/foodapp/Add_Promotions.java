@@ -24,12 +24,13 @@ import java.util.Calendar;
 
 public class Add_Promotions extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
-    //String s1, s2;
+    //StorageReference imageRef;
     EditText txt0_form, txt1_form, txt2_form, txt3_form, txt4_form;
     Button btn, btnDate;
     ImageButton imageBtn;
     DatabaseReference dbRef;
     PromotionTable pro;
+
 
     private static final int GALLERY_REQUEST = 1;
 
@@ -86,7 +87,11 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                 try {
                     if (TextUtils.isEmpty(txt0_form.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Create an ID for the Promotion.", Toast.LENGTH_SHORT).show();
-                    } else if (TextUtils.isEmpty(txt1_form.getText().toString())) {
+                    }else if(TextUtils.isEmpty(txt1_form.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Please Add the item number.", Toast.LENGTH_SHORT).show();
+                    }else if(TextUtils.isEmpty(txt4_form.getText().toString())){
+                        Toast.makeText(getApplicationContext(),"You should apply small description to this promotion.",Toast.LENGTH_SHORT).show();
+                    }else if (TextUtils.isEmpty(txt3_form.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Should add the promotion given quantity.", Toast.LENGTH_SHORT).show();
                     }else{
                         pro.setPromoNo(txt0_form.getText().toString().trim());
@@ -98,13 +103,13 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
 
 
                         //dbRef.push().setValue(pro);
-                        dbRef.child("promotion2").setValue(pro);
+                        dbRef.child("promotion3").setValue(pro);
 
                         Toast.makeText(getApplicationContext(),"Data added successfully.",Toast.LENGTH_SHORT).show();
                         clearControls();
                     }
                 }catch(NumberFormatException e){
-                    Toast.makeText(getApplicationContext(),"Invalide data is there.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Invalid data is there.",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -131,7 +136,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
 
         if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
             Uri imageUri = data.getData();
-
+            //StorageR
             imageBtn.setImageURI(imageUri);
         }
     }

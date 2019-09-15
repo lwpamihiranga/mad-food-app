@@ -11,17 +11,23 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Promotion_ACTIVITY3 extends AppCompatActivity {
 
+    //FirebaseDatabase dRef;
     ImageButton imageView;
     EditText textView1;
     EditText getTextView2;
     Button b;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotion__activity3);
+
+        //dRef = new FirebaseDatabase("https://foodappmad.firebaseio.com/PromotionTable");
 
         imageView = findViewById(R.id.imageButtonview);
         textView1 = findViewById(R.id.editText5);
