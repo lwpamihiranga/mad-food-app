@@ -1,16 +1,19 @@
 package lk.my.sliit.it18106398.foodapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,8 +27,11 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     //String s1, s2;
     EditText txt0_form, txt1_form, txt2_form, txt3_form, txt4_form;
     Button btn, btnDate;
+    ImageButton imageBtn;
     DatabaseReference dbRef;
     PromotionTable pro;
+
+    private static final int GALLERY_REQUEST = 1;
 
     private void clearControls(){
         txt0_form.setText("");
@@ -47,6 +53,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         txt3_form = (EditText) findViewById(R.id.editTxt3);
         txt4_form = (EditText) findViewById(R.id.editTxt4);
 
+        imageBtn = (ImageButton) findViewById(R.id.imageButton2);
         btn = (Button) findViewById(R.id.add_button);
 
         pro = new PromotionTable();
@@ -58,6 +65,15 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                 DialogFragment datePicker = new date_picker_fragment();
                 datePicker.show(getSupportFragmentManager(),"Date Picker");
                 ;
+            }
+        });
+
+        imageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent,GALLERY_REQUEST);
             }
         });
 
@@ -82,7 +98,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
 
 
                         //dbRef.push().setValue(pro);
-                        dbRef.child("promotion1").setValue(pro);
+                        dbRef.child("promotion2").setValue(pro);
 
                         Toast.makeText(getApplicationContext(),"Data added successfully.",Toast.LENGTH_SHORT).show();
                         clearControls();
@@ -109,6 +125,16 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
+            Uri imageUri = data.getData();
+
+            imageBtn.setImageURI(imageUri);
+        }
+    }
     @Override
     protected void onStart() {
         super.onStart();
