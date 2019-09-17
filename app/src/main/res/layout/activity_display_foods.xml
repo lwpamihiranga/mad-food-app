@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageTop" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/qty"
         android:layout_width="139dp"
         android:layout_height="55dp"
         android:layout_marginStart="36dp"
@@ -42,7 +42,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_background_login"
         android:ems="10"
-        android:hint="Quntity"
+        android:hint="Quantity"
         android:inputType="textPersonName"
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -64,7 +64,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toEndOf="@+id/editText1"
+        app:layout_constraintStart_toEndOf="@+id/qty"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.961" />
 
