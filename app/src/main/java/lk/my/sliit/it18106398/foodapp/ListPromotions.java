@@ -14,13 +14,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -31,14 +35,39 @@ public class ListPromotions extends AppCompatActivity {
     DatabaseReference dRef;
     RecyclerView recyclerView;
     //ArrayList<ModelPromotions> promotions;
+    ArrayList<Add_Promotions> promotions;
+    ArrayList<String> foodname;
+    //ArrayList<>
     //FirebaseRecyclerAdapter adapter;
+    PromotionsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_promotions);
 
-        dRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
+        foodname = new ArrayList<>();
+        dRef = FirebaseDatabase.getInstance().getReference();
+        dRef.child("PromotionTable").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    for(DataSnapshot ds:dataSnapshot.getChildren()){
+                        Toast.makeText(ListPromotions.this,"err",Toast.LENGTH_SHORT).show();
+                        String desc = ds.child("foodName").getValue(String.class);
+                        foodname.add(desc);
+                    }
+                }
+                else{
+                    Toast.makeText(ListPromotions.this,"No data found.",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         recyclerView = findViewById(R.id.promoRecyclerView);
 
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://foodappmad.firebaseio.com/PromotionTable");

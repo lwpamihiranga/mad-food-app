@@ -41,10 +41,10 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
         ModelPromotions promotions = mList.get(position);
 
         ImageView promoImg = holder.promo_img;
-        TextView promoName = holder.promo_txt;
+        TextView foodName = holder.promo_txt;
 
         promoImg.setImageResource(mList.get(position).getPromoImage());
-        promoName.setText(promotions.getPromoName());
+        foodName.setText(promotions.getPromoName());
     }
 
     @Override
