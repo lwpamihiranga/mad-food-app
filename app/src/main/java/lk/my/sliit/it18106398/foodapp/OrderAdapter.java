@@ -16,34 +16,36 @@ import java.util.ArrayList;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder> {
     private Context mContext;
-    private ArrayList<ModelOrder> mList;
+    private ArrayList<String> des;
+    private ArrayList<Integer> qty;
 
-    public OrderAdapter(Context context, ArrayList<ModelOrder> list) {
+    public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty) {
         mContext = context;
-        mList = list;
+        this.des = des;
+        this.qty = qty;
     }
     public OrderAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View v = inflater.inflate(R.layout.order_bag_layout, parent, false);
 
-        myViewHolder viewHolder = new myViewHolder(v, mContext, mList);
+        myViewHolder viewHolder = new myViewHolder(v, mContext, des,qty);
 
         return viewHolder;
     }
     public void onBindViewHolder(myViewHolder holder, int position) {
-        ModelOrder order = mList.get(position);
+        //ModelOrder order = mList.get(position);
 
         ImageView orderImage = holder.order_img;
         TextView orderName = holder.order_name;
 
-        orderImage.setImageResource(mList.get(position).getImage());
+        //orderImage.setImageResource(mList.get(position).getImage());
 
-        orderName.setText(order.getName());
+        orderName.setText(des.get(position));
 
     }
     public int getItemCount() {
-        return mList.size();
+        return des.size();
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -54,7 +56,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         Context mContext;
         ArrayList<ModelOrder> mList;
 
-        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelOrder> list) {
+        public myViewHolder(@NonNull View itemView, Context context, ArrayList<String> list,ArrayList<Integer> qty) {
             super(itemView);
 
             order_img = itemView.findViewById(R.id.foodImg);
@@ -65,7 +67,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             updateBtn.setOnClickListener(this);
 
             mContext = context;
-            mList = list;
+            //mList = list;
         }
 
         public void onClick(View view) {

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "424606155784-48ukjiqcloomqj4oknqo67qvvlh4htdu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lk.my.sliit.it18106398.foodapp",
+            "certificate_hash": "56fa16bde898edc3f956c416672b18b342cfad8f"
+          }
+        },
+        {
           "client_id": "424606155784-q8rt0mfqmfhp4piluf2o79r9a83egavc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
