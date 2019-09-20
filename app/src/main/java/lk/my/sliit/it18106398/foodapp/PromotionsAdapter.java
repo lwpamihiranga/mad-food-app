@@ -19,9 +19,9 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
     private Context mContext;
     private ArrayList<ModelPromotions> mList;
 
-    public PromotionsAdapter(Context mContext, ArrayList<ModelPromotions> mList) {
+    public PromotionsAdapter(Context mContext, ArrayList<String> mList) {
         this.mContext = mContext;
-        this.mList = mList;
+        //this.mList = mList;
     }
 
     @NonNull

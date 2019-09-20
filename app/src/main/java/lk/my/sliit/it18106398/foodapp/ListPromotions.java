@@ -36,7 +36,7 @@ public class ListPromotions extends AppCompatActivity {
     RecyclerView recyclerView;
     //ArrayList<ModelPromotions> promotions;
     ArrayList<Add_Promotions> promotions;
-    ArrayList<String> foodname;
+    ArrayList<String> foodName;
     //ArrayList<>
     //FirebaseRecyclerAdapter adapter;
     PromotionsAdapter adapter;
@@ -46,7 +46,7 @@ public class ListPromotions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_promotions);
 
-        foodname = new ArrayList<>();
+        foodName = new ArrayList<>();
         dRef = FirebaseDatabase.getInstance().getReference();
         dRef.child("PromotionTable").addValueEventListener(new ValueEventListener() {
             @Override
@@ -54,8 +54,9 @@ public class ListPromotions extends AppCompatActivity {
                 if(dataSnapshot.exists()){
                     for(DataSnapshot ds:dataSnapshot.getChildren()){
                         Toast.makeText(ListPromotions.this,"err",Toast.LENGTH_SHORT).show();
-                        String desc = ds.child("foodName").getValue(String.class);
-                        foodname.add(desc);
+                        String food = ds.child("foodName").getValue(String.class);
+                        foodName.add(food);
+                        adapter.notifyDataSetChanged();
                     }
                 }
                 else{
@@ -69,8 +70,8 @@ public class ListPromotions extends AppCompatActivity {
             }
         });
         recyclerView = findViewById(R.id.promoRecyclerView);
-
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://foodappmad.firebaseio.com/PromotionTable");
+        adapter = new PromotionsAdapter(getApplicationContext(),foodName);
+        //1)DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://foodappmad.firebaseio.com/PromotionTable");
 
 
         //promotions = new ArrayList<>();
@@ -91,7 +92,7 @@ public class ListPromotions extends AppCompatActivity {
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, promotions);
 
         //recyclerView.setAdapter(listAdap);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //2)recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
 
@@ -99,7 +100,7 @@ public class ListPromotions extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<ModelPromotions> options =
+        /*3)FirebaseRecyclerOptions<ModelPromotions> options =
                 new FirebaseRecyclerOptions.Builder<ModelPromotions>()
                 .setQuery(dRef,ModelPromotions.class)
                 .build();
@@ -122,10 +123,10 @@ public class ListPromotions extends AppCompatActivity {
                 };
         recyclerView.setAdapter(adapter);
 
-        adapter.startListening();
+        adapter.startListening();*/
     }
 
-    public  static class  FindFriendViewHolder extends RecyclerView.ViewHolder{
+    /*4)public  static class  FindFriendViewHolder extends RecyclerView.ViewHolder{
             ImageView  viewimage;
             TextView txtimage;
 
@@ -135,5 +136,5 @@ public class ListPromotions extends AppCompatActivity {
             txtimage = itemView.findViewById(R.id.promoImage);
             viewimage = itemView.findViewById(R.id.promoText);
         }
-    }
+    }*/
 }
