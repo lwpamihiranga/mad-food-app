@@ -9,16 +9,16 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class promo_list extends AppCompatActivity {
-//    RecyclerView recyclerView;
-//    ArrayList<ModelPromotions> promotionsControl;
+    RecyclerView recyclerView;
+    ArrayList<ModelPromotions> promotionsControl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_promo_list);
+//        setContentView(R.layout.activity_promo_list);
 
 //        recyclerView = findViewById(R.id.recycler_promo);
-//
+
 //        promotionsControl = new ArrayList<>();
 //        PromotionsAdapter adapter = new PromotionsAdapter(this, promotionsControl);
 //

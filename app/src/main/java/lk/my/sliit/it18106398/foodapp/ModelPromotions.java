@@ -7,10 +7,7 @@ public class ModelPromotions {
     public ModelPromotions() {
     }
 
-    public ModelPromotions(int promoImage, String promoName) {
-        this.promoImage = promoImage;
-        this.foodName = promoName;
-    }
+
 
     public int getPromoImage() {
         return promoImage;

@@ -51,16 +51,15 @@ public class ListPromotions extends AppCompatActivity {
         dRef.child("PromotionTable").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    for(DataSnapshot ds:dataSnapshot.getChildren()){
-                        Toast.makeText(ListPromotions.this,"err",Toast.LENGTH_SHORT).show();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        Toast.makeText(ListPromotions.this, "err", Toast.LENGTH_SHORT).show();
                         String food = ds.child("foodName").getValue(String.class);
                         foodName.add(food);
                         adapter.notifyDataSetChanged();
                     }
-                }
-                else{
-                    Toast.makeText(ListPromotions.this,"No data found.",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ListPromotions.this, "No data found.", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -70,71 +69,9 @@ public class ListPromotions extends AppCompatActivity {
             }
         });
         recyclerView = findViewById(R.id.promoRecyclerView);
-        adapter = new PromotionsAdapter(getApplicationContext(),foodName);
-        //1)DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://foodappmad.firebaseio.com/PromotionTable");
-
-
-        //promotions = new ArrayList<>();
-
-        //promotions.add(new ModelPromotions(R.drawable.pic12, "Bangladesh Cuisine"));
-        //promotions.add(new ModelPromotions(R.drawable.img6, "Beef Stroganoff"));
-        //promotions.add(new ModelPromotions(R.drawable.img10, "Sausage mix rice"));
-        //promotions.add(new ModelPromotions(R.drawable.img10, "Indean Kottu"));
-        //promotions.add(new ModelPromotions(R.drawable.img11, "Box-O-Noodles"));
-
-
-        /*PromotionsAdapter adapter = new PromotionsAdapter(
-            this,
-                String.class,
-                android.R.layout.simple_list_item_1,
-                databaseRef
-        );*/
-        //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, promotions);
-
-        //recyclerView.setAdapter(listAdap);
-        //2)recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        /*3)FirebaseRecyclerOptions<ModelPromotions> options =
-                new FirebaseRecyclerOptions.Builder<ModelPromotions>()
-                .setQuery(dRef,ModelPromotions.class)
-                .build();
-
-        FirebaseRecyclerAdapter<ModelPromotions, FindFriendViewHolder> adapter =
-                new FirebaseRecyclerAdapter<ModelPromotions, FindFriendViewHolder>(options) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull FindFriendViewHolder findFriendViewHolder, int i, @NonNull ModelPromotions modelPromotions) {
-                       findFriendViewHolder.txtimage.setText(modelPromotions.getPromoName());
-                       Picasso.get().load(modelPromotions.getPromoImage()).into(findFriendViewHolder.viewimage);
-                    }
-
-                    @NonNull
-                    @Override
-                    public FindFriendViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_promotions,parent,false);
-                        FindFriendViewHolder viewHolder = new FindFriendViewHolder(view);
-                        return viewHolder;
-                    }
-                };
+        adapter = new PromotionsAdapter(getApplicationContext(), foodName);
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter.startListening();*/
     }
-
-    /*4)public  static class  FindFriendViewHolder extends RecyclerView.ViewHolder{
-            ImageView  viewimage;
-            TextView txtimage;
-
-        public FindFriendViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            txtimage = itemView.findViewById(R.id.promoImage);
-            viewimage = itemView.findViewById(R.id.promoText);
-        }
-    }*/
 }
