@@ -10,7 +10,6 @@ public class PromotionTable {
     private String description;
     private int deadlineDate;
     private int image;
-     
 
 
     public PromotionTable() {

@@ -3,6 +3,7 @@ package lk.my.sliit.it18106398.foodapp;
 public class FoodTable {
     private String itemNo;
     private String Foodname;
+    private int price;
     private String Discription;
 
     public FoodTable() {
@@ -16,6 +17,10 @@ public class FoodTable {
         return Foodname;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     public String getDiscription() {
         return Discription;
     }
@@ -26,6 +31,10 @@ public class FoodTable {
 
     public void setFoodname(String foodname) {
         Foodname = foodname;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public void setDiscription(String discription) {
