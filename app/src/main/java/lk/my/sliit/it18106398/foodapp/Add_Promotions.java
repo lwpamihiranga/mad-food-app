@@ -116,7 +116,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                         //pro.setDeadlineDate(Integer.parseInt(btnDate.getText().toString()));
 
                         //dbRef.push().setValue(pro);
-                        dbRef.child("promo3").setValue(pro);
+                        dbRef.child("promo4").setValue(pro);
 
                         Toast.makeText(getApplicationContext(),"Data added successfully.",Toast.LENGTH_SHORT).show();
                         clearControls();
