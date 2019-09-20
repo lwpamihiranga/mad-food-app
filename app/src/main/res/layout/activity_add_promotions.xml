@@ -159,7 +159,7 @@
         app:srcCompat="@color/common_google_signin_btn_text_dark_default" />
 
     <Button
-        android:id="@+id/btnUpdateImg"
+        android:id="@+id/btnUploadImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

@@ -26,7 +26,6 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 //have to add image to database
 
@@ -38,7 +37,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     ImageButton imageBtn;
     DatabaseReference dbRef;
     PromotionTable pro;
-    Button update;
+    Button upload;
 
     SimpleDateFormat dform = new SimpleDateFormat("dd:mm:yy");
     private StorageReference folder;
@@ -67,7 +66,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         imageBtn = (ImageButton) findViewById(R.id.imageButton2);
         btn = (Button) findViewById(R.id.add_button);
 
-        update = findViewById(R.id.btnUpdateImg);
+        upload = findViewById(R.id.btnUploadImg);
         pro = new PromotionTable();
 
         btnDate = (Button) findViewById(R.id.tvDate);
@@ -128,7 +127,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
             }
         });
 
-        update.setOnClickListener(new View.OnClickListener() {
+        upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
