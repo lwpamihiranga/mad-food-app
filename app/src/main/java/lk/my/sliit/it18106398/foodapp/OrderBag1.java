@@ -1,10 +1,10 @@
 package lk.my.sliit.it18106398.foodapp;
 
-public class Order {
+public class OrderBag1 {
     private Integer qty;
     private String description;
 
-    public Order() {
+    public OrderBag1() {
     }
 
     public Integer getQty() {
