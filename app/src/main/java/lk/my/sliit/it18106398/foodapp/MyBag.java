@@ -21,7 +21,7 @@ public class MyBag extends AppCompatActivity {
 
     RecyclerView recyclerView;
     //ArrayList<ModelOrder> orderList;
-    ArrayList<Order> orderList;
+    ArrayList<OrderBag1> orderList;
     ArrayList<String> description;
     ArrayList<Integer>qty;
 
@@ -37,7 +37,7 @@ public class MyBag extends AppCompatActivity {
         qty = new ArrayList<>();
 
         db = FirebaseDatabase.getInstance().getReference();
-        db.child("Order").addValueEventListener(new ValueEventListener() {
+        db.child("OrderBag1").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists())
