@@ -20,8 +20,8 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     EditText qty;
 
     Button b1;
-    DatabaseReference dbRef;
-    Order o;
+    //DatabaseReference dbRef;
+    //Order o;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class DisplayFoodsActivity extends AppCompatActivity {
 
         b1 = findViewById(R.id.btn1);
 
-        o = new Order();
+        //o = new Order();
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,21 +42,21 @@ public class DisplayFoodsActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(DisplayFoodsActivity.this, MyBag.class);
                 startActivity(intent1);
 
-                dbRef = FirebaseDatabase.getInstance().getReference().child("Order");
-                try{
-                    o.setQty(Integer.parseInt(qty.getText().toString().trim()));
-                    o.setDescription(description.getText().toString().trim());
+                //dbRef = FirebaseDatabase.getInstance().getReference().child("Order");
+                //try{
+                   // o.setQty(Integer.parseInt(qty.getText().toString().trim()));
+                    //o.setDescription(description.getText().toString().trim());
 
-                    dbRef.push().setValue(o);
+                    //dbRef.push().setValue(o);
 
-                    Toast.makeText(getApplicationContext(),"Data saved successfully",Toast.LENGTH_SHORT).show();
-                    qty.setText("");
+                   // Toast.makeText(getApplicationContext(),"Data saved successfully",Toast.LENGTH_SHORT).show();
+                   // qty.setText("");
                 }
-                catch (NumberFormatException e){
-                    Toast.makeText(getApplicationContext(),"Invalid quantity",Toast.LENGTH_SHORT).show();
-                }
+                //catch (NumberFormatException e){
+                   // Toast.makeText(getApplicationContext(),"Invalid quantity",Toast.LENGTH_SHORT).show();
+                //}
 
-            }
+           // }
         });
 
         imageView = findViewById(R.id.imageTop);
