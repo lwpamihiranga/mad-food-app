@@ -22,14 +22,14 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     //private ArrayList<ModelViewPromotion> mList;
 
     private ArrayList<String> promoNo;
-    private ArrayList<String> namefood;
+    private ArrayList<String> name;
     private ArrayList<String> desc;
 
 
-    public ResViewPromotionAdapter(Context context, ArrayList<String> promoNo, ArrayList<String> namefood, ArrayList<String> desc) {
+    public ResViewPromotionAdapter(Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
         mContext = context;
         this.promoNo = promoNo;
-        this.namefood = namefood;
+        this.name = name;
         this.desc = desc;
     }
 
@@ -37,15 +37,19 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View V = inflater.inflate(R.layout.restaurant_viewpromotion, parent, false);
 
-        ResViewPromotionAdapter.myViewHolder viewHolder = new ResViewPromotionAdapter.myViewHolder(V, mContext, promoNo,namefood,desc);
+        ResViewPromotionAdapter.myViewHolder viewHolder = new ResViewPromotionAdapter.myViewHolder(V, mContext, promoNo,name,desc);
 
         return viewHolder;
     }
 
     public void onBindViewHolder(myViewHolder holder, int position) {
         ImageView promoImage = holder.promo_img;
-        TextView promoNumber = holder.promo_text;
-        TextView foodName = holder.food_txt;
+        TextView promoNumber = holder.promonum;
+        TextView foodName = holder.food_name;
+        TextView Description = holder.food_desc;
+
+
+        promoNumber.setText(promoNo.get(position));
     }
 
     @Override
@@ -67,7 +71,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         ArrayList<ModelViewPromotion> mList;
 
 
-        public myViewHolder(@NonNull View itemView, Context context, ArrayList<ModelViewPromotion> list) {
+        public myViewHolder(View itemView, Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promo_image);
@@ -77,11 +81,13 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             update_promo = itemView.findViewById(R.id.btnpromo_update);
             delete_promo = itemView.findViewById(R.id.btnpromo_delete);
 
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
 
             mContext = context;
-            mList = list;
+            //mList = list;
         }
+
+
 
         @Override
         public void onClick(View view) {

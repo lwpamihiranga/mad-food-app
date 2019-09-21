@@ -10,14 +10,18 @@ public class ModelViewPromotion {
 //    private Button btnDelete;
 //    private Button btnUpdate;
 
-    public ModelViewPromotion(int promoImage, String promoNumber, String foodName, String Description) {
+
+    public ModelViewPromotion() {
+    }
+
+    /*public ModelViewPromotion(int promoImage, String promoNumber, String foodName, String Description) {
         this.promoImage = promoImage;
         this.promoNumber = promoNumber;
         this.foodName = foodName;
         this.Description = Description;
 //        this.btnDelete = btndelete;
 //        this.btnUpdate = btnupdate;
-    }
+    }*/
 
     public int getPromoImage() {
         return promoImage;
