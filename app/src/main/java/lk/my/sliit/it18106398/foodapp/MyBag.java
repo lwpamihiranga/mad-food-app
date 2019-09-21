@@ -44,7 +44,7 @@ public class MyBag extends AppCompatActivity {
                 {
                     for (DataSnapshot dss:dataSnapshot.getChildren())
                     {
-                        Toast.makeText(MyBag.this, "err", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MyBag.this, "err", Toast.LENGTH_SHORT).show();
                         String desc = dss.child("description").getValue(String.class);
                         int quty = dss.child("qty").getValue(Integer.class);
                         description.add(desc);
