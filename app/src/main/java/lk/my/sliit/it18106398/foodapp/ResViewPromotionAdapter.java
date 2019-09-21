@@ -81,7 +81,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             update_promo = itemView.findViewById(R.id.btnpromo_update);
             delete_promo = itemView.findViewById(R.id.btnpromo_delete);
 
-            //itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
 
             mContext = context;
             //mList = list;
@@ -95,8 +95,9 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         public void onClick(View view) {
             Intent intent = new Intent(mContext,Add_Promotions.class);
 
-            intent.putExtra("button",mList.get(getAdapterPosition()).getPromoImage());
-
+            intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
+            intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
+            intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
             mContext.startActivity(intent);
         }
 
