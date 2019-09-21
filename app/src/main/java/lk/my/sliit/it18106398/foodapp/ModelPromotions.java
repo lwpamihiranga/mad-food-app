@@ -2,22 +2,19 @@ package lk.my.sliit.it18106398.foodapp;
 
 public class ModelPromotions {
     private int promoImage;
-    private String promoName;
+    private String foodName;
 
     public ModelPromotions() {
     }
 
-    public ModelPromotions(int promoImage, String promoName) {
-        this.promoImage = promoImage;
-        this.promoName = promoName;
-    }
+
 
     public int getPromoImage() {
         return promoImage;
     }
 
     public String getPromoName() {
-        return promoName;
+        return foodName;
     }
 
     public void setPromoImage(int promoImage) {
@@ -25,6 +22,6 @@ public class ModelPromotions {
     }
 
     public void setPromoName(String promoName) {
-        this.promoName = promoName;
+        this.foodName = promoName;
     }
 }

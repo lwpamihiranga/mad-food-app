@@ -11,6 +11,7 @@ public class PromotionTable {
     private int deadlineDate;
     private int image;
 
+
     public PromotionTable() {
     }
 

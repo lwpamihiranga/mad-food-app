@@ -17,12 +17,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 //have to add image to database
 
@@ -34,9 +37,11 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     ImageButton imageBtn;
     DatabaseReference dbRef;
     PromotionTable pro;
+    Button upload;
 
     SimpleDateFormat dform = new SimpleDateFormat("dd:mm:yy");
-    private static final int GALLERY_REQUEST = 1;
+    private StorageReference folder;
+    private static final int ImageBack = 1;
 
     private void clearControls(){
         txt0_form.setText("");
@@ -50,7 +55,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_promotions);
 
-        //Context context = getApplicationContext();
+        folder = FirebaseStorage.getInstance().getReference().child("ImageFolder");
 
         txt0_form = (EditText) findViewById(R.id.editTxt0);
         txt1_form = (EditText) findViewById(R.id.editTxt1);
@@ -61,6 +66,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         imageBtn = (ImageButton) findViewById(R.id.imageButton2);
         btn = (Button) findViewById(R.id.add_button);
 
+        upload = findViewById(R.id.btnUploadImg);
         pro = new PromotionTable();
 
         btnDate = (Button) findViewById(R.id.tvDate);
@@ -73,14 +79,14 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
             }
         });
 
-        imageBtn.setOnClickListener(new View.OnClickListener() {
+        /*imageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
                 galleryIntent.setType("image/*");
                 startActivityForResult(galleryIntent,GALLERY_REQUEST);
             }
-        });
+        });*/
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +94,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                 //Intent intent = new Intent(Add_Promotions.this, Promotion_ACTIVITY1.class);
                 //Toast.makeText(Add_Promotions.this, "Added New Promotion Successfully.", Toast.LENGTH_SHORT).show();
                 dbRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
+                //folder = FirebaseStorage.getInstance().getReference().child("ImageFolder");
     //long x = new Date().getTime();
                 try {
                     if (TextUtils.isEmpty(txt0_form.getText().toString())) {
@@ -109,7 +116,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                         //pro.setDeadlineDate(Integer.parseInt(btnDate.getText().toString()));
 
                         //dbRef.push().setValue(pro);
-                        dbRef.child("promotion3").setValue(pro);
+                        dbRef.child("promo4").setValue(pro);
 
                         Toast.makeText(getApplicationContext(),"Data added successfully.",Toast.LENGTH_SHORT).show();
                         clearControls();
@@ -120,6 +127,14 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
             }
         });
 
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent,ImageBack);
+            }
+        });
     }
 
     @Override
@@ -135,15 +150,26 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         //txtView.setText(date);
 
     }
-
+    /*public void update(View view) {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent,ImageBack);
+    }*/
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
+        if (requestCode == ImageBack && resultCode == RESULT_OK) {
             Uri imageUri = data.getData();
-            //StorageR
-            imageBtn.setImageURI(imageUri);
+
+            StorageReference imgName = folder.child("image"+imageUri.getLastPathSegment());
+            imgName.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
     }
     @Override
