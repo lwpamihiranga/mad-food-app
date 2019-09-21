@@ -85,6 +85,8 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 
             mContext = context;
             //mList = list;
+
+
         }
 
 
