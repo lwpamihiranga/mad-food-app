@@ -19,38 +19,46 @@ import java.util.ArrayList;
 
 public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromotionAdapter.myViewHolder> {
     private Context mContext;
-    private ArrayList<ModelViewPromotion> mList;
+    //private ArrayList<ModelViewPromotion> mList;
 
-    public ResViewPromotionAdapter(Context mContext, ArrayList<ModelViewPromotion> mList) {
-        this.mContext = mContext;
-        this.mList = mList;
+    private ArrayList<String> promoNo;
+    private ArrayList<String> namefood;
+    private ArrayList<String> desc;
+
+
+    public ResViewPromotionAdapter(Context context, ArrayList<String> promoNo, ArrayList<String> namefood, ArrayList<String> desc) {
+        mContext = context;
+        this.promoNo = promoNo;
+        this.namefood = namefood;
+        this.desc = desc;
     }
 
-    @NonNull
-    @Override
     public ResViewPromotionAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View V = inflater.inflate(R.layout.restaurant_viewpromotion, parent, false);
 
-        ResViewPromotionAdapter.myViewHolder viewHolder = new ResViewPromotionAdapter.myViewHolder(V, mContext, mList);
+        ResViewPromotionAdapter.myViewHolder viewHolder = new ResViewPromotionAdapter.myViewHolder(V, mContext, promoNo,namefood,desc);
 
         return viewHolder;
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ResViewPromotionAdapter.myViewHolder holder, int position) {
-
+    public void onBindViewHolder(myViewHolder holder, int position) {
+        ImageView promoImage = holder.promo_img;
+        TextView promoNumber = holder.promo_text;
+        TextView foodName = holder.food_txt;
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return promoNo.size();
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageButton promo_img;
-        EditText promo_txt;
+        TextView promonum;
+        TextView food_name;
+        TextView food_desc;
         Button update_promo;
         Button delete_promo;
 
@@ -63,7 +71,9 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promo_image);
-            promo_txt = itemView.findViewById(R.id.promo_text);
+            promonum  = itemView.findViewById(R.id.promo_text);
+            food_name = itemView.findViewById(R.id.food_txt);
+            food_desc = itemView.findViewById(R.id.desc_txt);
             update_promo = itemView.findViewById(R.id.btnpromo_update);
             delete_promo = itemView.findViewById(R.id.btnpromo_delete);
 
