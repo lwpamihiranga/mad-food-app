@@ -37,7 +37,7 @@ public class Addfoods extends AppCompatActivity {
         edittext1 = findViewById(R.id.editTxt1);
         edittext2 = findViewById(R.id.editTxt2);
         edittext3 = findViewById(R.id.editTxt2);
-        edittext4 = findViewById(R.id.editText4);
+        //edittext4 = findViewById(R.id.editText4);
 
 
         add_button= (Button) findViewById(R.id.button3);

@@ -16,9 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Promotion_ACTIVITY3 extends AppCompatActivity {
 
     //FirebaseDatabase dRef;
-    ImageButton imageView;
-    EditText textView1;
-    EditText getTextView2;
+    ImageView imageView;
+    TextView textView1;
+    TextView getTextView2;
     Button b;
 
 
@@ -29,15 +29,21 @@ public class Promotion_ACTIVITY3 extends AppCompatActivity {
 
         //dRef = new FirebaseDatabase("https://foodappmad.firebaseio.com/PromotionTable");
 
-        imageView = findViewById(R.id.imageButtonview);
-        textView1 = findViewById(R.id.editText5);
-        getTextView2 = findViewById(R.id.editText4);
+        imageView = findViewById(R.id.imageViewadd);
+        textView1 = findViewById(R.id.nameTxt);
+        getTextView2 = findViewById(R.id.descTxt);
 
         b = findViewById(R.id.button2);
 
         //imageView.setImageResource(getIntent().getIntExtra("image", 00));
         //textView1.setText(getIntent().getStringExtra("name"));
-
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getApplicationContext(),MyBag.class);
+                startActivity(intent1);
+            }
+        });
 
     }
 }
