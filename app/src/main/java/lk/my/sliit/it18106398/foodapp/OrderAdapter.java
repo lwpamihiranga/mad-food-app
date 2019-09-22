@@ -58,7 +58,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
         Context mContext;
         ArrayList<ModelOrder> mList;
-
+        ArrayList<OrderBag1> orderBag1s;
+        ArrayList<ModelFood> modelFoods;
 
         public myViewHolder(@NonNull View itemView, Context context, ArrayList<String> list,ArrayList<Integer> qty) {
             super(itemView);
@@ -89,8 +90,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
         public void openDisplayFoodsActivity(){
             Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
-            intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
-            //intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
             mContext.startActivity(intent);
         }
 
