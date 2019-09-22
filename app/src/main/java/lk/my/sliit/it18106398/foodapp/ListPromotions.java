@@ -73,6 +73,12 @@ public class ListPromotions extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        /*Intent intent = new Intent(ListPromotions.this,Add_Promotions.class);
+        startActivity(intent);*/
+    }
+    public void onClick(View view){
+        Intent intent = new Intent(ListPromotions.this,Add_Promotions.class);
+        startActivity(intent);
     }
 
 }
