@@ -3,12 +3,10 @@ package lk.my.sliit.it18106398.foodapp;
 public class ModelOrder {
     private int image;
     private String name;
-    private int quantity;
 
-    public ModelOrder(int image, String name, int quantity) {
+    public ModelOrder(int image, String name) {
         this.image = image;
         this.name = name;
-        this.quantity = quantity;
     }
 
     public int getImage() {
@@ -19,7 +17,4 @@ public class ModelOrder {
         return name;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
 }
