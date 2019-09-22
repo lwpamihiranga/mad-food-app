@@ -28,27 +28,14 @@ public class MyBag extends AppCompatActivity {
     ArrayList<Integer>qty;
 
     OrderAdapter adapter;
-    Button btnUpdate;
     DatabaseReference db;
 
-    /*public void openDisplayFoodActivity(){
-        Intent intent = new Intent(this, DisplayFoodsActivity.class);
-        startActivity(intent);
-    }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_bag);
         description = new ArrayList<>();
         qty = new ArrayList<>();
-
-       /* btnUpdate = (Button) findViewById(R.id.updatebtn);
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDisplayFoodActivity();
-            }
-        });*/
 
         db = FirebaseDatabase.getInstance().getReference();
         db.child("OrderBag1").addValueEventListener(new ValueEventListener() {

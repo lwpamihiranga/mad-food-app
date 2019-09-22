@@ -21,8 +21,8 @@ public class CompletedOrderActivity extends AppCompatActivity {
 
         orders = new ArrayList<>();
 
-        orders.add(new ModelOrder(R.drawable.friderice, "Fried Rice"));
-        orders.add(new ModelOrder(R.drawable.cheeskottu, "Cheese Kottu"));
+       // orders.add(new ModelOrder(R.drawable.friderice, "Fried Rice"));
+       // orders.add(new ModelOrder(R.drawable.cheeskottu, "Cheese Kottu"));
 
         completedOrderAdapter adapter = new completedOrderAdapter(this, orders);
 
