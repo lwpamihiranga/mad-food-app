@@ -34,12 +34,12 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
     public void onBindViewHolder(myViewHolder holder, int position) {
         //ModelOrder order = mList.get(position);
 
-        ImageView promoImage = holder.promo_img;
-        TextView foodName = holder.promo_txt;
+        ImageView promoImg = holder.promo_img;
+        TextView promoName = holder.promo_txt;
 
         //orderImage.setImageResource(mList.get(position).getImage());
 
-        foodName.setText(name.get(position));
+        promoName.setText(name.get(position));
 
     }
     @Override
@@ -66,30 +66,11 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
             mContext = context;
             //mList = list;
         }
-   /* public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View v = inflater.inflate(R.layout.list_promotions, parent, false);
-
-        myViewHolder viewHolder = new myViewHolder(v, mContext, mList);
-
-        return viewHolder;
-    }*/
-
-    /*public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        ModelViewPromotion promotions = mList.get(position);
-
-        ImageView promoImg = holder.promo_img;
-        TextView foodName = holder.promo_txt;
-
-        promoImg.setImageResource(mList.get(position).getPromoImage());
-        foodName.setText(promotions.getPromoName());
-    }*/
-
-        @Override
         public void onClick(View view) {
             Intent intent = new Intent(mContext,Promotion_ACTIVITY3.class);
-            intent.putExtra("image",mList.get(getAdapterPosition()).getPromoImage());
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //intent.putExtra("image",mList.get(getAdapterPosition()).getPromoImage());
             intent.putExtra("name", mList.get(getAdapterPosition()).getPromoName());
 
             mContext.startActivity(intent);

@@ -37,8 +37,8 @@ public class Resturent_Home extends AppCompatActivity {
         viewPromotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Resturent_Home.this, Promotion_ACTIVITY2.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(Resturent_Home.this, Promotion_ACTIVITY2.class);
+                startActivity(intent1);
             }
         });
 
