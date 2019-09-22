@@ -41,7 +41,7 @@
                 app:layout_constraintVertical_bias="0.089" />
 
             <Button
-                android:id="@+id/updatebtn"
+                android:id="@+id/acceptbtn"
                 android:layout_width="70dp"
                 android:layout_height="39dp"
                 android:layout_marginStart="8dp"
@@ -66,7 +66,7 @@
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/updatebtn"
+                app:layout_constraintStart_toEndOf="@+id/acceptbtn"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.835" />
         </androidx.constraintlayout.widget.ConstraintLayout>

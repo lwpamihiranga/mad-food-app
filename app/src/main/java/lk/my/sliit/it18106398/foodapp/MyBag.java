@@ -65,6 +65,8 @@ public class MyBag extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
+
         });
 
         recyclerView = findViewById(R.id.foodsRecycleView);

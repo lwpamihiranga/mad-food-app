@@ -23,6 +23,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         mContext = context;
         this.des = des;
         this.qty = qty;
+
     }
     public OrderAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
@@ -64,7 +65,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
             order_qty = itemView.findViewById(R.id.qty);
-            updateBtn = itemView.findViewById(R.id.updatebtn);
+            updateBtn = itemView.findViewById(R.id.acceptbtn);
 
 //            itemView.setOnClickListener(this);
             updateBtn.setOnClickListener(this);

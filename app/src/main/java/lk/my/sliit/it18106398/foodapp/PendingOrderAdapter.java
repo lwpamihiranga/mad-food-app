@@ -60,6 +60,7 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
         ImageView order_img;
         TextView order_name;
         Button acceptButton;
+        Button deleteButton;
 
         Context mContext;
         ArrayList<ModelOrder> mList;
@@ -68,9 +69,11 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
 
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
-            acceptButton = itemView.findViewById(R.id.updatebtn);
+            acceptButton = itemView.findViewById(R.id.acceptbtn);
+            deleteButton = itemView.findViewById(R.id.deleteBtn);
 
             acceptButton.setOnClickListener(this);
+            deleteButton.setOnClickListener(this);
 
             mContext = context;
         }
