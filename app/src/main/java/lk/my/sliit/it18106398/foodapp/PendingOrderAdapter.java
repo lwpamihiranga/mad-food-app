@@ -69,7 +69,7 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
 
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
-            acceptButton = itemView.findViewById(R.id.acceptbtn);
+            acceptButton = itemView.findViewById(R.id.updatebtn);
             deleteButton = itemView.findViewById(R.id.deleteBtn);
 
             acceptButton.setOnClickListener(this);

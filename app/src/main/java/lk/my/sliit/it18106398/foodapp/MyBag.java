@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,13 +31,24 @@ public class MyBag extends AppCompatActivity {
     Button btnUpdate;
     DatabaseReference db;
 
-
+    /*public void openDisplayFoodActivity(){
+        Intent intent = new Intent(this, DisplayFoodsActivity.class);
+        startActivity(intent);
+    }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_bag);
         description = new ArrayList<>();
         qty = new ArrayList<>();
+
+       /* btnUpdate = (Button) findViewById(R.id.updatebtn);
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDisplayFoodActivity();
+            }
+        });*/
 
         db = FirebaseDatabase.getInstance().getReference();
         db.child("OrderBag1").addValueEventListener(new ValueEventListener() {
@@ -65,8 +76,6 @@ public class MyBag extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
-
         });
 
         recyclerView = findViewById(R.id.foodsRecycleView);

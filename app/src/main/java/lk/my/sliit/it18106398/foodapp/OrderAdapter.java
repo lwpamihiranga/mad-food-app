@@ -65,7 +65,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
             order_qty = itemView.findViewById(R.id.qty);
-            updateBtn = itemView.findViewById(R.id.acceptbtn);
+            updateBtn = itemView.findViewById(R.id.updatebtn);
 
 //            itemView.setOnClickListener(this);
             updateBtn.setOnClickListener(this);
