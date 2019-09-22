@@ -42,7 +42,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_background_login"
         android:ems="10"
-        android:hint="Quntity"
+        android:hint="@string/add_qty"
         android:inputType="textPersonName"
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"

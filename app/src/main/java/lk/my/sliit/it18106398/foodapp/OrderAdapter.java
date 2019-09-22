@@ -38,11 +38,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
         ImageView orderImage = holder.order_img;
         TextView orderName = holder.order_name;
+        TextView quantity = holder.order_qty;
 
         //orderImage.setImageResource(mList.get(position).getImage());
 
         orderName.setText(des.get(position));
-
+        //quantity.setText(qty.get(position));
     }
     public int getItemCount() {
         return des.size();
@@ -51,6 +52,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView order_img;
         TextView order_name;
+        TextView order_qty;
         Button updateBtn;
 
         Context mContext;
@@ -61,7 +63,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
-            updateBtn = itemView.findViewById(R.id.acceptbtn);
+            order_qty = itemView.findViewById(R.id.qty);
+            updateBtn = itemView.findViewById(R.id.updatebtn);
 
 //            itemView.setOnClickListener(this);
             updateBtn.setOnClickListener(this);

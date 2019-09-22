@@ -16,37 +16,44 @@ import java.util.ArrayList;
 
 public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapter.OrderViewHolder> {
     private Context mContext;
-    private ArrayList<ModelOrder> mList;
+    //private ArrayList<ModelOrder> mList;
+    private ArrayList<String> des;
+    private ArrayList<Integer> qty;
 
-    public PendingOrderAdapter(Context mContext, ArrayList<ModelOrder> mList) {
+    public PendingOrderAdapter(Context mContext, ArrayList<String> des, ArrayList<Integer> qty) {
         this.mContext = mContext;
-        this.mList = mList;
+        this.des = des;
+        this.qty = qty;
     }
 
     @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PendingOrderAdapter.OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View v = inflater.inflate(R.layout.pending_orders_layout, parent, false);
-        return new OrderViewHolder(v, mContext);
+        OrderViewHolder viewHolder = new OrderViewHolder(v, mContext,des,qty);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-        ModelOrder order = mList.get(position);
+        //ModelOrder order = mList.get(position);
 
         ImageView orderImage = holder.order_img;
         TextView orderName = holder.order_name;
 
-        orderImage.setImageResource(mList.get(position).getImage());
+        //orderImage.setImageResource(mList.get(position).getImage());
 
-        orderName.setText(order.getName());
+        orderName.setText(des.get(position));
 
     }
 
-    @Override
+   /* @Override
     public int getItemCount() {
         return mList.size();
+    }*/
+    public int getItemCount() {
+        return des.size();
     }
 
     public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -55,12 +62,13 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
         Button acceptButton;
 
         Context mContext;
-        public OrderViewHolder(@NonNull View itemView, Context context) {
+        ArrayList<ModelOrder> mList;
+        public OrderViewHolder(@NonNull View itemView, Context context, ArrayList<String> des, ArrayList<Integer> qty) {
             super(itemView);
 
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
-            acceptButton = itemView.findViewById(R.id.acceptbtn);
+            acceptButton = itemView.findViewById(R.id.updatebtn);
 
             acceptButton.setOnClickListener(this);
 

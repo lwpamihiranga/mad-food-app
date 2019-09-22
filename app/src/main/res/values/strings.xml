@@ -74,4 +74,5 @@
     <string name="foodname">Food Name</string>
     <string name="promotiondescription">Promotion Description</string>
     <string name="imgUpload">Upload Image</string>
+    <string name="add_qty">Quantity</string>
 </resources>
