@@ -34,7 +34,7 @@ public class ListPromotions extends AppCompatActivity {
     Toolbar tb;
     DatabaseReference dRef;
     RecyclerView recyclerView;
-    //ArrayList<ModelPromotions> promotions;
+    ArrayList<ModelPromotions> PromoList;
     ArrayList<Add_Promotions> promotions;
     ArrayList<String> foodName;
     //ArrayList<>
@@ -73,5 +73,12 @@ public class ListPromotions extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        /*Intent intent = new Intent(ListPromotions.this,Add_Promotions.class);
+        startActivity(intent);*/
     }
+    public void onClick(View view){
+        Intent intent = new Intent(ListPromotions.this,Add_Promotions.class);
+        startActivity(intent);
+    }
+
 }

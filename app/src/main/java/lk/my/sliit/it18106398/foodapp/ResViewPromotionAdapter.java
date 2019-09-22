@@ -37,19 +37,21 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View V = inflater.inflate(R.layout.restaurant_viewpromotion, parent, false);
 
-        ResViewPromotionAdapter.myViewHolder viewHolder = new ResViewPromotionAdapter.myViewHolder(V, mContext, promoNo,name,desc);
+        myViewHolder viewHolder = new myViewHolder(V, mContext, promoNo,name,desc);
 
         return viewHolder;
     }
 
     public void onBindViewHolder(myViewHolder holder, int position) {
         ImageView promoImage = holder.promo_img;
-        TextView promoNumber = holder.promonum;
+        TextView promoNumber = holder.promotionNo;
         TextView foodName = holder.food_name;
         TextView Description = holder.food_desc;
 
 
         promoNumber.setText(promoNo.get(position));
+        foodName.setText(name.get(position));
+        Description.setText(desc.get(position));
     }
 
     @Override
@@ -60,11 +62,11 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageButton promo_img;
-        TextView promonum;
+        TextView promotionNo;
         TextView food_name;
         TextView food_desc;
-        Button update_promo;
-        Button delete_promo;
+        /*Button update_promo;
+        Button delete_promo;*/
 
 
         Context mContext;
@@ -75,11 +77,11 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promo_image);
-            promonum  = itemView.findViewById(R.id.promo_text);
+            promotionNo  = itemView.findViewById(R.id.promo_text);
             food_name = itemView.findViewById(R.id.food_txt);
             food_desc = itemView.findViewById(R.id.desc_txt);
-            update_promo = itemView.findViewById(R.id.btnpromo_update);
-            delete_promo = itemView.findViewById(R.id.btnpromo_delete);
+            /*update_promo = itemView.findViewById(R.id.btnpromo_update);
+            delete_promo = itemView.findViewById(R.id.btnpromo_delete);*/
 
             itemView.setOnClickListener(this);
 
@@ -89,12 +91,10 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 
         }
 
-
-
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(mContext,Add_Promotions.class);
-
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
             intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
             intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
