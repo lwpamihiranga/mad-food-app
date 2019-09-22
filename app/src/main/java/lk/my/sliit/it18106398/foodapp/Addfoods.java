@@ -35,8 +35,8 @@ public class Addfoods extends AppCompatActivity {
         setContentView(R.layout.activity_addfoods);
 
         edittext1 = findViewById(R.id.editTxt1);
-        edittext2 = findViewById(R.id.editText2);
-        edittext3 = findViewById(R.id.editText3);
+        edittext2 = findViewById(R.id.editTxt2);
+        edittext3 = findViewById(R.id.editTxt2);
         edittext4 = findViewById(R.id.editText4);
 
 
