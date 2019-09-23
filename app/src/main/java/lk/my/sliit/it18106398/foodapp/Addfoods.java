@@ -39,6 +39,8 @@ public class Addfoods extends AppCompatActivity {
         add_button1= (Button) findViewById(R.id.BtnAddFoods);
         editFoodName = (EditText)findViewById(R.id.editFoodName);
         editFoodNo = (EditText)findViewById(R.id.editFoodNo);
+        editFoodDescription = (EditText)findViewById(R.id.editFoodDescription);
+        editPrice = (EditText)findViewById(R.id.editPrice);
 
         fdt = new FoodTable();
 
@@ -50,13 +52,19 @@ public class Addfoods extends AppCompatActivity {
 
                 try {
                     if (TextUtils.isEmpty(editFoodName.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"please enter food name",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"please enter food name..",Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(editFoodNo.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Please enter food no",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please enter food no..",Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(editFoodDescription.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter food description..",Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(editPrice.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter food price..",Toast.LENGTH_SHORT).show();
 
                     else{
                         fdt.setItemNo(editFoodNo.getText().toString().trim());
                         fdt.setName(editFoodName.getText().toString().trim());
+                        fdt.setPrice(editPrice.getText().toString().trim());
+                        fdt.setDescription(editFoodDescription.getText().toString().trim());
 
                         databaseReference.push().setValue(fdt);
 
