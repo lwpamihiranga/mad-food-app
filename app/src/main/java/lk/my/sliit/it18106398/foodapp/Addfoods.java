@@ -10,15 +10,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Addfoods extends AppCompatActivity {
 
 
-    
+
     DatabaseReference databaseReference;
     Button add_button1;
     EditText editFoodName,editPrice,editFoodDescription,editFoodNo;
@@ -43,43 +42,51 @@ public class Addfoods extends AppCompatActivity {
 
         fdt = new FoodTable();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("FoodTable");
+        add_button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        try {
-            if (TextUtils.isEmpty(editFoodName.getText().toString()))
-                Toast.makeText(getApplicationContext(),"please enter food name",Toast.LENGTH_SHORT).show();
-        else if (TextUtils.isEmpty(editFoodNo.getText().toString()))
-                Toast.makeText(getApplicationContext(),"Please enter food no",Toast.LENGTH_SHORT).show();
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("FoodTable");
 
-        else{
-            fdt.setItemNo(editFoodNo.getText().toString().trim());
-            fdt.setName(editFoodName.getText().toString().trim());
+                try {
+                    if (TextUtils.isEmpty(editFoodName.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"please enter food name",Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(editFoodNo.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter food no",Toast.LENGTH_SHORT).show();
 
-            databaseReference.push().setValue(fdt);
+                    else{
+                        fdt.setItemNo(editFoodNo.getText().toString().trim());
+                        fdt.setName(editFoodName.getText().toString().trim());
 
-            Toast.makeText(getApplicationContext(),"Data Saved..",Toast.LENGTH_SHORT).show();
-            clearControls();
+                        databaseReference.push().setValue(fdt);
+
+                        Toast.makeText(getApplicationContext(),"Data Saved..",Toast.LENGTH_SHORT).show();
+                        clearControls();
+
+                    }
+
+
+                }
+                catch (NullPointerException e){
+                    Toast.makeText(getApplicationContext(),"Invalid",Toast.LENGTH_SHORT).show();
+
+
+
+
+                    //add_button1.setOnClickListener(new View.OnClickListener() {
+                    //  @Override
+                    //  public void onClick(View view) {
+                    //    Intent intent = new Intent(Addfoods.this, Promotion_ACTIVITY1.class);
+
+
+                    //  }
+                    //});
+
+                }
+
 
             }
-
-
-        }
-        catch (NullPointerException e){
-            Toast.makeText(getApplicationContext(),"Invalid",Toast.LENGTH_SHORT).show();
-
-
-
-
-        //add_button1.setOnClickListener(new View.OnClickListener() {
-         //  @Override
-         //  public void onClick(View view) {
-          //    Intent intent = new Intent(Addfoods.this, Promotion_ACTIVITY1.class);
-
-
-         //  }
-        //});
-
-    }
+        });
 
 
     }
