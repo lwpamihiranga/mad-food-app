@@ -1,12 +1,12 @@
 package lk.my.sliit.it18106398.foodapp;
 
-public class FoodTable {
+public class FoodsTable {
     private String itemNo;
     private String Foodname;
     private int price;
     private String Discription;
 
-    public FoodTable() {
+    public FoodsTable() {
     }
 
     public String getItemNo() {

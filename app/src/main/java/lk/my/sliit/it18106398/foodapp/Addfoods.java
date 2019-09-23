@@ -1,6 +1,5 @@
 package lk.my.sliit.it18106398.foodapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,7 +17,7 @@ public class Addfoods extends AppCompatActivity {
     EditText edittext1,edittext2,edittext3,edittext4;
     Button add_button;
     DatabaseReference dRef;
-    FoodTable food;
+    FoodsTable food;
 
     //StorageReference foodfolder;
 
@@ -47,7 +46,7 @@ public class Addfoods extends AppCompatActivity {
            public void onClick(View view) {
               //Intent intent = new Intent(Addfoods.this,Promotion_ACTIVITY1.class);
 
-                dRef = FirebaseDatabase.getInstance().getReference().child("FoodTable");
+                dRef = FirebaseDatabase.getInstance().getReference().child("FoodsTable");
 
                 try {
                    if (TextUtils.isEmpty(edittext1.getText().toString())) {
