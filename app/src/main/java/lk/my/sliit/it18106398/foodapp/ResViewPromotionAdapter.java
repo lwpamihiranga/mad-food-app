@@ -61,7 +61,8 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        ImageButton promo_img;
+        //ImageButton promo_img;
+        ImageView promo_img;
         TextView promotionNo;
         TextView food_name;
         TextView food_desc;
