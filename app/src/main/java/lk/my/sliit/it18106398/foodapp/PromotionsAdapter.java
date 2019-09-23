@@ -70,7 +70,7 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
         public void onClick(View view) {
             Intent intent = new Intent(mContext,Promotion_ACTIVITY3.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //intent.putExtra("image",mList.get(getAdapterPosition()).getPromoImage());
+            intent.putExtra("image",mList.get(getAdapterPosition()).getPromoImage());
             intent.putExtra("name", mList.get(getAdapterPosition()).getPromoName());
 
             mContext.startActivity(intent);

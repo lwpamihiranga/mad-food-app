@@ -2,13 +2,10 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -66,8 +63,8 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         TextView promotionNo;
         TextView food_name;
         TextView food_desc;
-        /*Button update_promo;
-        Button delete_promo;*/
+        Button update_promo;
+        Button delete_promo;
 
 
         Context mContext;
@@ -81,26 +78,33 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             promotionNo  = itemView.findViewById(R.id.promo_text);
             food_name = itemView.findViewById(R.id.food_txt);
             food_desc = itemView.findViewById(R.id.desc_txt);
-            /*update_promo = itemView.findViewById(R.id.btnpromo_update);
-            delete_promo = itemView.findViewById(R.id.btnpromo_delete);*/
+            update_promo = itemView.findViewById(R.id.btnpromo_update);
+            delete_promo = itemView.findViewById(R.id.btnpromo_delete);
 
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
+            update_promo.setOnClickListener(this);
+            //delete_promo.setOnClickListener(this);
 
             mContext = context;
             //mList = list;
-
-
         }
 
         @Override
         public void onClick(View view) {
+            //openAddPromotions();
             Intent intent = new Intent(mContext,Add_Promotions.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
-            intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
-            intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
+            //intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
+            //intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
+            //intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
             mContext.startActivity(intent);
         }
+
+        /*private void openAddPromotions() {
+            Intent intent = new Intent(mContext,Add_Promotions.class);
+
+            mContext.startActivity(intent);
+        }*/
 
     }
 }

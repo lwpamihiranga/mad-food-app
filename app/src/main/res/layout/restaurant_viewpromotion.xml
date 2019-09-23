@@ -26,11 +26,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnpromo_delete"
+            android:id="@+id/btnpromo_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="160dp"
             android:text="@string/update"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,17 +39,17 @@
             app:layout_constraintTop_toBottomOf="@+id/desc_txt" />
 
         <Button
-            android:id="@+id/btnpromo_update"
+            android:id="@+id/btnpromo_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.546"
-            app:layout_constraintStart_toEndOf="@+id/btnpromo_delete" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/btnpromo_update" />
 
         <ImageView
             android:id="@+id/promo_image"
