@@ -18,6 +18,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
     private Context mContext;
     private ArrayList<String> des;
     private ArrayList<Integer> qty;
+    int pos;
 
     public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty) {
         mContext = context;
@@ -40,11 +41,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         ImageView orderImage = holder.order_img;
         TextView orderName = holder.order_name;
         TextView quantity = holder.order_qty;
+        pos = position;
 
         //orderImage.setImageResource(mList.get(position).getImage());
 
         orderName.setText(des.get(position));
-        //quantity.setText(qty.get(position));
+        quantity.setText("" +qty.get(position));
     }
     public int getItemCount() {
         return des.size();
@@ -90,6 +92,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
         public void openDisplayFoodsActivity(){
             Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
+            intent.putExtra("qty",qty.get(pos));
             mContext.startActivity(intent);
         }
 
