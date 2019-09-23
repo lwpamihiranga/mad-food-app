@@ -27,6 +27,7 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_foods);
+
         Intent intent = getIntent();
         int x = intent.getIntExtra("qty",0);
 
