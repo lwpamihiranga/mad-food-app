@@ -67,7 +67,7 @@ public class Addfoods extends AppCompatActivity {
 
 
                 }
-                catch (NullPointerException e){
+                catch (NumberFormatException e){
                     Toast.makeText(getApplicationContext(),"Invalid",Toast.LENGTH_SHORT).show();
 
 
