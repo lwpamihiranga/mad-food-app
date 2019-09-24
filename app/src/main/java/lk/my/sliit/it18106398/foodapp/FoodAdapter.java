@@ -39,8 +39,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         ImageView imageView = holder.fImage;
         TextView textView = holder.fName;
 
-        imageView.setImageResource(mList.get(position).getFoodImage());
-
+      //  imageView.setImageResource(mList.get(position).getFoodImage());
+       // Food_Items.class,R.layout.food_list,FoodViewHolder.class,food_Items;
         textView.setText(foods.getfName());
     }
 
