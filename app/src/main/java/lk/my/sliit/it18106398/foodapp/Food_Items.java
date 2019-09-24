@@ -1,15 +1,15 @@
 package lk.my.sliit.it18106398.foodapp;
 
-public class ModelFood {
-    private int foodImage;
+public class Food_Items {
+    private String foodImage;
     private String fName;
 
-    public ModelFood(int foodImage, String fName) {
+    public Food_Items(String foodImage, String fName) {
         this.foodImage = foodImage;
         this.fName = fName;
     }
 
-    public int getFoodImage() {
+    public String getFoodImage() {
         return foodImage;
     }
 

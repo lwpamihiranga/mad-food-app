@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
 
     private Context mContex;
-    private ArrayList<ModelFood> mList;
+    private ArrayList<Food_Items> mList;
 
-    public FoodAdapter(Context mContex, ArrayList<ModelFood> mList) {
+    public FoodAdapter(Context mContex, ArrayList<Food_Items> mList) {
         this.mContex = mContex;
         this.mList = mList;
     }
@@ -34,7 +34,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-        ModelFood foods = mList.get(position);
+        Food_Items foods = mList.get(position);
 
         ImageView imageView = holder.fImage;
         TextView textView = holder.fName;
@@ -55,9 +55,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         TextView fName;
 
         Context mContext;
-        ArrayList<ModelFood> mList;
+        ArrayList<Food_Items> mList;
 
-        public FoodViewHolder(@NonNull View itemView, Context context, ArrayList<ModelFood> list) {
+        public FoodViewHolder(@NonNull View itemView, Context context, ArrayList<Food_Items> list) {
             super(itemView);
 
             fImage = itemView.findViewById(R.id.foodImg);
