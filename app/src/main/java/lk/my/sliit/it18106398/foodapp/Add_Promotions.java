@@ -34,7 +34,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     //StorageReference imageRef;
     EditText txt0_form, txt1_form, txt2_form, txt3_form, txt4_form;
     Button btn, btnDate;
-    ImageButton imageBtn;
+    //ImageButton imageBtn;
     DatabaseReference dbRef;
     PromotionTable pro;
     Button upload;
@@ -63,7 +63,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         txt3_form = (EditText) findViewById(R.id.editTxt3);
         txt4_form = (EditText) findViewById(R.id.editTxt4);
 
-        imageBtn = (ImageButton) findViewById(R.id.imageButton2);
+        //imageBtn = (ImageButton) findViewById(R.id.imageButton2);
         btn = (Button) findViewById(R.id.add_button);
 
         upload = findViewById(R.id.btnUploadImg);

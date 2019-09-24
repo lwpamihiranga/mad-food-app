@@ -2,18 +2,22 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -66,41 +70,73 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         TextView promotionNo;
         TextView food_name;
         TextView food_desc;
-        /*Button update_promo;
-        Button delete_promo;*/
+        Button update_promo;
+        Button delete_promo;
 
 
         Context mContext;
         ArrayList<ModelViewPromotion> mList;
 
 
-        public myViewHolder(View itemView, Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
+        public myViewHolder(View itemView, Context context, final ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promo_image);
             promotionNo  = itemView.findViewById(R.id.promo_text);
             food_name = itemView.findViewById(R.id.food_txt);
             food_desc = itemView.findViewById(R.id.desc_txt);
-            /*update_promo = itemView.findViewById(R.id.btnpromo_update);
-            delete_promo = itemView.findViewById(R.id.btnpromo_delete);*/
+            update_promo = itemView.findViewById(R.id.btnpromo_update);
+            delete_promo = itemView.findViewById(R.id.btnpromo_delete);
 
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
+            update_promo.setOnClickListener(this);
+
+            /*update_promo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
+                    readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.hasChildren())
+                            {
+                                promotionNo.setText(dataSnapshot.child("promoNo").getValue().toString());
+                                food_name.setText(dataSnapshot.child("foodName").getValue().toString());
+                                food_desc.setText(dataSnapshot.child("description").getValue().toString());
+                            }else{
+                                //Toast.makeText()
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            });*/
+            delete_promo.setOnClickListener(this);
 
             mContext = context;
             //mList = list;
-
-
         }
 
         @Override
         public void onClick(View view) {
+            //openAddPromotions();
             Intent intent = new Intent(mContext,Add_Promotions.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
-            intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
-            intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
+            //intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
+            //intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
+            //intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
             mContext.startActivity(intent);
         }
+
+        /*private void openAddPromotions() {
+            Intent intent = new Intent(mContext,Add_Promotions.class);
+
+            mContext.startActivity(intent);
+        }*/
 
     }
 }

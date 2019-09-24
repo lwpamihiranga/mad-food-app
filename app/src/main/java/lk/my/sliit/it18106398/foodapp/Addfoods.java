@@ -10,23 +10,25 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Addfoods extends AppCompatActivity {
 
-    EditText edittext1,edittext2,edittext3,edittext4;
-    Button add_button;
-    DatabaseReference dRef;
-    FoodTable food;
 
-    //StorageReference foodfolder;
+
+    DatabaseReference databaseReference;
+    Button add_button1;
+    EditText editFoodName,editPrice,editFoodDescription,editFoodNo;
+    FoodTable fdt;
+
 
     private void clearControls(){
-        edittext1.setText("");
-        edittext2.setText("");
-        edittext4.setText("");
-        edittext3.setText("");
+        editFoodName.setText("");
+        editFoodNo.setText("");
+        editPrice.setText("");
+        editFoodDescription.setText("");
     }
 
     @Override
@@ -34,45 +36,64 @@ public class Addfoods extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addfoods);
 
-        edittext1 = findViewById(R.id.editTxt1);
-        edittext2 = findViewById(R.id.editTxt2);
-        edittext3 = findViewById(R.id.editTxt2);
-        edittext4 = findViewById(R.id.editText4);
+        add_button1= (Button) findViewById(R.id.BtnAddFoods);
+        editFoodName = (EditText)findViewById(R.id.editFoodName);
+        editFoodNo = (EditText)findViewById(R.id.editFoodNo);
+        editFoodDescription = (EditText)findViewById(R.id.editFoodDescription);
+        editPrice = (EditText)findViewById(R.id.editPrice);
 
+        fdt = new FoodTable();
 
-        add_button= (Button) findViewById(R.id.button3);
+        add_button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        add_button.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-              //Intent intent = new Intent(Addfoods.this,Promotion_ACTIVITY1.class);
-
-                dRef = FirebaseDatabase.getInstance().getReference().child("FoodTable");
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("FoodTable");
 
                 try {
-                   if (TextUtils.isEmpty(edittext1.getText().toString())) {
-                       Toast.makeText(getApplicationContext(), "Please Create food Item Number.", Toast.LENGTH_SHORT).show();
-                   }else if(TextUtils.isEmpty(edittext2.getText().toString())){
-                       Toast.makeText(getApplicationContext(),"enter food name",Toast.LENGTH_SHORT).show();
-                  /* }else if(TextUtils.isEmpty(Integer.parseInt(edittext3.getText().toString())){
-                       Toast.makeText(getApplicationContext(),"Enter price.",Toast.LENGTH_SHORT).show();*/
-                   }else if(TextUtils.isEmpty(edittext4.getText().toString())){
-                       Toast.makeText(getApplicationContext(),"Enter description hear.",Toast.LENGTH_SHORT).show();
-                   }else{
-                       food.setItemNo(edittext1.getText().toString().trim());
-                       food.setFoodname(edittext2.getText().toString().trim());
-                       food.setPrice(Integer.parseInt(edittext3.getText().toString().trim()));
-                       food.setDiscription(edittext4.getText().toString().trim());
+                    if (TextUtils.isEmpty(editFoodName.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"please enter food name..",Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(editFoodNo.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter food no..",Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(editFoodDescription.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter food description..",Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(editPrice.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter food price..",Toast.LENGTH_SHORT).show();
 
-                       dRef.child("food1").setValue(food);
+                    else{
+                        fdt.setItemNo(editFoodNo.getText().toString().trim());
+                        fdt.setName(editFoodName.getText().toString().trim());
+                        fdt.setPrice(editPrice.getText().toString().trim());
+                        fdt.setDescription(editFoodDescription.getText().toString().trim());
 
-                       Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
-                       clearControls();
-                   }
-               }catch (NumberFormatException ex){
-                   Toast.makeText(getApplicationContext(),"Data should valide.",Toast.LENGTH_SHORT).show();
-               }
-           }
+                        databaseReference.push().setValue(fdt);
+
+                        Toast.makeText(getApplicationContext(),"Data Saved..",Toast.LENGTH_SHORT).show();
+                        clearControls();
+
+                    }
+
+
+                }
+                catch (NumberFormatException e){
+                    Toast.makeText(getApplicationContext(),"Invalid",Toast.LENGTH_SHORT).show();
+
+
+
+
+                    //add_button1.setOnClickListener(new View.OnClickListener() {
+                    //  @Override
+                    //  public void onClick(View view) {
+                    //    Intent intent = new Intent(Addfoods.this, Promotion_ACTIVITY1.class);
+
+
+                    //  }
+                    //});
+
+                }
+
+
+            }
         });
 
 

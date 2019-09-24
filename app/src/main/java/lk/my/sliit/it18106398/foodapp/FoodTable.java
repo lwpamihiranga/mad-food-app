@@ -1,43 +1,38 @@
 package lk.my.sliit.it18106398.foodapp;
 
 public class FoodTable {
-    private String itemNo;
-    private String Foodname;
-    private int price;
-    private String Discription;
+
+    private String name;
+    private String ItemNo;
+    private String Price;
+    private String Description;
+
 
     public FoodTable() {
+
     }
 
-    public String getItemNo() {
-        return itemNo;
+    public String getPrice() {
+        return Price;
     }
 
-    public String getFoodname() {
-        return Foodname;
+    public void setPrice(String price) {
+        Price = price;
     }
 
-    public int getPrice() {
-        return price;
+    public String getDescription() {
+        return Description;
     }
 
-    public String getDiscription() {
-        return Discription;
+    public void setDescription(String description) {
+        Description = description;
     }
 
-    public void setItemNo(String itemNo) {
-        this.itemNo = itemNo;
-    }
+    public String getName() {return name;}
 
-    public void setFoodname(String foodname) {
-        Foodname = foodname;
-    }
+    public String getItemNo() { return ItemNo;}
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public void setDiscription(String discription) {
-        Discription = discription;
-    }
+    public void setItemNo(String itemNo) { ItemNo = itemNo;}
 }

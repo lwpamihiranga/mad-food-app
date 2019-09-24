@@ -16,9 +16,6 @@
             android:name=".PendingOrderActivity"
             android:parentActivityName=".NavigationDrawerActivity" />
         <activity
-            android:name=".Addfoods"
-            android:parentActivityName=".NavigationDrawerActivity" />
-        <activity
             android:name=".MyBag"
             android:parentActivityName=".NavigationDrawerActivity" />
         <activity
@@ -51,6 +48,7 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".RestuarantsList" />
         <activity android:name=".CompletedOrderActivity" />
+        <activity android:name=".Addfoods"/>
 
     </application>
 
