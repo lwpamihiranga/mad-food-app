@@ -23,13 +23,23 @@ import java.util.ArrayList;
 
 public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromotionAdapter.myViewHolder> {
     private Context mContext;
-    //private ArrayList<ModelViewPromotion> mList;
+    private ArrayList<ModelViewPromotion> mList;
 
     private ArrayList<String> promoNo;
     private ArrayList<String> name;
     private ArrayList<String> desc;
+    //private OnPromoClickListener mListener;
 
+   /* public ResViewPromotionAdapter(promo_list promo_list, ArrayList<Add_Promotions> promoList2) {
+    }
+*/
+    /*public interface OnPromoClickListener{
+        void onPromoClick(int position);
+    }*/
 
+    /*public void setOnPromoClickListener(OnPromoClickListener listener){
+        mListener = listener;
+    }*/
     public ResViewPromotionAdapter(Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
         mContext = context;
         this.promoNo = promoNo;
@@ -78,7 +88,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         ArrayList<ModelViewPromotion> mList;
 
 
-        public myViewHolder(View itemView, Context context, final ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
+        public myViewHolder(View itemView, Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promo_image);
@@ -88,34 +98,20 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             update_promo = itemView.findViewById(R.id.btnpromo_update);
             delete_promo = itemView.findViewById(R.id.btnpromo_delete);
 
-            //itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
             update_promo.setOnClickListener(this);
-
             /*update_promo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
-                    readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if(dataSnapshot.hasChildren())
-                            {
-                                promotionNo.setText(dataSnapshot.child("promoNo").getValue().toString());
-                                food_name.setText(dataSnapshot.child("foodName").getValue().toString());
-                                food_desc.setText(dataSnapshot.child("description").getValue().toString());
-                            }else{
-                                //Toast.makeText()
-                            }
+                    if(mListener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            mListener.onPromoClick(position);
                         }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
+                    }
                 }
             });*/
-            delete_promo.setOnClickListener(this);
+            //delete_promo.setOnClickListener(this);
 
             mContext = context;
             //mList = list;

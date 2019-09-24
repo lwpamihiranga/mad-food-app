@@ -43,6 +43,10 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     private StorageReference folder;
     private static final int ImageBack = 1;
 
+    /*public Add_Promotions(String number, String namePromo, String describe) {
+
+    }*/
+
     private void clearControls(){
         txt0_form.setText("");
         txt1_form.setText("");

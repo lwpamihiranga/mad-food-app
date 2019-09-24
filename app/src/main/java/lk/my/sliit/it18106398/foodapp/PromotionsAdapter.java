@@ -16,11 +16,13 @@ import java.util.ArrayList;
 public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.myViewHolder> {
     private Context mContext;
     private ArrayList<String> name;
+    private ArrayList<String> key;
     //private ArrayList<ModelPromotions> mList;
 
-    public PromotionsAdapter(Context Context, ArrayList<String> name) {
+    public PromotionsAdapter(Context Context, ArrayList<String> name, ArrayList<String> key) {
         mContext = Context;
         this.name = name;
+        this.key = name;
     }
 
     public PromotionsAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -28,7 +30,7 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View v = inflater.inflate(R.layout.list_promotions, parent, false);
 
-        myViewHolder viewHolder = new myViewHolder(v,mContext,name);
+        myViewHolder viewHolder = new myViewHolder(v,mContext,name, key);
         return viewHolder;
     }
     public void onBindViewHolder(myViewHolder holder, int position) {
@@ -36,12 +38,16 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
 
         ImageView promoImg = holder.promo_img;
         TextView promoName = holder.promo_txt;
+        TextView keys = holder.key;
 
         //orderImage.setImageResource(mList.get(position).getImage());
 
         promoName.setText(name.get(position));
+        keys.setText(key.get(position));
 
     }
+    String pName;
+    String myKey;
     @Override
     public int getItemCount() {
 
@@ -51,18 +57,24 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
 
         ImageView promo_img;
         TextView promo_txt;
+        TextView key;
 
         Context mContext;
         ArrayList<ModelPromotions> mList;
 
-        public myViewHolder(@NonNull View itemView, Context context, ArrayList<String> name) {
+
+
+        public myViewHolder(@NonNull View itemView, Context context, ArrayList<String> strings, ArrayList<String> name) {
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promoImage);
             promo_txt = itemView.findViewById(R.id.promoText);
+            key = itemView.findViewById(R.id.textView7);
+//            pName = "test";
 
             itemView.setOnClickListener(this);
-
+            pName = promo_txt.getText().toString();
+            myKey = key.getText().toString();
             mContext = context;
             //mList = list;
         }
@@ -70,9 +82,14 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
         public void onClick(View view) {
             Intent intent = new Intent(mContext,Promotion_ACTIVITY3.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
+            TextView text = view.findViewById(R.id.promoText);
+            pName = text.getText().toString();
+            TextView text1 = view.findViewById(R.id.textView7);
+            myKey = key.getText().toString();
             //intent.putExtra("image",mList.get(getAdapterPosition()).getPromoImage());
-            //intent.putExtra("name", mList.get(getAdapterPosition()).getPromoName());
+//            intent.putExtra("pName", mList.get(getAdapterPosition()).getPromoName());
+            intent.putExtra("pName", pName);
+            intent.putExtra("key", myKey);
 
             mContext.startActivity(intent);
         }

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class Promotion_ACTIVITY2 extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+   /* RecyclerView recyclerView;
     //ArrayList<ModelViewPromotion> resViewpromotions;
     ArrayList<ModelViewPromotion> promotional;
     ArrayList<String> proNo;
@@ -35,14 +35,14 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
     ResViewPromotionAdapter adapt;
     Button update;
     Button delete;
-    DatabaseReference db;
+    DatabaseReference db;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotion__activity2);
 
-        proNo = new ArrayList<>();
+        /*proNo = new ArrayList<>();
         name = new ArrayList<>();
         descriptions = new ArrayList<>();
 
@@ -79,6 +79,6 @@ public class Promotion_ACTIVITY2 extends AppCompatActivity {
 
         recyclerView.setAdapter(adapt);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+*/
     }
 }

@@ -1,21 +1,13 @@
 package lk.my.sliit.it18106398.foodapp;
 
+import android.os.Bundle;
+import android.widget.Toast;
+import android.widget.Toolbar;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -29,6 +21,10 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import lk.my.sliit.it18106398.foodapp.Add_Promotions;
+import lk.my.sliit.it18106398.foodapp.ModelPromotions;
+import lk.my.sliit.it18106398.foodapp.PromotionsAdapter;
+
 public class ListPromotions extends AppCompatActivity {
 
     Toolbar tb;
@@ -37,6 +33,7 @@ public class ListPromotions extends AppCompatActivity {
     ArrayList<ModelPromotions> PromoList;
     ArrayList<Add_Promotions> promotions;
     ArrayList<String> foodName;
+    ArrayList<String> promoKey;
     //ArrayList<>
     //FirebaseRecyclerAdapter adapter;
     PromotionsAdapter adapter;
@@ -47,20 +44,36 @@ public class ListPromotions extends AppCompatActivity {
         setContentView(R.layout.activity_list_promotions);
 
         foodName = new ArrayList<>();
+        promoKey = new ArrayList<>();
         dRef = FirebaseDatabase.getInstance().getReference();
+
+        recyclerView = findViewById(R.id.promoRecyclerView);
+        adapter = new PromotionsAdapter(getApplicationContext(),foodName, promoKey);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
         dRef.child("PromotionTable").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
+                //if (dataSnapshot.exists()) {
+
+                foodName.clear();
+                promoKey.clear();
+
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                        Toast.makeText(ListPromotions.this, "err", Toast.LENGTH_SHORT).show();
+
                         String food = ds.child("foodName").getValue(String.class);
+                        String key = ds.child("description").getValue(String.class);
+                        Toast.makeText(ListPromotions.this, "key"+key, Toast.LENGTH_SHORT).show();
+
                         foodName.add(food);
+                        promoKey.add(key);
                         adapter.notifyDataSetChanged();
                     }
-                } else {
-                    Toast.makeText(ListPromotions.this, "No data found.", Toast.LENGTH_SHORT).show();
-                }
+                //} else {
+                 //   Toast.makeText(ListPromotions.this, "No data found.", Toast.LENGTH_SHORT).show();
+                //}
             }
 
             @Override
@@ -68,12 +81,9 @@ public class ListPromotions extends AppCompatActivity {
 
             }
         });
-        recyclerView = findViewById(R.id.promoRecyclerView);
-        adapter = new PromotionsAdapter(getApplicationContext(), foodName);
+       /* recyclerView = findViewById(R.id.promoRecyclerView);
+        adapter = new PromotionsAdapter(getApplicationContext(),foodName, promoKey);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));*/
     }
-
-
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -16,16 +17,17 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class promo_list extends AppCompatActivity {
+public class promo_list extends AppCompatActivity /*implements ResViewPromotionAdapter.OnPromoClickListener*/ {
 
     RecyclerView recyclerView2;
 
     ArrayList<String> proNo;
     ArrayList<String> name;
     ArrayList<String> descriptions;
-    ArrayList<ModelViewPromotion> PromoList2;
+    ArrayList<Add_Promotions> PromoList2;
     ArrayList<Add_Promotions> promotions;
     DatabaseReference dbref;
+    //private RequestQueue mRequestQueue;
 
     ResViewPromotionAdapter adapt;
 
@@ -37,6 +39,7 @@ public class promo_list extends AppCompatActivity {
         proNo = new ArrayList<>();
         name = new ArrayList<>();
         descriptions = new ArrayList<>();
+        //PromoList2 = new ArrayList<Add_Promotions>();
 
         dbref = FirebaseDatabase.getInstance().getReference();
         dbref.child("PromotionTable").addValueEventListener(new ValueEventListener() {
@@ -54,7 +57,12 @@ public class promo_list extends AppCompatActivity {
                         descriptions.add(describe);
 
                         adapt.notifyDataSetChanged();
+                        //PromoList2.add(new Add_Promotions(number,namePromo,describe));
+
                     }
+                    /*adapt = new ResViewPromotionAdapter(promo_list.this,PromoList2);
+                    recyclerView2.setAdapter(adapt);
+                    adapt.setOnPromoClickListener(promo_list.this);*/
                 }else{
                     Toast.makeText(promo_list.this,"No data found.",Toast.LENGTH_SHORT).show();
                 }
@@ -66,9 +74,17 @@ public class promo_list extends AppCompatActivity {
             }
         });
         recyclerView2 = findViewById(R.id.controllerPromoList);
+        //recyclerView2.setHasFixedSize(true);
         adapt = new ResViewPromotionAdapter(getApplicationContext(),proNo,name,descriptions);
 
         recyclerView2.setAdapter(adapt);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
+
     }
+
+
+   /* public void onPromoClick(int position) {
+        //Intent detailIntent = new Intent(this, Add_Promotions.class);
+
+    }*/
 }
