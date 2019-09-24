@@ -18,6 +18,8 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     ImageView imageView;
     TextView description;
     EditText qty;
+    String y;
+    int x;
 
     Button b1;
     DatabaseReference dbRef;
@@ -28,8 +30,9 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_foods);
 
-        Intent intent = getIntent();
-        int x = intent.getIntExtra("qty",0);
+        //Intent intent = getIntent();
+        y =  getIntent().getStringExtra("des");
+        x = getIntent().getIntExtra("qty",0);
 
         description = findViewById(R.id.foodNameTxtView);
         qty = findViewById(R.id.qty);
