@@ -83,12 +83,11 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         Button update_promo;
         Button delete_promo;
 
-
         Context mContext;
         ArrayList<ModelViewPromotion> mList;
 
 
-        public myViewHolder(View itemView, Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
+        public myViewHolder(View itemView, Context context, final ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promo_image);
@@ -111,7 +110,12 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
                     }
                 }
             });*/
-            //delete_promo.setOnClickListener(this);
+            delete_promo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //deletePromo(promotionNo);
+                }
+            });
 
             mContext = context;
             //mList = list;
@@ -128,6 +132,13 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             mContext.startActivity(intent);
         }
 
+        /*private void deletePromo(String promoNo){
+            DatabaseReference dbPT = FirebaseDatabase.getInstance().getReference("PromotionTable").child(promoNo);
+
+            dbPT.removeValue();
+
+            Toast.makeText(this,"Deleted",Toast.LENGTH_SHORT).show();
+        }*/
         /*private void openAddPromotions() {
             Intent intent = new Intent(mContext,Add_Promotions.class);
 
