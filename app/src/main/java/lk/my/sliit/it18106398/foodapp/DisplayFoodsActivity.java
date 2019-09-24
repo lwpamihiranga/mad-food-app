@@ -2,6 +2,7 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +20,6 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     TextView description;
     EditText qty;
     String y;
-    int x;
 
     Button b1;
     DatabaseReference dbRef;
@@ -30,9 +30,11 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_foods);
 
-        //Intent intent = getIntent();
-        y =  getIntent().getStringExtra("des");
-        x = getIntent().getIntExtra("qty",0);
+        Intent intent = getIntent();
+        y =  intent.getStringExtra("des");
+        description = findViewById(R.id.foodNameTxtView);
+        description.setText(y);
+        Toast.makeText(this, "" + y, Toast.LENGTH_SHORT).show();
 
         description = findViewById(R.id.foodNameTxtView);
         qty = findViewById(R.id.qty);
