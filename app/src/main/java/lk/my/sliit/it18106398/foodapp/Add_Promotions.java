@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     private StorageReference folder;
     private static final int GALLERY_INTENT = 2;
 
+    private ProgressDialog mProgressDialog;
     /*public Add_Promotions(String number, String namePromo, String describe) {
 
     }*/
@@ -60,6 +62,8 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         setContentView(R.layout.activity_add_promotions);
 
         folder = FirebaseStorage.getInstance().getReference();
+
+        mProgressDialog = new ProgressDialog(this);
 
         txt0_form = (EditText) findViewById(R.id.editTxt0);
         txt1_form = (EditText) findViewById(R.id.editTxt1);
@@ -164,6 +168,9 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
+
+            mProgressDialog.setMessage("Uploading....");
+            mProgressDialog.show();
             Uri imageUri = data.getData();
 
             //StorageReference imgName = folder.child("image"+imageUri.getLastPathSegment());
@@ -172,6 +179,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(Add_Promotions.this,"Uploaded",Toast.LENGTH_LONG ).show();
+                    mProgressDialog.dismiss();
                 }
             });
 
