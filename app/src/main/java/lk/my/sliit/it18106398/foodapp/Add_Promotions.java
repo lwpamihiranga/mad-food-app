@@ -58,10 +58,10 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         folder = FirebaseStorage.getInstance().getReference().child("ImageFolder");
 
         txt0_form = (EditText) findViewById(R.id.editTxt0);
-        txt1_form = (EditText) findViewById(R.id.editTxt1);
-        txt2_form = (EditText) findViewById(R.id.editTxt2);
-        txt3_form = (EditText) findViewById(R.id.editTxt3);
-        txt4_form = (EditText) findViewById(R.id.editTxt4);
+        txt1_form = (EditText) findViewById(R.id.editFoodNo);
+        txt2_form = (EditText) findViewById(R.id.editFoodName);
+        txt3_form = (EditText) findViewById(R.id.editPrice);
+        txt4_form = (EditText) findViewById(R.id.editFoodDescription);
 
         imageBtn = (ImageButton) findViewById(R.id.imageButton2);
         btn = (Button) findViewById(R.id.add_button);

@@ -8,29 +8,29 @@
     tools:context=".Addfoods">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/BtnAddFoods"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="93dp"
         android:layout_marginBottom="45dp"
-        android:text="Button"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxt4"
+        app:layout_constraintTop_toBottomOf="@+id/editFoodDescription"
         app:layout_constraintVertical_bias="0.492" />
 
 
     <EditText
-        android:id="@+id/editTxt2"
+        android:id="@+id/editFoodName"
         android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_below="@id/editTxt1"
-        android:layout_alignStart="@id/editTxt1"
-        android:layout_alignLeft="@id/editTxt1"
+        android:layout_below="@id/editFoodNo"
+        android:layout_alignStart="@id/editFoodNo"
+        android:layout_alignLeft="@id/editFoodNo"
         android:layout_marginTop="32dp"
         android:background="#11000000"
         android:ems="10"
@@ -41,16 +41,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxt1" />
+        app:layout_constraintTop_toBottomOf="@+id/editFoodNo" />
 
 
     <EditText
-        android:id="@+id/editTxt3"
+        android:id="@+id/editPrice"
         android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_below="@id/editTxt2"
-        android:layout_alignStart="@id/editTxt2"
-        android:layout_alignLeft="@id/editTxt2"
+        android:layout_below="@id/editFoodName"
+        android:layout_alignStart="@id/editFoodName"
+        android:layout_alignLeft="@id/editFoodName"
         android:layout_marginTop="32dp"
         android:background="#11000000"
         android:ems="10"
@@ -61,16 +61,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxt2" />
+        app:layout_constraintTop_toBottomOf="@+id/editFoodName" />
 
 
     <EditText
-        android:id="@+id/editTxt4"
+        android:id="@+id/editFoodDescription"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_below="@id/editTxt3"
-        android:layout_alignStart="@id/editTxt3"
-        android:layout_alignLeft="@id/editTxt3"
+        android:layout_below="@id/editPrice"
+        android:layout_alignStart="@id/editPrice"
+        android:layout_alignLeft="@id/editPrice"
         android:layout_marginTop="20dp"
         android:background="#11000000"
         android:ems="10"
@@ -81,11 +81,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxt3" />
+        app:layout_constraintTop_toBottomOf="@+id/editPrice" />
 
 
     <EditText
-        android:id="@+id/editTxt1"
+        android:id="@+id/editFoodNo"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
