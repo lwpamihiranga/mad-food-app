@@ -18,7 +18,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
     private Context mContext;
     private ArrayList<String> des;
     private ArrayList<Integer> qty;
-    int pos;
+    private int pos;
 
     public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty) {
         mContext = context;
@@ -35,7 +35,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
         return viewHolder;
     }
-    public void onBindViewHolder(myViewHolder holder, int position) {
+    public void onBindViewHolder(myViewHolder holder, final int position) {
         //ModelOrder order = mList.get(position);
 
         ImageView orderImage = holder.order_img;
@@ -81,7 +81,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         public void onClick(View view) {
             //Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
             openDisplayFoodsActivity();
-
             //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             //intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
             //intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
@@ -91,10 +90,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         }
 
         public void openDisplayFoodsActivity(){
-            Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
-            intent.putExtra("qty",qty.get(pos));
+            Intent intent = new Intent(mContext, UpdateQuantity.class);
+            intent.putExtra("des",des.get(getAdapterPosition()));
+            //intent.putExtra("qty",qty.get(pos));
             mContext.startActivity(intent);
         }
-
     }
 }

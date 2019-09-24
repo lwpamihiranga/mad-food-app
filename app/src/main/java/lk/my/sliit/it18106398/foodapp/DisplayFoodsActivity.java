@@ -2,6 +2,7 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,8 +28,6 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_foods);
-        Intent intent = getIntent();
-        int x = intent.getIntExtra("qty",0);
 
         description = findViewById(R.id.foodNameTxtView);
         qty = findViewById(R.id.qty);

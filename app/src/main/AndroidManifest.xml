@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UpdateQuantity"></activity>
         <activity
             android:name=".ViewFood"
             android:parentActivityName=".NavigationDrawerActivity" />
@@ -25,7 +26,7 @@
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,11 +46,10 @@
         <activity android:name=".Promotion_ACTIVITY3" />
         <activity android:name=".Promotion_ACTIVITY2" />
         <activity android:name=".Promotion_ACTIVITY1" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".RestuarantsList" />
         <activity android:name=".CompletedOrderActivity" />
-        <activity android:name=".Addfoods"/>
-
+        <activity android:name=".Addfoods" />
     </application>
 
 </manifest>
