@@ -49,6 +49,7 @@ public class Promotion_ACTIVITY3 extends AppCompatActivity {
         String name = intent.getStringExtra("pName");
         String des = intent.getStringExtra("key");
         String d = intent.getStringExtra("textView1");
+        String n = intent.getStringExtra("getTextView2");
         textView1.setText(name);
         getTextView2.setText(des);
 

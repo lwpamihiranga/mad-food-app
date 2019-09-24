@@ -18,7 +18,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -27,6 +29,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 //have to add image to database
 
@@ -39,10 +42,12 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     DatabaseReference dbRef;
     PromotionTable pro;
     Button upload;
+    String savedate;
+    private String downloadImgURL;
 
     SimpleDateFormat dform = new SimpleDateFormat("dd:mm:yy");
     private StorageReference folder;
-    private static final int GALLERY_INTENT = 2;
+    private static final int ImageBack = 1;
 
     private ProgressDialog mProgressDialog;
     /*public Add_Promotions(String number, String namePromo, String describe) {
@@ -62,6 +67,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         setContentView(R.layout.activity_add_promotions);
 
         folder = FirebaseStorage.getInstance().getReference();
+        dbRef = FirebaseDatabase.getInstance().getReference();
 
         mProgressDialog = new ProgressDialog(this);
 
@@ -99,6 +105,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //Intent intent = new Intent(Add_Promotions.this, Promotion_ACTIVITY1.class);
                 //Toast.makeText(Add_Promotions.this, "Added New Promotion Successfully.", Toast.LENGTH_SHORT).show();
                 dbRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
@@ -124,7 +131,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                         //pro.setDeadlineDate(Integer.parseInt(btnDate.getText().toString()));
 
                         //dbRef.push().setValue(pro);
-                        dbRef.child("promo6").setValue(pro);
+                        dbRef.child("promo7").setValue(pro);
 
                         Toast.makeText(getApplicationContext(),"Data added successfully.",Toast.LENGTH_SHORT).show();
                         clearControls();
@@ -140,11 +147,17 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
-                startActivityForResult(intent,GALLERY_INTENT);
+                startActivityForResult(intent,ImageBack);
             }
         });
     }
 
+    /*private void store(){
+        Calender calender = Calendar.getInstance();
+        SimpleDateFormat currentDate = new SimpleDateFormat("mmm dd yyyy");
+        savedate = currentDate.format(calender.getTime());
+
+    }*/
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
         Calendar cal = Calendar.getInstance();
@@ -167,19 +180,34 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
+        if (requestCode == ImageBack && resultCode == RESULT_OK) {
 
             mProgressDialog.setMessage("Uploading....");
             mProgressDialog.show();
             Uri imageUri = data.getData();
 
             //StorageReference imgName = folder.child("image"+imageUri.getLastPathSegment());
-            StorageReference imgName = folder.child("Photos").child(imageUri.getLastPathSegment());
+            final StorageReference imgName = folder.child("Photos").child(imageUri.getLastPathSegment());
             imgName.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(Add_Promotions.this,"Uploaded",Toast.LENGTH_LONG ).show();
                     mProgressDialog.dismiss();
+                    imgName.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            DatabaseReference imageStrore = FirebaseDatabase.getInstance().getReference().child("image");
+                            HashMap<String,String> map = new HashMap<>();
+                            map.put("imageurl",String.valueOf(uri));
+
+                            imageStrore.setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(Add_Promotions.this,"Finally Compleated",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                    });
                 }
             });
 

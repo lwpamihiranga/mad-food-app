@@ -22,7 +22,7 @@ public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsAdapter.my
     public PromotionsAdapter(Context Context, ArrayList<String> name, ArrayList<String> key) {
         mContext = Context;
         this.name = name;
-        this.key = name;
+        this.key = key;
     }
 
     public PromotionsAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

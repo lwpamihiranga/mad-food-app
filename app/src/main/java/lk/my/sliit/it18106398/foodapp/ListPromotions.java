@@ -58,7 +58,7 @@ public class ListPromotions extends AppCompatActivity {
         dRef.child("PromotionTable").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //if (dataSnapshot.exists()) {
+                if (dataSnapshot.hasChildren()) {
 
                 foodName.clear();
                 promoKey.clear();
@@ -81,7 +81,7 @@ public class ListPromotions extends AppCompatActivity {
                     }
                 //} else {
                  //   Toast.makeText(ListPromotions.this, "No data found.", Toast.LENGTH_SHORT).show();
-                //}
+                }
             }
 
             @Override

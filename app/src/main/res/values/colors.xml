@@ -7,6 +7,6 @@
     <color name="purple">#658CD1</color>
 
     <color name="login_form_details">#FCF8F8</color>
-    <color name="login_form_details_light">#938bc9</color>
-    <color name="login_form_details_medium">#1DCE3B</color>
+    <color name="login_form_details_light">#B9B4E5</color>
+    <color name="login_form_details_medium">#0FFB37</color>
 </resources>
