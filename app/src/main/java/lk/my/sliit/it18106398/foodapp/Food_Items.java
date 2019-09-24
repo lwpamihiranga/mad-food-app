@@ -9,6 +9,14 @@ public class Food_Items {
         this.fName = fName;
     }
 
+    public void setFoodImage(String foodImage) {
+        this.foodImage = foodImage;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
     public String getFoodImage() {
         return foodImage;
     }
