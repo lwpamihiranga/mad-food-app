@@ -15,15 +15,10 @@ public class Sample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
 
-
         des = (TextView) findViewById(R.id.des);
 
         Intent intent = getIntent();
         String d = intent.getStringExtra("des");
         des.setText(d);
-
-
-
-
     }
 }

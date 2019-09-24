@@ -19,7 +19,6 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     ImageView imageView;
     TextView description;
     EditText qty;
-    String y;
 
     Button b1;
     DatabaseReference dbRef;
@@ -29,12 +28,6 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_foods);
-
-        Intent intent = getIntent();
-        y =  intent.getStringExtra("des");
-        description = findViewById(R.id.foodNameTxtView);
-        description.setText(y);
-        Toast.makeText(this, "" + y, Toast.LENGTH_SHORT).show();
 
         description = findViewById(R.id.foodNameTxtView);
         qty = findViewById(R.id.qty);
