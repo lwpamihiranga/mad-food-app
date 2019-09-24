@@ -8,9 +8,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -71,7 +78,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         ArrayList<ModelViewPromotion> mList;
 
 
-        public myViewHolder(View itemView, Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
+        public myViewHolder(View itemView, Context context, final ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
             super(itemView);
 
             promo_img = itemView.findViewById(R.id.promo_image);
@@ -83,7 +90,32 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 
             //itemView.setOnClickListener(this);
             update_promo.setOnClickListener(this);
-            //delete_promo.setOnClickListener(this);
+
+            /*update_promo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("PromotionTable");
+                    readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.hasChildren())
+                            {
+                                promotionNo.setText(dataSnapshot.child("promoNo").getValue().toString());
+                                food_name.setText(dataSnapshot.child("foodName").getValue().toString());
+                                food_desc.setText(dataSnapshot.child("description").getValue().toString());
+                            }else{
+                                //Toast.makeText()
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            });*/
+            delete_promo.setOnClickListener(this);
 
             mContext = context;
             //mList = list;
