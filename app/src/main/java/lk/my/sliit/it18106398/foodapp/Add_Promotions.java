@@ -163,7 +163,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        /*if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
+        if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
             Uri imageUri = data.getData();
 
             //StorageReference imgName = folder.child("image"+imageUri.getLastPathSegment());
@@ -175,7 +175,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                 }
             });
 
-        }*/
+        }
     }
     @Override
     protected void onStart() {
