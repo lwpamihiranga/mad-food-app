@@ -41,7 +41,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
 
     SimpleDateFormat dform = new SimpleDateFormat("dd:mm:yy");
     private StorageReference folder;
-    private static final int ImageBack = 1;
+    private static final int GALLERY_INTENT = 2;
 
     /*public Add_Promotions(String number, String namePromo, String describe) {
 
@@ -59,7 +59,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_promotions);
 
-        folder = FirebaseStorage.getInstance().getReference().child("ImageFolder");
+        folder = FirebaseStorage.getInstance().getReference();
 
         txt0_form = (EditText) findViewById(R.id.editTxt0);
         txt1_form = (EditText) findViewById(R.id.editTxt1);
@@ -120,7 +120,7 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
                         //pro.setDeadlineDate(Integer.parseInt(btnDate.getText().toString()));
 
                         //dbRef.push().setValue(pro);
-                        dbRef.child("promo4").setValue(pro);
+                        dbRef.child("promo6").setValue(pro);
 
                         Toast.makeText(getApplicationContext(),"Data added successfully.",Toast.LENGTH_SHORT).show();
                         clearControls();
@@ -134,9 +134,9 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
-                startActivityForResult(intent,ImageBack);
+                startActivityForResult(intent,GALLERY_INTENT);
             }
         });
     }
@@ -163,18 +163,19 @@ public class Add_Promotions extends AppCompatActivity implements DatePickerDialo
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == ImageBack && resultCode == RESULT_OK) {
+        /*if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
             Uri imageUri = data.getData();
 
-            StorageReference imgName = folder.child("image"+imageUri.getLastPathSegment());
+            //StorageReference imgName = folder.child("image"+imageUri.getLastPathSegment());
+            StorageReference imgName = folder.child("Photos").child(imageUri.getLastPathSegment());
             imgName.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Add_Promotions.this,"Uploaded",Toast.LENGTH_LONG ).show();
                 }
             });
 
-        }
+        }*/
     }
     @Override
     protected void onStart() {

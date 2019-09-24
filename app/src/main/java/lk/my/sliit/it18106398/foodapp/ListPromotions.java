@@ -1,6 +1,7 @@
 package lk.my.sliit.it18106398.foodapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -20,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import lk.my.sliit.it18106398.foodapp.Add_Promotions;
 import lk.my.sliit.it18106398.foodapp.ModelPromotions;
@@ -63,13 +65,19 @@ public class ListPromotions extends AppCompatActivity {
 
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
+                        //Map<String,String> map = dataSnapshot.getValue(Map.class);
                         String food = ds.child("foodName").getValue(String.class);
+                        //String food = map.get("foodName");
                         String key = ds.child("description").getValue(String.class);
-                        Toast.makeText(ListPromotions.this, "key"+key, Toast.LENGTH_SHORT).show();
+                        //String key = map.get("description");
+                        Toast.makeText(ListPromotions.this, ""+key, Toast.LENGTH_SHORT).show();
 
                         foodName.add(food);
                         promoKey.add(key);
                         adapter.notifyDataSetChanged();
+
+                        //Log.v("E_VALUE","foodName:"+food);
+                        //Log.v("E_VALUE","description:"+key);
                     }
                 //} else {
                  //   Toast.makeText(ListPromotions.this, "No data found.", Toast.LENGTH_SHORT).show();
