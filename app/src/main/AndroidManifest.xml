@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Sample"></activity>
+        <activity android:name=".UpdateQuantity"></activity>
         <activity
             android:name=".ViewFood"
             android:parentActivityName=".NavigationDrawerActivity" />
@@ -50,7 +50,6 @@
         <activity android:name=".RestuarantsList" />
         <activity android:name=".CompletedOrderActivity" />
         <activity android:name=".Addfoods" />
-        <activity android:name=".UpdateQty" />
     </application>
 
 </manifest>

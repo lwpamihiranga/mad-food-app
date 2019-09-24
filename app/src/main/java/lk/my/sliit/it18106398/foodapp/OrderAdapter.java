@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -91,7 +90,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         }
 
         public void openDisplayFoodsActivity(){
-            Intent intent = new Intent(mContext, Sample.class);
+            Intent intent = new Intent(mContext, UpdateQuantity.class);
             intent.putExtra("des",des.get(getAdapterPosition()));
             //intent.putExtra("qty",qty.get(pos));
             mContext.startActivity(intent);

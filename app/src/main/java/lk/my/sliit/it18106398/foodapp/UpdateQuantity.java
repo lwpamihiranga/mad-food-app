@@ -6,14 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Sample extends AppCompatActivity {
+public class UpdateQuantity extends AppCompatActivity {
 
     TextView des;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample);
+        setContentView(R.layout.activity_update_qty);
 
         des = (TextView) findViewById(R.id.des);
 
