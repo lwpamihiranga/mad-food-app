@@ -9,6 +9,7 @@ public class ModelViewPromotion {
     private String Description;
 //    private Button btnDelete;
 //    private Button btnUpdate;
+    private String key;
 
 
     public ModelViewPromotion() {
@@ -39,7 +40,14 @@ public class ModelViewPromotion {
         return Description;
     }
 
-    // public int getBtnUpdate(){return btnUpdate;}
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+// public int getBtnUpdate(){return btnUpdate;}
 
 
 }

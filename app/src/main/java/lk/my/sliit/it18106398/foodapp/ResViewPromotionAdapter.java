@@ -2,7 +2,10 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -28,18 +31,19 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     private ArrayList<String> promoNo;
     private ArrayList<String> name;
     private ArrayList<String> desc;
-    //private OnPromoClickListener mListener;
+    private OnPromoClickListener mListener;
 
    /* public ResViewPromotionAdapter(promo_list promo_list, ArrayList<Add_Promotions> promoList2) {
     }
 */
-    /*public interface OnPromoClickListener{
+    public interface OnPromoClickListener{
         void onPromoClick(int position);
-    }*/
+        //void onDeleteClick(int position);
+    }
 
-    /*public void setOnPromoClickListener(OnPromoClickListener listener){
+    public void setOnPromoClickListener(OnPromoClickListener listener){
         mListener = listener;
-    }*/
+    }
     public ResViewPromotionAdapter(Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
         mContext = context;
         this.promoNo = promoNo;
@@ -73,8 +77,8 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         return promoNo.size();
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
+    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+//,View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener
         //ImageButton promo_img;
         ImageView promo_img;
         TextView promotionNo;
@@ -98,6 +102,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             delete_promo = itemView.findViewById(R.id.btnpromo_delete);
 
             itemView.setOnClickListener(this);
+            //itemView.setOnCreateContextMenuListener(this);
             update_promo.setOnClickListener(this);
             /*update_promo.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -129,9 +134,38 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             //intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
             //intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
             //intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
+            if(mListener != null){
+                int position = getAdapterPosition();
+                if(position != RecyclerView.NO_POSITION){
+                    mListener.onPromoClick(position);
+                }
+            }
             mContext.startActivity(intent);
         }
 
+        /*@Override
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            if (mListener != null){
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION){
+                    switch (menuItem.getItemId()){
+                        case 1:
+                            mListener.onDeleteClick(position);
+                            return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            contextMenu.setHeaderTitle("Select Action");
+            MenuItem delete = contextMenu.add(Menu.NONE, 1, 1, "Delete");
+
+            delete.setOnMenuItemClickListener(this);
+        }
+*/
         /*private void deletePromo(String promoNo){
             DatabaseReference dbPT = FirebaseDatabase.getInstance().getReference("PromotionTable").child(promoNo);
 
