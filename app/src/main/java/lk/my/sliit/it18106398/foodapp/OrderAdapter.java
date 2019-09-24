@@ -2,7 +2,10 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,12 +21,15 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
     private Context mContext;
     private ArrayList<String> des;
     private ArrayList<Integer> qty;
+    private ArrayList<OrderBag1> ob;
     private int pos;
+    private onItemClickListener mListener;
 
-    public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty) {
+    public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty, ArrayList<OrderBag1>ob) {
         mContext = context;
         this.des = des;
         this.qty = qty;
+        this.ob = ob;
 
     }
     public OrderAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -52,7 +58,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         return des.size();
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
         ImageView order_img;
         TextView order_name;
         TextView order_qty;
@@ -71,7 +77,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             order_qty = itemView.findViewById(R.id.qty);
             updateBtn = itemView.findViewById(R.id.updatebtn);
 
-//            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
+            itemView.setOnCreateContextMenuListener(this);
             updateBtn.setOnClickListener(this);
 
             mContext = context;
@@ -79,14 +86,36 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         }
 
         public void onClick(View view) {
-            //Intent intent = new Intent(mContext, DisplayFoodsActivity.class);
             openDisplayFoodsActivity();
-            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
-            //intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
-            ///intent.putExtra("order_qty", mList.get(getAdapterPosition()).getQuantity());
+            if (mListener != null){
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION){
+                    mListener.onItemClick(position);
+                }
+            }
+        }
 
-            //mContext.startActivity(intent);
+        @Override
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            contextMenu.setHeaderTitle("Select Action");
+            MenuItem delete = contextMenu.add(Menu.NONE, 1, 1, "Delete");
+
+            delete.setOnMenuItemClickListener(this);
+        }
+
+        @Override
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            if (mListener != null){
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION){
+                    switch (menuItem.getItemId()){
+                        case 1:
+                            mListener.onDeleteClick(position);
+                            return true;
+                    }
+                }
+            }
+            return false;
         }
 
         public void openDisplayFoodsActivity(){
@@ -95,5 +124,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             //intent.putExtra("qty",qty.get(pos));
             mContext.startActivity(intent);
         }
+    }
+
+    public interface onItemClickListener{
+        void onItemClick(int position);
+        void onDeleteClick(int position);
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener){
+        mListener = listener;
     }
 }

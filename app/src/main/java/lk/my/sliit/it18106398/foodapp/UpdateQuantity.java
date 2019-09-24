@@ -54,6 +54,8 @@ public class UpdateQuantity extends AppCompatActivity {
                                 dbRef.setValue(orderBag1);
 
                                 Toast.makeText(getApplicationContext(), "Data updated successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(UpdateQuantity.this, MyBag.class);
+                                startActivity(intent);
                             } catch (NumberFormatException e) {
                                 Toast.makeText(getApplicationContext(), "Invalid quantity", Toast.LENGTH_SHORT).show();
                             }
