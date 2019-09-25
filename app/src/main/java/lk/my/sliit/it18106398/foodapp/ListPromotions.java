@@ -70,7 +70,7 @@ public class ListPromotions extends AppCompatActivity {
                         //String food = map.get("foodName");
                         String key = ds.child("description").getValue(String.class);
                         //String key = map.get("description");
-                        Toast.makeText(ListPromotions.this, ""+key, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListPromotions.this, "Loaded", Toast.LENGTH_SHORT).show();
 
                         foodName.add(food);
                         promoKey.add(key);
@@ -79,8 +79,8 @@ public class ListPromotions extends AppCompatActivity {
                         //Log.v("E_VALUE","foodName:"+food);
                         //Log.v("E_VALUE","description:"+key);
                     }
-                //} else {
-                 //   Toast.makeText(ListPromotions.this, "No data found.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ListPromotions.this, "No data found.", Toast.LENGTH_SHORT).show();
                 }
             }
 
