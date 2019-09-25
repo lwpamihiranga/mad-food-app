@@ -72,7 +72,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         foodName.setText(name.get(position));
         Description.setText(desc.get(position));
     }
-
+    String pName;
     @Override
     public int getItemCount() {
         return promoNo.size();
@@ -118,12 +118,12 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 
                             }
 
-//                           done[0] = true;
-//                            if(done[0]) {
-//                                done[0] = false;
-//                                Intent intent = new Intent(mContext, Resturent_Home.class);
-//                                mContext.startActivity(intent);
-//                            }
+                           /*done[0] = true;
+                            if(done[0]) {
+                                done[0] = false;
+                                Intent intent = new Intent(mContext, Resturent_Home.class);
+                                mContext.startActivity(intent);
+                            }*/
                         }
 
 
@@ -179,7 +179,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 //                    });
 //                }
 //            });
-
+            pName = food_name.getText().toString();
             mContext = context;
             //mList = list;
         }
@@ -190,52 +190,18 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             Intent intent = new Intent(mContext,Update_Promotions.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             //intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
-            //intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
+            TextView text = food_name;
+            pName = text.getText().toString();
             //intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
-            if(mListener != null){
+            /*if(mListener != null){
                 int position = getAdapterPosition();
                 if(position != RecyclerView.NO_POSITION){
                     mListener.onPromoClick(position);
                 }
-            }
+            }*/
             mContext.startActivity(intent);
         }
 
-        /*@Override
-        public boolean onMenuItemClick(MenuItem menuItem) {
-            if (mListener != null){
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION){
-                    switch (menuItem.getItemId()){
-                        case 1:
-                            mListener.onDeleteClick(position);
-                            return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        @Override
-        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-            contextMenu.setHeaderTitle("Select Action");
-            MenuItem delete = contextMenu.add(Menu.NONE, 1, 1, "Delete");
-
-            delete.setOnMenuItemClickListener(this);
-        }
-*/
-        /*private void deletePromo(String promoNo){
-            DatabaseReference dbPT = FirebaseDatabase.getInstance().getReference("PromotionTable").child(promoNo);
-
-            dbPT.removeValue();
-
-            Toast.makeText(this,"Deleted",Toast.LENGTH_SHORT).show();
-        }*/
-        /*private void openAddPromotions() {
-            Intent intent = new Intent(mContext,Add_Promotions.class);
-
-            mContext.startActivity(intent);
-        }*/
 
     }
 }

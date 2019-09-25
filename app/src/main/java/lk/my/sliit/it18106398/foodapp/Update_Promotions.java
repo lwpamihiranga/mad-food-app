@@ -2,10 +2,13 @@ package lk.my.sliit.it18106398.foodapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
 
 public class Update_Promotions extends AppCompatActivity {
 
@@ -14,6 +17,8 @@ public class Update_Promotions extends AppCompatActivity {
     TextView data3;
     TextView data4;
     Button update;
+    DatabaseReference db1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,12 @@ public class Update_Promotions extends AppCompatActivity {
 
         update = findViewById(R.id.updateDataBtn);
 
+        Intent intent = getIntent();
+        String x = intent.getStringExtra("pName;");
+        //String foodname = intent.getStringExtra("Pname");
+        //String descri = intent.getStringExtra("desc");
+        data1.setText(x);
+        //data2.setText(descri);
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
