@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="lk.my.sliit.it18106398.foodapp">
 
-<<<<<<< Updated upstream
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     
 =======

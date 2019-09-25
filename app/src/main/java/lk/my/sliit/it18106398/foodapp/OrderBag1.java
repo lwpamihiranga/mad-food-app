@@ -11,6 +11,13 @@ public class OrderBag1 {
     public OrderBag1() {
     }
 
+    public OrderBag1(Integer qty, String description, String key, String imageUrl) {
+        this.qty = qty;
+        this.description = description;
+        this.key = key;
+        this.imageUrl = imageUrl;
+    }
+
     public Integer getQty() {
         return qty;
     }
