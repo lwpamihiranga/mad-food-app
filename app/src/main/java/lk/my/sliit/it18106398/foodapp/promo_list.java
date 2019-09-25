@@ -27,6 +27,7 @@ public class promo_list extends AppCompatActivity /*implements ResViewPromotionA
     ArrayList<String> proNo;
     ArrayList<String> name;
     ArrayList<String> descriptions;
+    ArrayList<String> quantityes;
     ArrayList<Add_Promotions> PromoList2;
     ArrayList<Add_Promotions> promotions;
     DatabaseReference dbref;
@@ -44,6 +45,7 @@ public class promo_list extends AppCompatActivity /*implements ResViewPromotionA
         proNo = new ArrayList<>();
         name = new ArrayList<>();
         descriptions = new ArrayList<>();
+        //quantityes = new ArrayList<>();
         //PromoList2 = new ArrayList<Add_Promotions>();
 
         dbref = FirebaseDatabase.getInstance().getReference();
@@ -56,11 +58,12 @@ public class promo_list extends AppCompatActivity /*implements ResViewPromotionA
                         String number = dss.child("promoNo").getValue(String.class);
                         String namePromo = dss.child("foodName").getValue(String.class);
                         String describe = dss.child("description").getValue(String.class);
+                        //String qty = dss.child("qty").getValue(String.class);
 
                         proNo.add(number);
                         name.add(namePromo);
                         descriptions.add(describe);
-
+                        //quantityes.add(qty);
                         //PromoList2.add(new Add_Promotions(number,namePromo,describe));
                         /*ModelViewPromotion up = dss.getValue(ModelViewPromotion.class);
                         up.setKey(dss.getKey());
@@ -89,8 +92,7 @@ public class promo_list extends AppCompatActivity /*implements ResViewPromotionA
 
     }
 
-
-     public void onPromoClick(int position) {
+    public void onPromoClick(int position) {
         //Intent detailIntent = new Intent(this, Add_Promotions.class);
          Toast.makeText(this,"Normal click at position : "+position,Toast.LENGTH_SHORT).show();
 

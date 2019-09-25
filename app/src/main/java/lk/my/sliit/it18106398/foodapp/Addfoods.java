@@ -42,7 +42,7 @@ public class Addfoods extends AppCompatActivity {
         editFoodDescription = (EditText)findViewById(R.id.editFoodDescription);
         editPrice = (EditText)findViewById(R.id.editPrice);
 
-        fdt = new FoodTable();
+       // fdt = new FoodTable();
 
         add_button1.setOnClickListener(new View.OnClickListener() {
             @Override
