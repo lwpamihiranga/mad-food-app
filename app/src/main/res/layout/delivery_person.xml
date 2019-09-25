@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="150sp"
-        android:background="@drawable/background_login">
+        android:background="@drawable/pic34">
 
         <ImageView
             android:id="@+id/imageViewDeliveryPerson"

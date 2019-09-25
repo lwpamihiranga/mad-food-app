@@ -68,8 +68,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         ImageView order_img;
         TextView order_name;
         TextView order_qty;
-        Button updateBtn;
-        Button deleteBtn;
+        Button selectBtn;
 
         Context mContext;
         ArrayList<ModelOrder> mList;
@@ -82,12 +81,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             order_img = itemView.findViewById(R.id.foodImg);
             order_name = itemView.findViewById(R.id.foodName);
             order_qty = itemView.findViewById(R.id.qty);
-            updateBtn = itemView.findViewById(R.id.updatebtn);
-            deleteBtn = itemView.findViewById(R.id.deleteBtn);
+            selectBtn = itemView.findViewById(R.id.updatebtn);
 
             itemView.setOnClickListener(this);
-            updateBtn.setOnClickListener(this);
-            deleteBtn.setOnClickListener(new View.OnClickListener() {
+            selectBtn.setOnClickListener(this);
+            /*deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(mContext, "Delete clicked", Toast.LENGTH_SHORT).show();
@@ -106,7 +104,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
                         }
                     });
                 }
-            });
+            });*/
 
             mContext = context;
             //mList = list;

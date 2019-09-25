@@ -71,6 +71,7 @@
     <string name="imgUpload">Upload Image</string>
     <string name="add_qty">Quantity</string>
     <string name="msg_update_qty">Edit Quantity</string>
+    <string name="btnSelect">SELECT</string>
     <string-array name="account_types">
         <item>Customer</item>
         <item>Restaurant</item>

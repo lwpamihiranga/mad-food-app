@@ -27,7 +27,7 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="161dp"
         android:text="@string/food_name"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/colorAccent"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
