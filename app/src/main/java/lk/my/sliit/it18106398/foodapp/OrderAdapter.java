@@ -61,7 +61,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         Context mContext;
         ArrayList<ModelOrder> mList;
         ArrayList<OrderBag1> orderBag1s;
-        ArrayList<Food_Items> modelFoods;
+        ArrayList<FoodItem> modelFoods;
 
         public myViewHolder(@NonNull View itemView, Context context, ArrayList<String> list,ArrayList<Integer> qty) {
             super(itemView);
