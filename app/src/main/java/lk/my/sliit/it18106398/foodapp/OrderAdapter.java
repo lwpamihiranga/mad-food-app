@@ -24,11 +24,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder> {
     private Context mContext;
     private ArrayList<String> des;
     private ArrayList<Integer> qty;
     private int pos;
+    DatabaseReference db = FirebaseDatabase.getInstance().getReference();
 
     public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty) {
         mContext = context;
@@ -82,23 +85,18 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             updateBtn = itemView.findViewById(R.id.updatebtn);
             deleteBtn = itemView.findViewById(R.id.deleteBtn);
 
-//            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
             updateBtn.setOnClickListener(this);
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1");
-                    delRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    Toast.makeText(mContext, "Delete clicked", Toast.LENGTH_SHORT).show();
+                    db.child("OrderBag1").orderByChild("description").equalTo(order_name.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener(){
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            Toast.makeText(mContext, "xxxx", Toast.LENGTH_SHORT).show();
-                            if (dataSnapshot.hasChild("-LpXNGumlWRngn4stMV9")){
-                                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1").child("-LpXNGumlWRngn4stMV9");
-                                dbRef.removeValue();
+                            for (DataSnapshot appleSnapShot:dataSnapshot.getChildren()){
+                                appleSnapShot.getRef().removeValue();
                                 Toast.makeText(mContext, "Data deleted successfully", Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                Toast.makeText(mContext, "No source to delete", Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -121,7 +119,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         public void openDisplayFoodsActivity(){
             Intent intent = new Intent(mContext, UpdateQuantity.class);
             intent.putExtra("des",des.get(getAdapterPosition()));
-            //intent.putExtra("qty",qty.get(pos));
+            intent.putExtra("position", qty.get(getAdapterPosition()));
+
             mContext.startActivity(intent);
         }
     }

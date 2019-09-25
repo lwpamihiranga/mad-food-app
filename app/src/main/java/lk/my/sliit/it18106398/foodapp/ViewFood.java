@@ -1,8 +1,16 @@
 package lk.my.sliit.it18106398.foodapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,10 +25,15 @@ import java.util.ArrayList;
 
 public class ViewFood extends AppCompatActivity {
 
+
+    public static final String FOOD_NAME = "name";
     RecyclerView recyclerView;
     ArrayList<FoodItem> list;
     DatabaseReference reference;
     RestViewFoodAdapter adapter;
+    FoodTable foodTable;
+    Button btndelete;
+
 
 
     @Override
@@ -28,8 +41,7 @@ public class ViewFood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_food);
 
-
-
+        btndelete = (Button)findViewById(R.id.btnfood_delete);
         recyclerView = findViewById(R.id.foodRecyclerView2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<FoodItem>();
@@ -38,13 +50,13 @@ public class ViewFood extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
                     FoodItem F = dataSnapshot1.getValue(FoodItem.class);
                     list.add(F);
                 }
 
-                adapter = new RestViewFoodAdapter(ViewFood.this,list);
+                adapter = new RestViewFoodAdapter(ViewFood.this, list);
                 recyclerView.setAdapter(adapter);
             }
 
@@ -53,6 +65,36 @@ public class ViewFood extends AppCompatActivity {
 
             }
         });
+
+      // recyclerView.setOnLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+
+       //     @Override
+        //   public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+             // foodTable.setItemNo();
+
+
+
+
+        //       return false;
+       //    }
+     //  });
+       // recyclerView.setOnLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+
+        //    @Override
+        //    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+//
+                //FoodTable foodTable = FoodTable.class.getName();
+
+         //       showUpdateDialog(foodTable.getName());
+
+         //       return false;
+         //   }
+       // });
+   // }
+
+
 
 
 
@@ -67,6 +109,26 @@ public class ViewFood extends AppCompatActivity {
        // RestViewFoodAdapter adapter = new RestViewFoodAdapter(this,resViewfoods);
 
         recyclerView.setAdapter(adapter);
+
+
+    }
+
+    private void showUpdateDialog(String food_txt){
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        final View dialogView = inflater.inflate(R.layout.update_dialog,null);
+
+        final TextView TextViewFood = (TextView)dialogView.findViewById(R.id.foodtextView);
+        final EditText editTextName = (EditText)dialogView.findViewById(R.id.editTextName);
+        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdate);
+
+
+        dialogBuilder.setTitle("Updating Food"+ food_txt);
+        AlertDialog alertDialog = dialogBuilder.create();
+
+        alertDialog.show();
 
 
     }

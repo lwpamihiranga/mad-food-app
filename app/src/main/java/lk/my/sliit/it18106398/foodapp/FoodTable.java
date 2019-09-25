@@ -1,15 +1,35 @@
 package lk.my.sliit.it18106398.foodapp;
 
 public class FoodTable {
+ String name;
+      String ItemNo;
+     String Price;
+     String Description;
 
-    private String name;
-    private String ItemNo;
-    private String Price;
-    private String Description;
+
+    public FoodTable(String name, String itemNo, String price, String description) {
+        this.name = name;
+        this.ItemNo = itemNo;
+        this.Price = price;
+        Description = description;
 
 
-    public FoodTable() {
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getItemNo() {
+        return ItemNo;
+    }
+
+    public void setItemNo(String itemNo) {
+        ItemNo = itemNo;
     }
 
     public String getPrice() {
@@ -27,12 +47,4 @@ public class FoodTable {
     public void setDescription(String description) {
         Description = description;
     }
-
-    public String getName() {return name;}
-
-    public String getItemNo() { return ItemNo;}
-
-    public void setName(String name) { this.name = name; }
-
-    public void setItemNo(String itemNo) { ItemNo = itemNo;}
 }
