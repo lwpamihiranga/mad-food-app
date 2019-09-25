@@ -6,18 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 
 public class Update_Promotions extends AppCompatActivity {
 
-    TextView data1;
-    TextView data2;
-    TextView data3;
-    TextView data4;
+    EditText data1;
+    EditText data2;
+    EditText data3;
+    EditText data4;
     Button update;
-    DatabaseReference db1;
+    DatabaseReference dbf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

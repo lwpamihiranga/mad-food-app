@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -179,7 +180,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 //                    });
 //                }
 //            });
-            pName = food_name.getText().toString();
+            //pName = food_name.getText().toString();
             mContext = context;
             //mList = list;
         }
@@ -190,8 +191,11 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             Intent intent = new Intent(mContext,Update_Promotions.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             //intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
-            TextView text = food_name;
-            pName = text.getText().toString();
+            /*TextView text = food_name;
+            pName = text.getText().toString();*/
+
+            EditText txt = view.findViewById(R.id.food_txt);
+            pName = food_name.getText().toString();
             //intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
             /*if(mListener != null){
                 int position = getAdapterPosition();
@@ -199,6 +203,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
                     mListener.onPromoClick(position);
                 }
             }*/
+            intent.putExtra("pName", pName);
             mContext.startActivity(intent);
         }
 
