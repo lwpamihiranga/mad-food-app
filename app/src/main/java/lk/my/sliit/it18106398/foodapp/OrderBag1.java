@@ -6,6 +6,7 @@ public class OrderBag1 {
     private Integer qty;
     private String description;
     private String key;
+    private String imageUrl;
 
     public OrderBag1() {
     }
@@ -34,5 +35,13 @@ public class OrderBag1 {
     @Exclude
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

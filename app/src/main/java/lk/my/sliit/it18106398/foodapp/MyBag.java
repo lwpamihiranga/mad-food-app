@@ -94,7 +94,7 @@ public class MyBag extends AppCompatActivity implements OrderAdapter.onItemClick
     public void onDeleteClick(int position) {
         OrderBag1 selectedItem = mUploads.get(position);
         final String selectedKey = selectedItem.getKey();
-        StorageReference imageRef = mstorage.getReference(selectedItem.getDescription());
+        StorageReference imageRef = mstorage.getReferenceFromUrl(selectedItem.getImageUrl());
         imageRef .delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
