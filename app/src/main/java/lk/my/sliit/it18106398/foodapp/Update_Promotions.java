@@ -15,8 +15,8 @@ public class Update_Promotions extends AppCompatActivity {
 
     EditText data1;
     EditText data2;
-    EditText data3;
-    EditText data4;
+    /*EditText data3;
+    EditText data4;*/
     Button update;
     DatabaseReference dbf;
 
@@ -27,17 +27,19 @@ public class Update_Promotions extends AppCompatActivity {
 
         data1 = findViewById(R.id.txtdata1);
         data2 = findViewById(R.id.txtdata2);
-        data3 = findViewById(R.id.txtdata3);
-        data4 = findViewById(R.id.txtdata4);
+        /*data3 = findViewById(R.id.txtdata3);
+        data4 = findViewById(R.id.txtdata4);*/
 
         update = findViewById(R.id.updateDataBtn);
 
         Intent intent = getIntent();
         String x = intent.getStringExtra("pName");
-        //String foodname = intent.getStringExtra("Pname");
+        String y = intent.getStringExtra("pDesc");
+        //String z = intent.getStringExtra("pQty");
         //String descri = intent.getStringExtra("desc");
         data1.setText(x);
-        //data2.setText(descri);
+        data2.setText(y);
+        //data3.setText(z);
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

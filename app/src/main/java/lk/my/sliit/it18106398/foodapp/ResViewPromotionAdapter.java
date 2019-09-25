@@ -29,6 +29,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     private ArrayList<String> promoNo;
     private ArrayList<String> name;
     private ArrayList<String> desc;
+    //private ArrayList<String> quantity;
     private OnPromoClickListener mListener;
     DatabaseReference db = FirebaseDatabase.getInstance().getReference();
    /* public ResViewPromotionAdapter(promo_list promo_list, ArrayList<Add_Promotions> promoList2) {
@@ -48,6 +49,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         this.promoNo = promoNo;
         this.name = name;
         this.desc = desc;
+        //this.quantity = qty;
     }
 
     public ResViewPromotionAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -64,13 +66,18 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         TextView promoNumber = holder.promotionNo;
         TextView foodName = holder.food_name;
         TextView Description = holder.food_desc;
+        //TextView Quantity = holder.food_qty;
 
 
         promoNumber.setText(promoNo.get(position));
         foodName.setText(name.get(position));
         Description.setText(desc.get(position));
+        //Quantity.setText(quantity.get(position));
     }
     String pName;
+    String pDesc;
+    //String pQty;
+
     @Override
     public int getItemCount() {
         return promoNo.size();
@@ -83,6 +90,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         TextView promotionNo;
         TextView food_name;
         TextView food_desc;
+        //TextView food_qty;
         Button update_promo;
         Button delete_promo;
 
@@ -97,6 +105,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             promotionNo  = itemView.findViewById(R.id.food_text);
             food_name = itemView.findViewById(R.id.food_txt);
             food_desc = itemView.findViewById(R.id.desc_txt);
+            //food_qty = itemView.findViewById(R.id.qty_txt);
             update_promo = itemView.findViewById(R.id.btnfood_update);
             delete_promo = itemView.findViewById(R.id.btnfood_delete);
 
@@ -193,6 +202,10 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 
             EditText txt = view.findViewById(R.id.food_txt);
             pName = food_name.getText().toString();
+            EditText txt1 = view.findViewById(R.id.desc_txt);
+            pDesc = food_desc.getText().toString();
+            //EditText txt2 = view.findViewById(R.id.qty_txt);
+            //pQty = food_qty.getText().toString();
             //intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
             /*if(mListener != null){
                 int position = getAdapterPosition();
@@ -201,6 +214,10 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
                 }
             }*/
             intent.putExtra("pName", pName);
+            intent.putExtra("pDesc",pDesc);
+            //intent.putExtra("pQty",pQty);
+            //intent.putExtra("p")
+
             mContext.startActivity(intent);
         }
 
