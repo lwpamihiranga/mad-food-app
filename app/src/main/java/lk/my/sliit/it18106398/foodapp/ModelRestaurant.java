@@ -1,6 +1,8 @@
 package lk.my.sliit.it18106398.foodapp;
 
-public class ModelRestaurant {
+import java.util.ArrayList;
+
+public class ModelRestaurant extends ArrayList<ModelRestaurant> {
     private int image;
     private String name;
 

@@ -2,10 +2,13 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -28,12 +31,15 @@ public class RestuarantsList extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<ModelRestaurant> restuarantsList;
 
+    SearchView resSearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restuarants_list);
 
 
+        resSearch = findViewById(R.id.searchView);
 
         recyclerView = findViewById(R.id.restuarantRecycleView);
 
@@ -49,10 +55,25 @@ public class RestuarantsList extends AppCompatActivity {
         restuarantsList.add(new ModelRestaurant(R.drawable.res8, "Palle Kade"));
         restuarantsList.add(new ModelRestaurant(R.drawable.res9, "Antige Kade"));
 
-        RestuarantsAdapter adapter = new RestuarantsAdapter(this, restuarantsList);
+        final RestuarantsAdapter adapter = new RestuarantsAdapter(this, restuarantsList);
+
+        resSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+
+
+        });
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
-    }
+}
 

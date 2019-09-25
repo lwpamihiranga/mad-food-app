@@ -2,9 +2,12 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,15 +15,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.myViewHolder> {
+public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.myViewHolder> implements Filterable {
 
     private Context mContext;
     private ArrayList<ModelRestaurant> mList;
+    private ArrayList<ModelRestaurant> mListCopy;
+
 
     public RestuarantsAdapter(Context context, ArrayList<ModelRestaurant> list) {
         mContext = context;
         mList = list;
+        mListCopy = new ArrayList<>(list);
     }
 
     @NonNull
@@ -51,6 +58,40 @@ public class RestuarantsAdapter extends RecyclerView.Adapter<RestuarantsAdapter.
     public int getItemCount() {
         return mList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFiler;
+    }
+
+    private Filter exampleFiler = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<ModelRestaurant> filteredList = new ArrayList<>();
+
+            if(charSequence == null || charSequence.length() == 0) {
+                filteredList.add((ModelRestaurant) mListCopy);
+            } else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for(ModelRestaurant res: mListCopy) {
+                    if(res.getName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(res);
+                    }
+                }
+            }
+            FilterResults  results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            mListCopy.clear();
+            mListCopy.addAll((List)filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView restuarant_img;
