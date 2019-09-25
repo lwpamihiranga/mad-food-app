@@ -5,17 +5,13 @@ import com.google.firebase.database.Exclude;
 public class OrderBag1 {
     private Integer qty;
     private String description;
-    private String key;
-    private String imageUrl;
 
     public OrderBag1() {
     }
 
-    public OrderBag1(Integer qty, String description, String key, String imageUrl) {
+    public OrderBag1(Integer qty, String description) {
         this.qty = qty;
         this.description = description;
-        this.key = key;
-        this.imageUrl = imageUrl;
     }
 
     public Integer getQty() {
@@ -34,21 +30,4 @@ public class OrderBag1 {
         this.description = description;
     }
 
-    @Exclude
-    public String getKey() {
-        return key;
-    }
-
-    @Exclude
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 }
