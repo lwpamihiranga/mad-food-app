@@ -61,6 +61,8 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageTop);
 
         imageView.setImageResource(getIntent().getIntExtra("image_id", 00));
-        description.setText(getIntent().getStringExtra("res_name"));
+//        description.setText(getIntent().getStringExtra("res_name"));
+        description.setText(getIntent().getStringExtra("fName"));
     }
+
 }

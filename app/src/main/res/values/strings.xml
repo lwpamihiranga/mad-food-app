@@ -58,11 +58,6 @@
     <string name="delete">Delete</string>
     <string name="promotion">promotion</string>
 
-    <string-array name="account_types">
-        <item>Customer</item>
-        <item>Restaurant</item>
-        <item>Delivery</item>
-    </string-array>
     <string name="driver_name">Name</string>
     <string name="rating_label">Rating</string>
     <string name="req_deliver_btn">Request to Deliver</string>
@@ -76,4 +71,9 @@
     <string name="imgUpload">Upload Image</string>
     <string name="add_qty">Quantity</string>
     <string name="msg_update_qty">Edit Quantity</string>
+    <string-array name="account_types">
+        <item>Customer</item>
+        <item>Restaurant</item>
+        <item>Delivery</item>
+    </string-array>
 </resources>
