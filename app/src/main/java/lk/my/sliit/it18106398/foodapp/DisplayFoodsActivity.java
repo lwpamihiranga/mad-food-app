@@ -28,10 +28,8 @@ public class DisplayFoodsActivity extends AppCompatActivity {
     ImageView imageView;
     TextView description;
     EditText qty;
-    private Uri mImageUri;
 
     Button b1;
-    private StorageReference mStorageRef;
     DatabaseReference dbRef;
     OrderBag1 o;
 
@@ -45,8 +43,7 @@ public class DisplayFoodsActivity extends AppCompatActivity {
 
         b1 = findViewById(R.id.btn1);
 
-        mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
-        dbRef = FirebaseDatabase.getInstance().getReference("uploads");
+        //dbRef = FirebaseDatabase.getInstance().getReference("uploads");
 
         o = new OrderBag1();
 
@@ -56,15 +53,12 @@ public class DisplayFoodsActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(DisplayFoodsActivity.this, MyBag.class);
                 startActivity(intent1);
 
-                uploadFile();
-
                 dbRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1");
                 try {
                     o.setQty(Integer.parseInt(qty.getText().toString().trim()));
                     o.setDescription(description.getText().toString().trim());
 
                      dbRef.push().setValue(o);
-                    //dbRef.child("s1").setValue(o);
 
                     Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
                     qty.setText("");
@@ -82,36 +76,5 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         Intent i1 = getIntent();
         String name = i1.getStringExtra("fName");
         description.setText(name);
-    }
-
-    private String getFileExtension(Uri uri){
-        ContentResolver cR = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return  mime.getExtensionFromMimeType(cR.getType(uri));
-    }
-
-    private void uploadFile(){
-        if (mImageUri != null) {
-            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
-            fileReference.putFile(mImageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(DisplayFoodsActivity.this,"upload successfull",Toast.LENGTH_LONG).show();
-                            OrderBag1 upload = new OrderBag1();
-                            String uploadId = dbRef.push().getKey();
-                            dbRef.child(uploadId).setValue(o);
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(DisplayFoodsActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
-        else{
-            Toast.makeText(this,"No file selected", Toast.LENGTH_SHORT).show();
-        }
     }
 }

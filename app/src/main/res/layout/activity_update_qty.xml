@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/des"
-        android:layout_width="404dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="394dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="156dp"
         android:gravity="center"
         android:text="Description"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,13 +25,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/msg_update_qty"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.401"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/des" />
 
@@ -43,13 +43,18 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editqty"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.519" /><![CDATA[
+
+
+
     //app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

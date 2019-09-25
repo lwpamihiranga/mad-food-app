@@ -35,33 +35,36 @@ public class UpdateQuantity extends AppCompatActivity {
         btnUpdate = (Button) findViewById(R.id.btnUpdate);
 
         Intent intent = getIntent();
-        String d = intent.getStringExtra("des");
+        final String d = intent.getStringExtra("des");
+
+        final String pos = intent.getExtras().get("position").toString();
         des.setText(d);
+        qty.setText(pos);
 
         orderBag1 = new OrderBag1();
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child(" OrderBag1");
+                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1");
                 updRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("s1")) {
-                            try {
-                                orderBag1.setQty(Integer.parseInt(qty.getText().toString().trim()));
-                                dbRef = FirebaseDatabase.getInstance().getReference().child(" OrderBag1").child("s1");
-                                dbRef.setValue(orderBag1);
+                        for(DataSnapshot ds : dataSnapshot.getChildren()){
+                            String sauDis = ds.child("description").getValue().toString();
+                            String sauAmo = ds.child("qty").getValue().toString();
 
+                            if(sauDis.equalsIgnoreCase(d) && sauAmo.equalsIgnoreCase(pos)){
+                                orderBag1.setDescription(d);
+                                orderBag1.setQty(Integer.parseInt(qty.getText().toString().trim()));
+
+                                ds.getRef().setValue(orderBag1);
                                 Toast.makeText(getApplicationContext(), "Data updated successfully", Toast.LENGTH_SHORT).show();
+
                                 Intent intent = new Intent(UpdateQuantity.this, MyBag.class);
                                 startActivity(intent);
-                            } catch (NumberFormatException e) {
-                                Toast.makeText(getApplicationContext(), "Invalid quantity", Toast.LENGTH_SHORT).show();
+
                             }
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "No source to found", Toast.LENGTH_SHORT).show();
                         }
                     }
 
