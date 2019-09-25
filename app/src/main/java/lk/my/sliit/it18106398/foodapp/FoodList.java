@@ -27,7 +27,7 @@ public class FoodList extends AppCompatActivity {
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<FoodItem> list;
-    FoodViewHolderAdapter adapter;
+    public FoodViewHolderAdapter adapter;
 
 
     @Override
@@ -37,12 +37,13 @@ public class FoodList extends AppCompatActivity {
 
 
 
+
         recyclerView =(RecyclerView)findViewById(R.id.foodsRecycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<FoodItem>();
 
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Food_Items");
+        reference = FirebaseDatabase.getInstance().getReference().child("FoodTable");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -61,6 +62,9 @@ public class FoodList extends AppCompatActivity {
 
             }
         });
+
+
+
 
         //foodList = new ArrayList<>();
 

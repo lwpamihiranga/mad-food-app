@@ -3,30 +3,28 @@ package lk.my.sliit.it18106398.foodapp;
 public class FoodItem {
 
 
-    private String Name;
-    private String Image;
+    private String name;
+    private String image;
 
     public FoodItem() {
+
+
     }
 
-    public FoodItem(String name, String image) {
-        Name = name;
-        Image = image;
-    }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getImage() {
-        return Image;
+        return image;
     }
 
     public void setImage(String image) {
-        Image = image;
+        this.image = image;
     }
 }
