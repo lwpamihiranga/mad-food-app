@@ -52,13 +52,13 @@ public class Addfoods extends AppCompatActivity {
 
                 try {
                     if (TextUtils.isEmpty(editFoodName.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"please enter food name..",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"please enter food name..!",Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(editFoodNo.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Please enter food no..",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please enter food no..!",Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(editFoodDescription.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Please enter food description..",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please enter food description..!",Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(editPrice.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Please enter food price..",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please enter food price..!",Toast.LENGTH_SHORT).show();
 
                     else{
                         fdt.setItemNo(editFoodNo.getText().toString().trim());
@@ -68,7 +68,7 @@ public class Addfoods extends AppCompatActivity {
 
                         databaseReference.push().setValue(fdt);
 
-                        Toast.makeText(getApplicationContext(),"Data Saved..",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Food Item Saved Successfully!..",Toast.LENGTH_SHORT).show();
                         clearControls();
 
                     }
@@ -76,7 +76,7 @@ public class Addfoods extends AppCompatActivity {
 
                 }
                 catch (NumberFormatException e){
-                    Toast.makeText(getApplicationContext(),"Invalid",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Invalid Data!!!",Toast.LENGTH_SHORT).show();
 
 
 
