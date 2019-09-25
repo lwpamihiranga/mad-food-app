@@ -33,7 +33,7 @@ public class Update_Promotions extends AppCompatActivity {
         update = findViewById(R.id.updateDataBtn);
 
         Intent intent = getIntent();
-        String x = intent.getStringExtra("pName;");
+        String x = intent.getStringExtra("pName");
         //String foodname = intent.getStringExtra("Pname");
         //String descri = intent.getStringExtra("desc");
         data1.setText(x);
