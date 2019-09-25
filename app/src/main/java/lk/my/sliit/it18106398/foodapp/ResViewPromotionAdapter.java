@@ -115,7 +115,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
                                 appleSnapshot.getRef().removeValue();
 
                             }
-
+                    Toast.makeText(mContext,"Deleted Successfully.",Toast.LENGTH_SHORT).show();
                            /*done[0] = true;
                             if(done[0]) {
                                 done[0] = false;
