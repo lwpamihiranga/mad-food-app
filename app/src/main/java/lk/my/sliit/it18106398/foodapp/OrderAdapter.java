@@ -11,9 +11,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -21,16 +28,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
     private Context mContext;
     private ArrayList<String> des;
     private ArrayList<Integer> qty;
-    private ArrayList<OrderBag1> ob;
     private int pos;
-    private onItemClickListener mListener;
 
-    public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty, ArrayList<OrderBag1>ob) {
+    public OrderAdapter(Context context, ArrayList<String> des, ArrayList<Integer> qty) {
         mContext = context;
         this.des = des;
         this.qty = qty;
-        this.ob = ob;
-
     }
     public OrderAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
@@ -58,11 +61,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
         return des.size();
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
+    public class myViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView order_img;
         TextView order_name;
         TextView order_qty;
         Button updateBtn;
+        Button deleteBtn;
 
         Context mContext;
         ArrayList<ModelOrder> mList;
@@ -76,10 +80,35 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             order_name = itemView.findViewById(R.id.foodName);
             order_qty = itemView.findViewById(R.id.qty);
             updateBtn = itemView.findViewById(R.id.updatebtn);
+            deleteBtn = itemView.findViewById(R.id.deleteBtn);
 
-            itemView.setOnClickListener(this);
-            itemView.setOnCreateContextMenuListener(this);
+//            itemView.setOnClickListener(this);
             updateBtn.setOnClickListener(this);
+            deleteBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1");
+                    delRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Toast.makeText(mContext, "xxxx", Toast.LENGTH_SHORT).show();
+                            if (dataSnapshot.hasChild("-LpXNGumlWRngn4stMV9")){
+                                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1").child("-LpXNGumlWRngn4stMV9");
+                                dbRef.removeValue();
+                                Toast.makeText(mContext, "Data deleted successfully", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                Toast.makeText(mContext, "No source to delete", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            });
 
             mContext = context;
             //mList = list;
@@ -87,35 +116,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
 
         public void onClick(View view) {
             openDisplayFoodsActivity();
-            if (mListener != null){
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION){
-                    mListener.onItemClick(position);
-                }
-            }
-        }
-
-        @Override
-        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-            contextMenu.setHeaderTitle("Select Action");
-            MenuItem delete = contextMenu.add(Menu.NONE, 1, 1, "Delete");
-
-            delete.setOnMenuItemClickListener(this);
-        }
-
-        @Override
-        public boolean onMenuItemClick(MenuItem menuItem) {
-            if (mListener != null){
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION){
-                    switch (menuItem.getItemId()){
-                        case 1:
-                            mListener.onDeleteClick(position);
-                            return true;
-                    }
-                }
-            }
-            return false;
         }
 
         public void openDisplayFoodsActivity(){
@@ -124,14 +124,5 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.myViewHolder
             //intent.putExtra("qty",qty.get(pos));
             mContext.startActivity(intent);
         }
-    }
-
-    public interface onItemClickListener{
-        void onItemClick(int position);
-        void onDeleteClick(int position);
-    }
-
-    public void setOnItemClickListener(onItemClickListener listener){
-        mListener = listener;
     }
 }

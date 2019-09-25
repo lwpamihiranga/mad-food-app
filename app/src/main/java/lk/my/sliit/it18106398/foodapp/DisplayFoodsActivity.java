@@ -78,6 +78,10 @@ public class DisplayFoodsActivity extends AppCompatActivity {
 
         imageView.setImageResource(getIntent().getIntExtra("image_id", 00));
         description.setText(getIntent().getStringExtra("res_name"));
+
+        Intent i1 = getIntent();
+        String name = i1.getStringExtra("fName");
+        description.setText(name);
     }
 
     private String getFileExtension(Uri uri){

@@ -2,26 +2,16 @@ package lk.my.sliit.it18106398.foodapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -96,12 +86,12 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         public myViewHolder(View itemView, Context context, final ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
             super(itemView);
 
-            promo_img = itemView.findViewById(R.id.promo_image);
-            promotionNo  = itemView.findViewById(R.id.promo_text);
+            promo_img = itemView.findViewById(R.id.food_image);
+            promotionNo  = itemView.findViewById(R.id.food_text);
             food_name = itemView.findViewById(R.id.food_txt);
             food_desc = itemView.findViewById(R.id.desc_txt);
-            update_promo = itemView.findViewById(R.id.btnpromo_update);
-            delete_promo = itemView.findViewById(R.id.btnpromo_delete);
+            update_promo = itemView.findViewById(R.id.btnfood_update);
+            delete_promo = itemView.findViewById(R.id.btnfood_delete);
 
             itemView.setOnClickListener(this);
             //itemView.setOnCreateContextMenuListener(this);

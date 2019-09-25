@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,7 +25,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-public class MyBag extends AppCompatActivity implements OrderAdapter.onItemClickListener {
+public class MyBag extends AppCompatActivity {
 
     RecyclerView recyclerView;
     //ArrayList<ModelOrder> orderList;
@@ -34,8 +35,6 @@ public class MyBag extends AppCompatActivity implements OrderAdapter.onItemClick
 
     OrderAdapter adapter;
     DatabaseReference db;
-    private FirebaseStorage mstorage;
-    private ValueEventListener mDBListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +44,8 @@ public class MyBag extends AppCompatActivity implements OrderAdapter.onItemClick
         qty = new ArrayList<>();
         mUploads = new ArrayList<>();
 
-        mstorage = FirebaseStorage.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
-        mDBListener = db.child("OrderBag1").addValueEventListener(new ValueEventListener() {
+        db.child("OrderBag1").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists())
@@ -59,10 +57,6 @@ public class MyBag extends AppCompatActivity implements OrderAdapter.onItemClick
                         int quty = dss.child("qty").getValue(Integer.class);
                         description.add(desc);
                         qty.add(quty);
-
-                        OrderBag1 upload = dss.getValue(OrderBag1.class);
-                        upload.setKey(dss.getKey());
-                        mUploads.add(upload);
                     }
                     adapter.notifyDataSetChanged();
                 }
@@ -79,64 +73,9 @@ public class MyBag extends AppCompatActivity implements OrderAdapter.onItemClick
         });
 
         recyclerView = findViewById(R.id.foodsRecycleView);
-        adapter = new OrderAdapter(getApplicationContext(),description,qty,mUploads);
+        adapter = new OrderAdapter(getApplicationContext(),description,qty);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        adapter.setOnItemClickListener(MyBag.this);
-    }
-
-    @Override
-    public void onItemClick(int position) {
-        Toast.makeText(this,"Normal click at position : "+position,Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDeleteClick (int position){
-            //OrderBag1 selectedItem = mUploads.get(position);
-            //final String selectedKey = selectedItem.getKey();
-            //StorageReference imageRef = mstorage.getReferenceFromUrl(selectedItem.getImageUrl());
-            Query myQuery = db.orderByChild("qty").equalTo(position);
-             db = FirebaseDatabase.getInstance().getReference();
-            myQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                            //ds.getRef().removeValue();
-                            //Toast.makeText(MyBag.this,"deleted",Toast.LENGTH_SHORT).show();
-                            System.out.println("kkk");
-                            String desc = ds.child("description").getValue(String.class);
-                            int quty = ds.child("qty").getValue(Integer.class);
-                            description.remove(desc);
-                            qty.remove(quty);
-                            Toast.makeText(MyBag.this, "deleted111", Toast.LENGTH_SHORT).show();
-                        }
-                        Toast.makeText(MyBag.this, "deleted", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                        Toast.makeText(MyBag.this, "No data found", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(MyBag.this,databaseError.getMessage(),Toast.LENGTH_SHORT).show();
-                }
-            });
-            //imageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-            //@Override
-            //public void onSuccess(Void aVoid) {
-           // db.child(selectedKey).removeValue();
-            //Toast.makeText(MyBag.this,"Item deleted",Toast.LENGTH_SHORT).show();
-            //};
-        //});
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        db.removeEventListener(mDBListener);
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".ViewFood">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/foodRecyclerView"
+        android:id="@+id/foodRecyclerView2"
         android:layout_width="395dp"
         android:layout_height="587dp"
         app:layout_constraintBottom_toBottomOf="parent"

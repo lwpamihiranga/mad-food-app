@@ -4,23 +4,21 @@ import android.widget.Button;
 
 public class ModelViewFoods {
 
-    private int promoImage;
-    private String promoName;
+    private int foodImage;
+    private String foodName;
     //    private Button btnDelete;
     private Button btnUpdate;
 
-    public ModelViewFoods(int promoImage, String promoName) {
-        this.promoImage = promoImage;
-        this.promoName = promoName;
-//        this.btnDelete = btndelete;
-//        this.btnUpdate = btnupdate;
+    public ModelViewFoods(int foodImage, String foodName) {
+        this.foodImage = foodImage;
+        this.foodName = foodName;
     }
 
     public int getPromoImage() {
-        return promoImage;
+        return foodImage;
     }
 
     public String getPromoName() {
-        return promoName;
+        return foodName;
     }
 }
