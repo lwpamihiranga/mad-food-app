@@ -3,6 +3,7 @@ package lk.my.sliit.it18106398.foodapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,5 +26,11 @@ public class Update_Promotions extends AppCompatActivity {
 
         update = findViewById(R.id.updateDataBtn);
 
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }

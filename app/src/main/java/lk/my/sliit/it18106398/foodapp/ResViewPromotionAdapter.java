@@ -187,7 +187,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         @Override
         public void onClick(View view) {
             //openAddPromotions();
-            Intent intent = new Intent(mContext,Add_Promotions.class);
+            Intent intent = new Intent(mContext,Update_Promotions.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             //intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
             //intent.putExtra("foodName", mList.get(getAdapterPosition()).getFoodName());
