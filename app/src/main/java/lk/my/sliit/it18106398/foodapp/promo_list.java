@@ -89,8 +89,7 @@ public class promo_list extends AppCompatActivity /*implements ResViewPromotionA
 
     }
 
-
-     public void onPromoClick(int position) {
+    public void onPromoClick(int position) {
         //Intent detailIntent = new Intent(this, Add_Promotions.class);
          Toast.makeText(this,"Normal click at position : "+position,Toast.LENGTH_SHORT).show();
 

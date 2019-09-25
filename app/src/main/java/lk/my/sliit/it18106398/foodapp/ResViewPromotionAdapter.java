@@ -32,7 +32,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     private ArrayList<String> name;
     private ArrayList<String> desc;
     private OnPromoClickListener mListener;
-
+    DatabaseReference db = FirebaseDatabase.getInstance().getReference();
    /* public ResViewPromotionAdapter(promo_list promo_list, ArrayList<Add_Promotions> promoList2) {
     }
 */
@@ -105,6 +105,25 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             itemView.setOnClickListener(this);
             //itemView.setOnCreateContextMenuListener(this);
             update_promo.setOnClickListener(this);
+            delete_promo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(mContext, "Delete Clicked", Toast.LENGTH_SHORT).show();
+                    db.child("PromotionTable").orderByChild("foodName").equalTo(food_name.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
+                                appleSnapshot.getRef().removeValue();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            });
             /*update_promo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -116,12 +135,38 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
                     }
                 }
             });*/
-            delete_promo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //deletePromo(promotionNo);
-                }
-            });
+//            delete_promo.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    //deletePromo(promotionNo);
+//                    db.child("PromotionTable").addValueEventListener(new ValueEventListener(){
+//
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                            if(dataSnapshot.hasChild("promo1")){
+//                                db = FirebaseDatabase.getInstance().getReference().child("PromotionTable").child("promo1");
+//                                for(DataSnapshot dss : dataSnapshot.getChildren()) {
+//
+//                                    String food = dss.child("foodName").getValue(String.class);
+//                                    String des = dss.child("description").getValue(String.class);
+//                                    String item = dss.child("itemNo").getValue(String.class);
+//                                    String proNo = dss.child("promoNo").getValue(String.class);
+//                                    String quanty= dss.child("qty").getValue(String.class);
+//                                    Toast.makeText(mContext,"Deleted successfully.",Toast.LENGTH_SHORT).show();
+//                                }
+//
+//                            }else{
+//                                Toast.makeText(mContext,"No Source",Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                        }
+//                    });
+//                }
+//            });
 
             mContext = context;
             //mList = list;
