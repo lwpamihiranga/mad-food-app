@@ -61,6 +61,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 //Intent intent = new Intent(NavigationDrawerActivity.this, Resturent_Home.class);
                 //linking problem solved
                 Intent intent = new Intent(NavigationDrawerActivity.this, Promotion_ACTIVITY1.class);
+                //Intent intent = new Intent(NavigationDrawerActivity.this, RestuarantsList.class);
                 startActivity(intent);
             }
         });

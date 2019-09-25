@@ -10,90 +10,72 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_login">
-
-        <ImageView
-            android:id="@+id/foodImg"
-            android:layout_width="165dp"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/noodles" />
+        android:background="@drawable/pic34">
 
         <TextView
             android:id="@+id/foodName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="188dp"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/textview"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/foodImg"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.089" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/updatebtn"
-            android:layout_width="70dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/round_shape"
-            android:backgroundTint="@color/login_form_details"
-            android:text="@string/update"
+            android:layout_width="112dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="124dp"
+            android:background="@color/dark_blue"
+            android:backgroundTint="#ffffbb33"
+            android:text="@string/btnSelect"
+            android:textSize="18sp"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/deleteBtn"
-            app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
-            app:layout_constraintStart_toEndOf="@+id/foodImg" />
-
-        <Button
-            android:id="@+id/deleteBtn"
-            android:layout_width="70dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/round_shape"
-            android:backgroundTint="@color/login_form_details_light"
-            android:text="@string/delete"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/updatebtn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.835" />
+            app:layout_constraintHorizontal_bias="0.869"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/qty"
-            android:layout_width="81dp"
-            android:layout_height="20dp"
+            android:layout_width="193dp"
+            android:layout_height="39dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:text="@string/textview"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/foodImg"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foodName" />
 
         <TextView
             android:id="@+id/orderStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
+            android:layout_width="187dp"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Pending...."
             android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/foodImg"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/qty"
-            app:layout_constraintVertical_bias="0.09" />
+            app:layout_constraintVertical_bias="0.341" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

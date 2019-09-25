@@ -21,7 +21,7 @@ public class UpdateQuantity extends AppCompatActivity {
 
     TextView des;
     EditText qty;
-    Button btnUpdate;
+    Button btnUpdate, btnDelete;
     DatabaseReference dbRef;
     OrderBag1 orderBag1;
 
@@ -33,6 +33,7 @@ public class UpdateQuantity extends AppCompatActivity {
         des = (TextView) findViewById(R.id.des);
         qty = (EditText) findViewById(R.id.editqty);
         btnUpdate = (Button) findViewById(R.id.btnUpdate);
+        btnDelete = (Button) findViewById(R.id.btnDelete);
 
         Intent intent = getIntent();
         final String d = intent.getStringExtra("des");
@@ -60,6 +61,38 @@ public class UpdateQuantity extends AppCompatActivity {
 
                                 ds.getRef().setValue(orderBag1);
                                 Toast.makeText(getApplicationContext(), "Data updated successfully", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(UpdateQuantity.this, MyBag.class);
+                                startActivity(intent);
+
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(UpdateQuantity.this, "Delete clicked", Toast.LENGTH_SHORT).show();
+                final DatabaseReference DelRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1");
+                DelRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for(DataSnapshot ds : dataSnapshot.getChildren()){
+                            String sauDis = ds.child("description").getValue().toString();
+                            String sauAmo = ds.child("qty").getValue().toString();
+
+                            if(sauDis.equalsIgnoreCase(d) && sauAmo.equalsIgnoreCase(pos)){
+                                ds.getRef().removeValue();
+
+                                ds.getRef().setValue(orderBag1);
+                                Toast.makeText(getApplicationContext(), "Data deleted successfully", Toast.LENGTH_SHORT).show();
 
                                 Intent intent = new Intent(UpdateQuantity.this, MyBag.class);
                                 startActivity(intent);
