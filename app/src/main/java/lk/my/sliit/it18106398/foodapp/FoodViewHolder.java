@@ -51,6 +51,8 @@ import java.util.ArrayList;
 
         Context mContext;
         String fName;
+
+
         public FoodViewHolder(View itemview) {
             super(itemview);
 
