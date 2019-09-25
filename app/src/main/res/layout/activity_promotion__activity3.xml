@@ -9,12 +9,13 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="206dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="102dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="103dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="8dp"
+        android:background="#658CD1"
         android:text="@string/promo_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +37,9 @@
         android:layout_width="397dp"
         android:layout_height="66dp"
         android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewadd" />
@@ -45,6 +49,9 @@
         android:layout_width="400dp"
         android:layout_height="171dp"
         android:layout_marginTop="8dp"
+        android:background="@color/login_form_details_light"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTxt" />

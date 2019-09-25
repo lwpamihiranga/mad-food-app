@@ -47,7 +47,8 @@ public class DisplayFoodsActivity extends AppCompatActivity {
                     o.setQty(Integer.parseInt(qty.getText().toString().trim()));
                     o.setDescription(description.getText().toString().trim());
 
-                    dbRef.push().setValue(o);
+                     dbRef.push().setValue(o);
+                    //dbRef.child("s1").setValue(o);
 
                     Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
                     qty.setText("");

@@ -75,4 +75,5 @@
     <string name="promotiondescription">Promotion Description</string>
     <string name="imgUpload">Upload Image</string>
     <string name="add_qty">Quantity</string>
+    <string name="msg_update_qty">Edit Quantity</string>
 </resources>
