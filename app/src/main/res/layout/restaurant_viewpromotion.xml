@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +14,7 @@
 
 
         <TextView
-            android:id="@+id/promo_text"
+            android:id="@+id/food_text"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:background="@color/login_form_details_light"
@@ -27,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnpromo_update"
+            android:id="@+id/btnfood_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -41,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/desc_txt" />
 
         <Button
-            android:id="@+id/btnpromo_delete"
+            android:id="@+id/btnfood_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -52,17 +53,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/btnpromo_update" />
+            app:layout_constraintStart_toEndOf="@+id/btnfood_update" />
 
         <ImageView
-            android:id="@+id/promo_image"
+            android:id="@+id/food_image"
             android:layout_width="0dp"
             android:layout_height="236dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/promo_text" />
+            app:layout_constraintTop_toBottomOf="@+id/food_text" />
 
         <TextView
             android:id="@+id/food_txt"
@@ -74,7 +75,7 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/promo_image" />
+            app:layout_constraintTop_toBottomOf="@+id/food_image" />
 
         <TextView
             android:id="@+id/desc_txt"

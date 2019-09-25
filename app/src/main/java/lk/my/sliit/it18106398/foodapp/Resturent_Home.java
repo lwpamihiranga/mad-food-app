@@ -49,6 +49,14 @@ public class Resturent_Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        viewFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Resturent_Home.this, ViewFood.class);
+                startActivity(intent);
+
+            }
+        });
         viewOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

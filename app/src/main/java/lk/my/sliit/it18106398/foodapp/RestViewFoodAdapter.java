@@ -29,7 +29,7 @@ public class RestViewFoodAdapter extends RecyclerView.Adapter<RestViewFoodAdapte
     @Override
     public RestViewFoodAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View V = inflater.inflate(R.layout.restaurant_viewpromotion, parent, false);
+        View V = inflater.inflate(R.layout.restaurant_viewfood, parent, false);
 
         RestViewFoodAdapter.myViewHolder viewHolder = new RestViewFoodAdapter.myViewHolder(V, mContext, mList);
 

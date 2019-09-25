@@ -21,7 +21,7 @@ public class ViewFood extends AppCompatActivity {
 
 
 
-        recyclerView = findViewById(R.id.foodRecyclerView);
+        recyclerView = findViewById(R.id.foodRecyclerView2);
 
         resViewfoods = new ArrayList<>();
 
