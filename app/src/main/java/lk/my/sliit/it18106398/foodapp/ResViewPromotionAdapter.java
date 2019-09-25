@@ -108,20 +108,32 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             delete_promo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    final boolean[] done = {false};
                     Toast.makeText(mContext, "Delete Clicked", Toast.LENGTH_SHORT).show();
                     db.child("PromotionTable").orderByChild("foodName").equalTo(food_name.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
                                 appleSnapshot.getRef().removeValue();
+
                             }
+
+//                           done[0] = true;
+//                            if(done[0]) {
+//                                done[0] = false;
+//                                Intent intent = new Intent(mContext, Resturent_Home.class);
+//                                mContext.startActivity(intent);
+//                            }
                         }
+
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
 
                         }
                     });
+
+
                 }
             });
             /*update_promo.setOnClickListener(new View.OnClickListener() {
