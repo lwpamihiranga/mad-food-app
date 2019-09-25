@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -91,19 +93,47 @@ public class MyBag extends AppCompatActivity implements OrderAdapter.onItemClick
     }
 
     @Override
-    public void onDeleteClick(int position) {
-        OrderBag1 selectedItem = mUploads.get(position);
-        final String selectedKey = selectedItem.getKey();
-        StorageReference imageRef = mstorage.getReferenceFromUrl(selectedItem.getImageUrl());
-        imageRef .delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                db.child(selectedKey).removeValue();
-                Toast.makeText(MyBag.this,"Item deleted",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+    public void onDeleteClick (int position){
+            //OrderBag1 selectedItem = mUploads.get(position);
+            //final String selectedKey = selectedItem.getKey();
+            //StorageReference imageRef = mstorage.getReferenceFromUrl(selectedItem.getImageUrl());
+            Query myQuery = db.orderByChild("qty").equalTo(position);
+             db = FirebaseDatabase.getInstance().getReference();
+            myQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            //ds.getRef().removeValue();
+                            //Toast.makeText(MyBag.this,"deleted",Toast.LENGTH_SHORT).show();
+                            System.out.println("kkk");
+                            String desc = ds.child("description").getValue(String.class);
+                            int quty = ds.child("qty").getValue(Integer.class);
+                            description.remove(desc);
+                            qty.remove(quty);
+                            Toast.makeText(MyBag.this, "deleted111", Toast.LENGTH_SHORT).show();
+                        }
+                        Toast.makeText(MyBag.this, "deleted", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(MyBag.this, "No data found", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Toast.makeText(MyBag.this,databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            });
+            //imageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            //@Override
+            //public void onSuccess(Void aVoid) {
+           // db.child(selectedKey).removeValue();
+            //Toast.makeText(MyBag.this,"Item deleted",Toast.LENGTH_SHORT).show();
+            //};
+        //});
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

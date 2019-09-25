@@ -39,6 +39,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     public interface OnPromoClickListener{
         void onPromoClick(int position);
         //void onDeleteClick(int position);
+
     }
 
     public void setOnPromoClickListener(OnPromoClickListener listener){
