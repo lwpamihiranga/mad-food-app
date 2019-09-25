@@ -46,7 +46,7 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         //dbRef = FirebaseDatabase.getInstance().getReference("uploads");
 
         o = new OrderBag1();
-
+        //add to mybag
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
