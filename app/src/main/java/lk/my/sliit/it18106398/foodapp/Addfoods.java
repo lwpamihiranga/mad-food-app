@@ -42,7 +42,7 @@ public class Addfoods extends AppCompatActivity {
         editFoodDescription = (EditText)findViewById(R.id.editFoodDescription);
         editPrice = (EditText)findViewById(R.id.editPrice);
 
-       // fdt = new FoodTable();
+       fdt = new FoodTable();
 
         add_button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,10 +66,11 @@ public class Addfoods extends AppCompatActivity {
                         fdt.setPrice(editPrice.getText().toString().trim());
                         fdt.setDescription(editFoodDescription.getText().toString().trim());
 
+//                        databaseReference.child("fdt2").setValue(fdt);
                         databaseReference.push().setValue(fdt);
-
+//                        databaseReference.child(fdt.getItemNo()).setValue(fdt);
                         Toast.makeText(getApplicationContext(),"Food Item Saved Successfully!..",Toast.LENGTH_SHORT).show();
-                        clearControls();
+//                        clearControls();
 
                     }
 

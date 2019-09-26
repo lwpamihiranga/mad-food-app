@@ -31,7 +31,7 @@
             android:id="@+id/btnfood_delete"
             android:layout_width="151dp"
             android:layout_height="35dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="80dp"
             android:background="#658CD1"
             android:text="@string/delete"
             app:layout_constraintBottom_toBottomOf="parent"
