@@ -203,7 +203,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
 //            pName = text.getText().toString();*/
 //            TextView text = view.findViewById(R.id.food_text);
 //            String pID = text.getText().toString();
-            String pID = "Promotion 1";
+            String pID = "Promotion 02";
             EditText txt = view.findViewById(R.id.food_txt);
             pName = food_name.getText().toString();
             EditText txt1 = view.findViewById(R.id.desc_txt);
