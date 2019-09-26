@@ -34,27 +34,12 @@
                 android:backgroundTint="#FFB5ADFB"
                 android:text="Accept"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@+id/deleteBtn"
-                app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/deleteBtn"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/deleteBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/round_shape"
-                android:backgroundTint="#FFFAA492"
-                android:text="Delete"
-                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/updatebtn"
+                app:layout_constraintHorizontal_bias="0.749"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.941" />
+                app:layout_constraintVertical_bias="0.894" />
 
             <TextView
                 android:id="@+id/quantity"

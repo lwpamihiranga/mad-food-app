@@ -63,7 +63,6 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
         TextView order_name;
         TextView order_qty;
         Button acceptButton;
-        Button deleteButton;
 
         Context mContext;
         ArrayList<ModelOrder> mList;
@@ -74,10 +73,8 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
             order_name = itemView.findViewById(R.id.foodName);
             order_qty = itemView.findViewById(R.id.quantity);
             acceptButton = itemView.findViewById(R.id.updatebtn);
-            deleteButton = itemView.findViewById(R.id.deleteBtn);
 
             acceptButton.setOnClickListener(this);
-            deleteButton.setOnClickListener(this);
 
             mContext = context;
         }
@@ -86,8 +83,8 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
         public void onClick(View view) {
             Intent intent = new Intent(mContext, DeliveryPersonList.class);
 //            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
-            intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
+            //intent.putExtra("image_id", mList.get(getAdapterPosition()).getImage());
+            //intent.putExtra("order_name", mList.get(getAdapterPosition()).getName());
 
             mContext.startActivity(intent);
         }
