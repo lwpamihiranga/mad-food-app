@@ -44,6 +44,7 @@ public class UpdateQuantity extends AppCompatActivity {
 
         orderBag1 = new OrderBag1();
 
+        //Method to update data
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +77,7 @@ public class UpdateQuantity extends AppCompatActivity {
                 });
             }
         });
+        //Method to delete data
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

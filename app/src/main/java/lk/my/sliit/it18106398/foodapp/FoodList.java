@@ -27,7 +27,7 @@ public class FoodList extends AppCompatActivity {
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<FoodItem> list;
-    public FoodViewHolderAdapter adapter;
+    FoodViewHolderAdapter adapter;
 
 
     @Override

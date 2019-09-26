@@ -46,13 +46,11 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         //dbRef = FirebaseDatabase.getInstance().getReference("uploads");
 
         o = new OrderBag1();
-        //add to mybag
+
+        //Method add to mybag
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(DisplayFoodsActivity.this, MyBag.class);
-                startActivity(intent1);
-
                 dbRef = FirebaseDatabase.getInstance().getReference().child("OrderBag1");
                 try {
                     o.setQty(Integer.parseInt(qty.getText().toString().trim()));
@@ -62,6 +60,8 @@ public class DisplayFoodsActivity extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
                     qty.setText("");
+                    Intent intent1 = new Intent(DisplayFoodsActivity.this, MyBag.class);
+                    startActivity(intent1);
                 } catch (NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "Invalid quantity", Toast.LENGTH_SHORT).show();
                 }
