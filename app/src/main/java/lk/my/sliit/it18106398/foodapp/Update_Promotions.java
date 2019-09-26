@@ -41,6 +41,7 @@ public class Update_Promotions extends AppCompatActivity {
         Intent intent = getIntent();
         final String x = intent.getStringExtra("pName");
         final String y = intent.getStringExtra("pDesc");
+        final String p = intent.getStringExtra("pID");
         //String z = intent.getStringExtra("pQty");
         //String descri = intent.getStringExtra("desc");
         data1.setText(x);
@@ -54,20 +55,26 @@ public class Update_Promotions extends AppCompatActivity {
                 dbf.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for(DataSnapshot ds: dataSnapshot.getChildren()){
-                            String proFood = ds.child("foodName").getValue().toString();
-                            String proDes = ds.child("description").getValue().toString();
-
-                            if(proFood.equalsIgnoreCase(x) && proDes.equalsIgnoreCase(y)){
-                                mView.setFoodName(x);
-                                mView.setDescription(y);
-
-                                ds.getRef().setValue(mView);
-                                Toast.makeText(getApplicationContext(),"Data Updated Successfully.",Toast.LENGTH_SHORT).show();
-
-                                Intent intent = new Intent(Update_Promotions.this,Resturent_Home.class);
-                            }
-                        }
+                        dataSnapshot.child(p).child("foodName").getRef().setValue(data1.getText().toString());
+                        dataSnapshot.child(p).child("description").getRef().setValue(data2.getText().toString());
+//                        for(DataSnapshot ds: dataSnapshot.getChildren()){
+//                            ds.child(p).child("foodName").getRef().setValue(data1.getText().toString());
+//                            ds.child(p).child("description").getRef().setValue(data2.getText().toString());
+//                            String proFood = ds.child("foodName").getValue().toString();
+//                            String proDes = ds.child("description").getValue().toString();
+//
+//                            String
+//
+//                            if(proFood.equalsIgnoreCase(x) && proDes.equalsIgnoreCase(y)){
+//                                mView.setFoodName(x);
+//                                mView.setDescription(y);
+//
+//                                ds.getRef().setValue(mView);
+//                                Toast.makeText(getApplicationContext(),"Data Updated Successfully.",Toast.LENGTH_SHORT).show();
+//
+//                                Intent intent = new Intent(Update_Promotions.this,Resturent_Home.class);
+//                            }
+//                        }
                     }
 
                     @Override

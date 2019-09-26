@@ -200,12 +200,15 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             //intent.putExtra("promoNo",mList.get(getAdapterPosition()).getPromoNumber());
             /*TextView text = food_name;
-            pName = text.getText().toString();*/
-
+//            pName = text.getText().toString();*/
+//            TextView text = view.findViewById(R.id.food_text);
+//            String pID = text.getText().toString();
+            String pID = "Promotion 1";
             EditText txt = view.findViewById(R.id.food_txt);
             pName = food_name.getText().toString();
             EditText txt1 = view.findViewById(R.id.desc_txt);
             pDesc = food_desc.getText().toString();
+
             //EditText txt2 = view.findViewById(R.id.qty_txt);
             //pQty = food_qty.getText().toString();
             //intent.putExtra("description", mList.get(getAdapterPosition()).getDescription());
@@ -217,6 +220,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
             }*/
             intent.putExtra("pName", pName);
             intent.putExtra("pDesc",pDesc);
+            intent.putExtra("pID", pID);
             //intent.putExtra("pQty",pQty);
             //intent.putExtra("p")
 
