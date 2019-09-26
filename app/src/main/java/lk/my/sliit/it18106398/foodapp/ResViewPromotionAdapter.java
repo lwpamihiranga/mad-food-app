@@ -19,13 +19,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromotionAdapter.myViewHolder> {
     private Context mContext;
     private ArrayList<ModelViewPromotion> mList;
-
+    private ArrayList<String> proImg;
     private ArrayList<String> promoNo;
     private ArrayList<String> name;
     private ArrayList<String> desc;
@@ -44,11 +45,12 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
     public void setOnPromoClickListener(OnPromoClickListener listener){
         mListener = listener;
     }
-    public ResViewPromotionAdapter(Context context, ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
+    public ResViewPromotionAdapter(Context context,ArrayList<String> promoNo, ArrayList<String> name, ArrayList<String> desc) {
         mContext = context;
         this.promoNo = promoNo;
         this.name = name;
         this.desc = desc;
+        //this.proImg = proImg;
         //this.quantity = qty;
     }
 
@@ -68,7 +70,7 @@ public class ResViewPromotionAdapter extends RecyclerView.Adapter<ResViewPromoti
         TextView Description = holder.food_desc;
         //TextView Quantity = holder.food_qty;
 
-
+        //Picasso.get().into(promoImage);
         promoNumber.setText(promoNo.get(position));
         foodName.setText(name.get(position));
         Description.setText(desc.get(position));

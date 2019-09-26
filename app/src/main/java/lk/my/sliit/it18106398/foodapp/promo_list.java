@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -23,7 +24,8 @@ import java.util.ArrayList;
 public class promo_list extends AppCompatActivity /*implements ResViewPromotionAdapter.OnPromoClickListener*/ {
 
     RecyclerView recyclerView2;
-
+    SharedPreferences share;
+    //ArrayList<String> image;
     ArrayList<String> proNo;
     ArrayList<String> name;
     ArrayList<String> descriptions;

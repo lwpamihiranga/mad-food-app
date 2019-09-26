@@ -74,6 +74,8 @@ public class RestuarantsList extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Intent intent = new Intent();
+
     }
 }
 
