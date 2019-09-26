@@ -66,6 +66,7 @@ public class ViewFood extends AppCompatActivity {
             }
         });
 
+
       // recyclerView.setOnLongClickListener(new AdapterView.OnItemLongClickListener() {
 
 
@@ -111,27 +112,20 @@ public class ViewFood extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-    }
+      // recyclerView.setOnLongClickListener(new AdapterView.OnItemLongClickListener(){
 
-    private void showUpdateDialog(String food_txt){
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+         //  @Override
+          // public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+          //    Intent updateDelete = new Intent(startService(),startActivity());
 
-        LayoutInflater inflater = getLayoutInflater();
-
-        final View dialogView = inflater.inflate(R.layout.update_dialog,null);
-
-        final TextView TextViewFood = (TextView)dialogView.findViewById(R.id.foodtextView);
-        final EditText editTextName = (EditText)dialogView.findViewById(R.id.editTextName);
-        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdate);
-
-
-        dialogBuilder.setTitle("Updating Food"+ food_txt);
-        AlertDialog alertDialog = dialogBuilder.create();
-
-        alertDialog.show();
+          //     return false;
+          // }
+     //  });
 
 
     }
+
+
 
     @Override
     protected void onResume() {

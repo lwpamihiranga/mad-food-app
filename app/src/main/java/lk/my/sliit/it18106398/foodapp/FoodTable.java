@@ -1,19 +1,12 @@
 package lk.my.sliit.it18106398.foodapp;
 
 public class FoodTable {
- String name;
-      String ItemNo;
-     String Price;
-     String Description;
+ private String name;
+    private  String ItemNo;
+    private String Price;
+    private String Description;
 
-
-    public FoodTable(String name, String itemNo, String price, String description) {
-        this.name = name;
-        this.ItemNo = itemNo;
-        this.Price = price;
-        Description = description;
-
-
+    public FoodTable() {
     }
 
     public String getName() {

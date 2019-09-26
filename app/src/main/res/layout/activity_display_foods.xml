@@ -24,24 +24,24 @@
         android:id="@+id/foodNameTxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/login_form_details"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="161dp"
+        android:layout_marginTop="12dp"
         android:text="@string/food_name"
+        android:textColor="@color/login_form_details"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageTop" />
 
     <EditText
         android:id="@+id/qty"
-        android:layout_width="139dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="102dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/edittext_background_login"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:ems="10"
         android:hint="@string/add_qty"
         android:inputType="textPersonName"
@@ -52,21 +52,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintVertical_bias="0.968" />
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="166dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/pic34"
         android:text="Add to My Bag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toEndOf="@+id/qty"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

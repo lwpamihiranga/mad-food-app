@@ -31,10 +31,22 @@
             android:text="@string/textview"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.667"
+            app:layout_constraintHorizontal_bias="0.819"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.573" />
+            app:layout_constraintVertical_bias="0.362" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="126dp"
+            android:layout_height="27dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.824"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.781" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
