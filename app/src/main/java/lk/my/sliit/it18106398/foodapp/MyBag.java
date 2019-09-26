@@ -44,6 +44,7 @@ public class MyBag extends AppCompatActivity {
         qty = new ArrayList<>();
         mUploads = new ArrayList<>();
 
+        //Method to show firebase data on recycler view
         db = FirebaseDatabase.getInstance().getReference();
         db.child("OrderBag1").addValueEventListener(new ValueEventListener() {
             @Override
