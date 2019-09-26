@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
- class FoodViewHolderAdapter extends RecyclerView.Adapter<FoodViewHolderAdapter.FoodViewHolder> {
+public class FoodViewHolderAdapter extends RecyclerView.Adapter<FoodViewHolderAdapter.FoodViewHolder> {
 
     Context context;
     ArrayList<FoodItem> FoodTable;
@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-            holder.name.setText(FoodTable.get(position).getName());
+        holder.name.setText(FoodTable.get(position).getName());
         //Picasso.get().load(Food_Items.get(position).getImage().into(holder.Image));
 
 
@@ -47,7 +47,8 @@ import java.util.ArrayList;
     class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView name;
-        ImageView image;
+        //ImageView image;
+
 
         Context mContext;
         String fName;
@@ -57,19 +58,19 @@ import java.util.ArrayList;
             super(itemview);
 
             name = (TextView)itemview.findViewById(R.id.name);
-            image = (ImageView)itemview.findViewById(R.id.image);
+        //    image = (ImageView)itemview.findViewById(R.id.image);
 
             itemView.setOnClickListener(this);
 
             mContext = context;
 //            fName = name.getText().toString();
-           // itemview.setOnClickListener(new View.OnClickListener() {
-           //     @Override
+            // itemview.setOnClickListener(new View.OnClickListener() {
+            //     @Override
             //   public void onClick(View view) {
-              //      Intent displapfood = new Intent(this, DisplayFoodsActivity.class);
+            //      Intent displapfood = new Intent(this, DisplayFoodsActivity.class);
 
 
-                }
+        }
 
         @Override
         public void onClick(View view) {
@@ -82,9 +83,3 @@ import java.util.ArrayList;
         //});
     }
 }
- //}
-
-//
-//     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//         return new FoodViewHolder(LayoutInflater.from(context).inflate(R.layout.food_list,parent,false));
-//     }
