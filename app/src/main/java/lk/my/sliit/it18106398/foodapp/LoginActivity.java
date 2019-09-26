@@ -68,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
 //                            String type = dataSnapshot.child("type").getValue().toString();
 //
 //                            if(type.equalsIgnoreCase("Customer")) {
+//                                Intent intent = new Intent(getApplicationContext(), FoodList.class);
+//                                startActivity(intent);
 //                                Toast.makeText(getApplicationContext(), "Singing in as a Customer", Toast.LENGTH_SHORT).show();
 //                            } else if(type.equalsIgnoreCase("Restaurant")) {
 //                                Toast.makeText(getApplicationContext(), "Singing in as a Restaurant", Toast.LENGTH_SHORT).show();
